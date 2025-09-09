@@ -19,7 +19,7 @@ export default {
   text-align: center;
   padding: 6rem 0;
   color: white;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #fee77b;
   position: relative;
   overflow: hidden;
 }
