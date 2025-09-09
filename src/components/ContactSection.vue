@@ -101,14 +101,14 @@ export default {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  background: #f8f9fa;
+  background: #fee77b;
   padding: 1rem 1.5rem;
   border-radius: 10px;
   transition: background 0.3s ease;
 }
 
 .contact-item:hover {
-  background: #e9ecef;
+  background: #f4c20d;
 }
 
 .contact-item a {

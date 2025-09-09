@@ -81,12 +81,12 @@ export default {
 }
 
 .feature-card {
-  background: #f8f9fa;
+  background: #fee77b;
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #e9ecef;
+  border: 1px solid #f4c20d;
 }
 
 .feature-card:hover {

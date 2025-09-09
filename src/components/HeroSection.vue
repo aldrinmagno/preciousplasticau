@@ -38,7 +38,7 @@ export default {
 
 .cta-button {
   display: inline-block;
-  background: #FF6B35;
+  background: #fee77b;
   color: white;
   padding: 1rem 2rem;
   text-decoration: none;
@@ -46,13 +46,13 @@ export default {
   font-weight: bold;
   font-size: 1.1rem;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 15px rgba(254, 231, 123, 0.4);
 }
 
 .cta-button:hover {
-  background: #E55A2B;
+  background: #f4c20d;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+  box-shadow: 0 6px 20px rgba(254, 231, 123, 0.6);
 }
 
 @media (max-width: 768px) {
