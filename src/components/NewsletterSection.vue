@@ -8,7 +8,7 @@
         <!-- Mailchimp Signup Form -->
         <div id="mc_embed_signup" class="mailchimp-form">
           <form 
-            action="https://gmail.us11.list-manage.com/subscribe/post?u=1beb7f7a0f565cd78490db978b2c3b20-us18&amp;id=351bb6fc62" 
+            action="https://gmail.us11.list-manage.com/subscribe/post?u=1beb7f7a0f565cd78490db978&amp;id=b2c3b20351" 
             method="post" 
             id="mc-embedded-subscribe-form" 
             name="mc-embedded-subscribe-form" 
@@ -49,7 +49,7 @@
               
               <!-- Real people should not fill this in and expect good things -->
               <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_YOUR_USER_ID_YOUR_LIST_ID" tabindex="-1" value="">
+                <input type="text" name="b_1beb7f7a0f565cd78490db978_b2c3b20351" tabindex="-1" value="">
               </div>
               
               <div class="clear">
