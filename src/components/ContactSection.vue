@@ -84,7 +84,7 @@ export default {
 }
 
 .contact h2 {
-  color: #1E6EEB;
+  color: #F4C20D;
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }

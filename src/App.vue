@@ -82,7 +82,7 @@ body {
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  color: #1E6EEB;
+  color: #F4C20D;
 }
 
 .section-subtitle {

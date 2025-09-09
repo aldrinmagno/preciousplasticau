@@ -58,7 +58,7 @@ nav {
   align-items: center;
   font-size: 1.5rem;
   font-weight: bold;
-  color: #1E6EEB;
+  color: #F4C20D;
 }
 
 .logo img {
@@ -81,7 +81,7 @@ nav {
 }
 
 .nav-links a:hover {
-  color: #1E6EEB;
+  color: #F4C20D;
 }
 
 .mobile-menu {

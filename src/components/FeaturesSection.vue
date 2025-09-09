@@ -100,7 +100,7 @@ export default {
 }
 
 .feature-card h3 {
-  color: #1E6EEB;
+  color: #F4C20D;
   margin-bottom: 1rem;
   font-size: 1.3rem;
 }

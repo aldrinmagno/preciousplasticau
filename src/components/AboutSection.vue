@@ -24,7 +24,7 @@ export default {
 
 <style scoped>
 .about {
-  background: linear-gradient(135deg, #1E6EEB 0%, #4A90E2 100%);
+  background: linear-gradient(135deg, #F4C20D 0%, #FFD700 100%);
   color: white;
   padding: 4rem 0;
 }
