@@ -5,6 +5,7 @@
       <HeroSection />
       <FeaturesSection />
       <AboutSection />
+      <NewsletterSection />
       <ContactSection />
     </main>
     <AppFooter />
@@ -16,6 +17,7 @@ import AppHeader from './components/AppHeader.vue'
 import HeroSection from './components/HeroSection.vue'
 import FeaturesSection from './components/FeaturesSection.vue'
 import AboutSection from './components/AboutSection.vue'
+import NewsletterSection from './components/NewsletterSection.vue'
 import ContactSection from './components/ContactSection.vue'
 import AppFooter from './components/AppFooter.vue'
 
@@ -26,6 +28,7 @@ export default {
     HeroSection,
     FeaturesSection,
     AboutSection,
+    NewsletterSection,
     ContactSection,
     AppFooter
   },
