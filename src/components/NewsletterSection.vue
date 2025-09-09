@@ -5,70 +5,58 @@
         <h2>Stay Updated</h2>
         <p>Get the latest news about our workshops, events, and plastic recycling initiatives delivered to your inbox.</p>
         
-        <!-- Mailchimp Signup Form -->
-        <div id="mc_embed_signup" class="mailchimp-form">
-          <form 
-            action="https://gmail.us11.list-manage.com/subscribe/post?u=1beb7f7a0f565cd78490db978&amp;id=b2c3b20351" 
-            method="post" 
-            id="mc-embedded-subscribe-form" 
-            name="mc-embedded-subscribe-form" 
-            class="validate" 
-            target="_blank" 
-            novalidate
-          >
-            <div id="mc_embed_signup_scroll" class="form-container">
-              <div class="mc-field-group">
+        <!-- Secure Newsletter Form -->
+        <form @submit.prevent="handleSubmit" class="newsletter-form">
+          <div class="form-container">
+            <div class="form-group">
+              <input 
+                type="email" 
+                v-model="form.email"
+                placeholder="Enter your email address"
+                required
+                :disabled="isSubmitting"
+                class="email-input"
+              >
+              <div class="name-inputs">
                 <input 
-                  type="email" 
-                  value="" 
-                  name="EMAIL" 
-                  class="required email" 
-                  id="mce-EMAIL"
-                  placeholder="Enter your email address"
-                  required
+                  type="text" 
+                  v-model="form.firstName"
+                  placeholder="First Name (Optional)"
+                  :disabled="isSubmitting"
+                  class="name-input"
                 >
-                <div class="input-group">
-                  <input 
-                    type="text" 
-                    value="" 
-                    name="FNAME" 
-                    class="" 
-                    id="mce-FNAME"
-                    placeholder="First Name (Optional)"
-                  >
-                  <input 
-                    type="text" 
-                    value="" 
-                    name="LNAME" 
-                    class="" 
-                    id="mce-LNAME"
-                    placeholder="Last Name (Optional)"
-                  >
-                </div>
-              </div>
-              
-              <!-- Real people should not fill this in and expect good things -->
-              <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                <input type="text" name="b_1beb7f7a0f565cd78490db978_b2c3b20351" tabindex="-1" value="">
-              </div>
-              
-              <div class="clear">
                 <input 
-                  type="submit" 
-                  value="Subscribe" 
-                  name="subscribe" 
-                  id="mc-embedded-subscribe" 
-                  class="subscribe-button"
+                  type="text" 
+                  v-model="form.lastName"
+                  placeholder="Last Name (Optional)"
+                  :disabled="isSubmitting"
+                  class="name-input"
                 >
               </div>
             </div>
-          </form>
-        </div>
+            
+            <!-- Honeypot field for bot protection -->
+            <input 
+              type="text" 
+              v-model="form.honeypot"
+              style="position: absolute; left: -5000px; opacity: 0;"
+              tabindex="-1"
+              autocomplete="off"
+            >
+            
+            <button 
+              type="submit" 
+              :disabled="isSubmitting || !form.email"
+              class="subscribe-button"
+            >
+              {{ isSubmitting ? 'Subscribing...' : 'Subscribe' }}
+            </button>
+          </div>
+        </form>
         
-        <!-- Success/Error Messages -->
-        <div id="mce-responses" class="clear">
-          <div class="response" id="mce-error-response" style="display:none"></div>
-          <div class="response" id="mce-success-response" style="display:none"></div>
+        <!-- Response Messages -->
+        <div v-if="message" class="response" :class="messageType">
+          {{ message }}
         </div>
         
         <p class="newsletter-note">
@@ -82,24 +70,68 @@
 <script>
 export default {
   name: 'NewsletterSection',
-  mounted() {
-    // Load Mailchimp validation script
-    const script = document.createElement('script')
-    script.type = 'text/javascript'
-    script.src = '//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'
-    document.head.appendChild(script)
-    
-    // Initialize validation when script loads
-    script.onload = () => {
-      if (window.fnames && window.ftypes) {
-        window.fnames = new Array()
-        window.ftypes = new Array()
-        window.fnames[0] = 'EMAIL'
-        window.ftypes[0] = 'email'
-        window.fnames[1] = 'FNAME'
-        window.ftypes[1] = 'text'
-        window.fnames[2] = 'LNAME'
-        window.ftypes[2] = 'text'
+  data() {
+    return {
+      form: {
+        email: '',
+        firstName: '',
+        lastName: '',
+        honeypot: '' // Bot protection
+      },
+      isSubmitting: false,
+      message: '',
+      messageType: ''
+    }
+  },
+  methods: {
+    async handleSubmit() {
+      // Bot protection - if honeypot is filled, ignore submission
+      if (this.form.honeypot) {
+        return
+      }
+
+      this.isSubmitting = true
+      this.message = ''
+      this.messageType = ''
+
+      try {
+        const response = await fetch('/api/newsletter/subscribe', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: this.form.email,
+            firstName: this.form.firstName,
+            lastName: this.form.lastName
+          })
+        })
+
+        const result = await response.json()
+
+        if (response.ok) {
+          this.message = result.message || 'Successfully subscribed! Please check your email to confirm.'
+          this.messageType = 'success'
+          this.resetForm()
+        } else {
+          this.message = result.error || 'Something went wrong. Please try again.'
+          this.messageType = 'error'
+        }
+      } catch (error) {
+        console.error('Newsletter subscription error:', error)
+        this.message = 'Network error. Please check your connection and try again.'
+        this.messageType = 'error'
+      } finally {
+        this.isSubmitting = false
+      }
+    },
+
+    resetForm() {
+      this.form = {
+        email: '',
+        firstName: '',
+        lastName: '',
+        honeypot: ''
       }
     }
   }
@@ -148,7 +180,7 @@ export default {
   font-weight: 500;
 }
 
-.mailchimp-form {
+.newsletter-form {
   margin: 2rem 0;
 }
 
@@ -160,20 +192,20 @@ export default {
   margin: 0 auto;
 }
 
-.mc-field-group {
+.form-group {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.input-group {
+.name-inputs {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-input[type="email"],
-input[type="text"] {
+.email-input,
+.name-input {
   padding: 1rem 1.5rem;
   border: 2px solid #E2E8F0;
   border-radius: 8px;
@@ -184,11 +216,17 @@ input[type="text"] {
   transition: all 0.3s ease;
 }
 
-input[type="email"]:focus,
-input[type="text"]:focus {
+.email-input:focus,
+.name-input:focus {
   outline: none;
   border-color: #fee77b;
   box-shadow: 0 0 0 3px rgba(254, 231, 123, 0.2);
+}
+
+.email-input:disabled,
+.name-input:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .subscribe-button {
@@ -206,10 +244,16 @@ input[type="text"]:focus {
   box-shadow: 0 4px 15px rgba(254, 231, 123, 0.4);
 }
 
-.subscribe-button:hover {
+.subscribe-button:hover:not(:disabled) {
   background: #f4c20d;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(254, 231, 123, 0.6);
+}
+
+.subscribe-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .newsletter-note {
@@ -226,13 +270,13 @@ input[type="text"]:focus {
   font-weight: 500;
 }
 
-#mce-success-response {
+.response.success {
   background: rgba(72, 187, 120, 0.1);
   color: #48bb78;
   border: 1px solid #48bb78;
 }
 
-#mce-error-response {
+.response.error {
   background: rgba(245, 101, 101, 0.1);
   color: #f56565;
   border: 1px solid #f56565;
@@ -243,7 +287,7 @@ input[type="text"]:focus {
     font-size: 2rem;
   }
   
-  .input-group {
+  .name-inputs {
     grid-template-columns: 1fr;
   }
   
