@@ -38,12 +38,12 @@ export default {
 
 <style scoped>
 header {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #E2E8F0;
 }
 
 nav {
@@ -56,14 +56,16 @@ nav {
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #F4C20D;
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #2D3748;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .logo img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
 }
 
@@ -75,13 +77,16 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: #333;
-  font-weight: 500;
+  color: #4A5568;
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #F4C20D;
+  color: #fee77b;
 }
 
 .mobile-menu {

@@ -70,39 +70,62 @@ export default {
 <style scoped>
 .features {
   background: white;
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .features-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 2.5rem;
+  margin-top: 3rem;
 }
 
 .feature-card {
-  background: #fee77b;
-  padding: 2rem;
-  border-radius: 15px;
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 12px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid #f4c20d;
+  border: 2px solid #E2E8F0;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #fee77b 0%, #f4c20d 100%);
 }
 
 .feature-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #fee77b;
 }
 
 .feature-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .feature-card h3 {
-  color: #F4C20D;
-  margin-bottom: 1rem;
-  font-size: 1.3rem;
+  color: #2D3748;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  color: #4A5568;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 500;
 }
 
 @media (max-width: 768px) {

@@ -68,7 +68,7 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: linear-gradient(135deg, #fee77b 0%, #f4c20d 100%);
+  background: #ffffff;
   min-height: 100vh;
 }
 
@@ -80,26 +80,31 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 900;
   margin-bottom: 1rem;
-  color: #F4C20D;
+  color: #2D3748;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1.3rem;
+  color: #4A5568;
+  font-weight: 500;
   max-width: 600px;
   margin: 0 auto;
+  margin-bottom: 3rem;
 }
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
   
   .section-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 }
 </style>

@@ -24,9 +24,10 @@ export default {
 
 <style scoped>
 .about {
-  background: linear-gradient(135deg, #fee77b 0%, #f4c20d 100%);
-  color: white;
-  padding: 4rem 0;
+  background: #F7FAFC;
+  color: #2D3748;
+  padding: 6rem 0;
+  position: relative;
 }
 
 .about-content {
@@ -37,14 +38,20 @@ export default {
 }
 
 .about-text h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  font-weight: 900;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: #2D3748;
 }
 
 .about-text p {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 1rem;
-  opacity: 0.9;
+  color: #4A5568;
+  font-weight: 500;
+  line-height: 1.7;
 }
 
 .about-image {
@@ -54,7 +61,8 @@ export default {
 .about-image img {
   max-width: 100%;
   border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border: 3px solid #fee77b;
 }
 
 @media (max-width: 768px) {

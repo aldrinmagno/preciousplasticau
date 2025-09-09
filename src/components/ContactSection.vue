@@ -74,7 +74,7 @@ export default {
 <style scoped>
 .contact {
   background: white;
-  padding: 4rem 0;
+  padding: 6rem 0;
 }
 
 .contact-content {
@@ -84,36 +84,55 @@ export default {
 }
 
 .contact h2 {
-  color: #F4C20D;
-  font-size: 2.5rem;
+  color: #2D3748;
+  font-size: 3rem;
+  font-weight: 900;
   margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.contact p {
+  font-size: 1.2rem;
+  color: #4A5568;
+  font-weight: 500;
 }
 
 .contact-info {
   display: flex;
   justify-content: center;
-  gap: 2rem;
-  margin-top: 2rem;
+  gap: 1.5rem;
+  margin-top: 3rem;
   flex-wrap: wrap;
 }
 
 .contact-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  background: #fee77b;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  transition: background 0.3s ease;
+  gap: 0.8rem;
+  background: #F7FAFC;
+  padding: 1.2rem 1.8rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  border: 2px solid #E2E8F0;
+  font-weight: 600;
 }
 
 .contact-item:hover {
-  background: #f4c20d;
+  background: #fee77b;
+  border-color: #f4c20d;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .contact-item a {
-  color: #333;
+  color: #2D3748;
   text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-item span:first-child {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {

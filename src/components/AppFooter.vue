@@ -14,9 +14,15 @@ export default {
 
 <style scoped>
 footer {
-  background: #333;
+  background: #2D3748;
   color: white;
   text-align: center;
-  padding: 2rem 0;
+  padding: 3rem 0;
+}
+
+footer p {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.8;
 }
 </style>
