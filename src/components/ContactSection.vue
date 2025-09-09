@@ -50,6 +50,20 @@ export default {
           text: 'preciousplastic.com.au',
           link: 'https://preciousplastic.com.au',
           target: '_blank'
+        },
+        {
+          id: 4,
+          icon: '📘',
+          text: 'Facebook Page',
+          link: 'https://www.facebook.com/profile.php?id=61580648091526',
+          target: '_blank'
+        },
+        {
+          id: 5,
+          icon: '👥',
+          text: 'Facebook Group',
+          link: 'https://www.facebook.com/groups/1801827844055214',
+          target: '_blank'
         }
       ]
     }
