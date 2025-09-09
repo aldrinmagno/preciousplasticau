@@ -1,8 +1,21 @@
-@@ .. @@
-   "scripts": {
-     "dev": "vite",
-     "build": "vite build",
--    "preview": "vite preview"
-+    "preview": "vite preview",
-+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
-   },
+{
+  "name": "vue-website",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "vue": "^3.4.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "eslint": "^8.57.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "vite": "^5.0.0"
+  }
+}
