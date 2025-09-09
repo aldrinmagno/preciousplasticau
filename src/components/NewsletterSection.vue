@@ -8,7 +8,7 @@
         <!-- Mailchimp Signup Form -->
         <div id="mc_embed_signup" class="mailchimp-form">
           <form 
-            action="https://gmail.us11.list-manage.com/subscribe/post?u=YOUR_USER_ID&amp;id=YOUR_LIST_ID" 
+            action="https://gmail.us11.list-manage.com/subscribe/post?u=1beb7f7a0f565cd78490db978b2c3b20-us18&amp;id=351bb6fc62" 
             method="post" 
             id="mc-embedded-subscribe-form" 
             name="mc-embedded-subscribe-form" 
