@@ -1,6 +1,6 @@
 <template>
   <header>
-    <nav class="container">
+    <nav class="nav-container ">
       <router-link to="/" class="logo">
         <img src="/logo.png" alt="Precious Plastic Darwin Logo">
         Precious Plastic Darwin
@@ -55,6 +55,11 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
+}
+
+
+.nav-container {
+  margin: 0 1em;
 }
 
 .logo {
