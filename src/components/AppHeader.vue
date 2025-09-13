@@ -69,8 +69,8 @@ nav {
 }
 
 .logo img {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
   margin-right: 10px;
 }
 
@@ -154,8 +154,8 @@ nav {
   }
   
   .logo img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
   }
 }
 </style>
