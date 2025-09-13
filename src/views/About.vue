@@ -267,63 +267,117 @@
 export default {
   name: 'About',
   mounted() {
-    // Add Organization structured data
-    const organizationData = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Precious Plastic Darwin",
-      "alternateName": "PP Darwin",
-      "url": "https://preciousplastic.com.au",
-      "logo": "https://preciousplastic.com.au/logo.png",
-      "description": "Community-driven plastic recycling in Darwin, Northern Territory. Part of the global Precious Plastic movement.",
-      "foundingDate": "2023",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Darwin",
-        "addressRegion": "NT",
-        "addressCountry": "AU"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "",
-        "contactType": "customer service",
-        "email": "hello@preciousplastic.com.au"
-      },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61580648091526",
-        "https://www.facebook.com/groups/1801827844055214"
-      ],
-      "founder": {
-        "@type": "Person",
-        "name": "Alex Chen"
-      },
-      "employee": [
-        {
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Precious Plastic Darwin",
+        "alternateName": "PP Darwin",
+        "url": "https://preciousplastic.com.au",
+        "logo": "https://preciousplastic.com.au/logo.png",
+        "description": "Community-driven plastic recycling in Darwin, Northern Territory. Part of the global Precious Plastic movement creating circular economy solutions.",
+        "foundingDate": "2023",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Darwin",
+          "addressRegion": "NT",
+          "addressCountry": "AU"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "",
+          "contactType": "customer service",
+          "email": "hello@preciousplastic.com.au",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61580648091526",
+          "https://www.facebook.com/groups/1801827844055214"
+        ],
+        "founder": {
           "@type": "Person",
           "name": "Alex Chen",
           "jobTitle": "Founder & Operations Director"
         },
-        {
-          "@type": "Person", 
-          "name": "Sarah Mitchell",
-          "jobTitle": "Education Coordinator"
+        "employee": [
+          {
+            "@type": "Person",
+            "name": "Alex Chen",
+            "jobTitle": "Founder & Operations Director"
+          },
+          {
+            "@type": "Person", 
+            "name": "Sarah Mitchell",
+            "jobTitle": "Education Coordinator"
+          },
+          {
+            "@type": "Person",
+            "name": "David Nguyen", 
+            "jobTitle": "Workshop Manager"
+          },
+          {
+            "@type": "Person",
+            "name": "Emma Thompson",
+            "jobTitle": "Community Engagement"
+          }
+        ],
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Global Precious Plastic Movement"
         },
-        {
-          "@type": "Person",
-          "name": "David Nguyen", 
-          "jobTitle": "Workshop Manager"
-        },
-        {
-          "@type": "Person",
-          "name": "Emma Thompson",
-          "jobTitle": "Community Engagement"
+        "knowsAbout": [
+          "Plastic Recycling",
+          "HDPE Processing",
+          "PP Processing", 
+          "Sustainability Education",
+          "Community Engagement",
+          "Circular Economy"
+        ],
+        "areaServed": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -12.4634,
+            "longitude": 130.8456
+          },
+          "geoRadius": "100000"
         }
-      ]
-    }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        "name": "About Precious Plastic Darwin",
+        "description": "Learn about our mission, team, impact, and commitment to creating a circular Darwin through community-driven plastic recycling",
+        "url": "https://preciousplastic.com.au/about",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "About",
+            "item": "https://preciousplastic.com.au/about"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(organizationData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }

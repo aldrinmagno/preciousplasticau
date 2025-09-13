@@ -275,39 +275,73 @@ export default {
     }
   },
   mounted() {
-    // Add LocalBusiness structured data
-    const businessData = {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Precious Plastic Darwin",
-      "description": "Community-driven plastic recycling in Darwin, Northern Territory",
-      "url": "https://preciousplastic.com.au",
-      "telephone": "",
-      "email": "hello@preciousplastic.com.au",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Darwin",
-        "addressRegion": "NT",
-        "addressCountry": "AU"
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Precious Plastic Darwin",
+        "description": "Community-driven plastic recycling in Darwin, Northern Territory. Contact us for workshops, partnerships, and plastic drop-off information.",
+        "url": "https://preciousplastic.com.au",
+        "telephone": "",
+        "email": "hello@preciousplastic.com.au",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Darwin",
+          "addressRegion": "NT",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -12.4634,
+          "longitude": 130.8456
+        },
+        "openingHours": [
+          "Mo-Fr 09:00-17:00",
+          "Sa 10:00-16:00"
+        ],
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61580648091526",
+          "https://www.facebook.com/groups/1801827844055214"
+        ],
+        "priceRange": "$",
+        "paymentAccepted": "Cash, Card",
+        "currenciesAccepted": "AUD"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -12.4634,
-        "longitude": 130.8456
+      {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "Contact Precious Plastic Darwin",
+        "description": "Get in touch with Precious Plastic Darwin for workshop bookings, partnerships, volunteer opportunities, and general inquiries",
+        "url": "https://preciousplastic.com.au/contact",
+        "mainEntity": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin"
+        }
       },
-      "openingHours": [
-        "Mo-Fr 09:00-17:00",
-        "Sa 10:00-16:00"
-      ],
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61580648091526",
-        "https://www.facebook.com/groups/1801827844055214"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact",
+            "item": "https://preciousplastic.com.au/contact"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(businessData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }

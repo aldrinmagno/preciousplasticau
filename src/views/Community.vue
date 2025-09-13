@@ -408,6 +408,74 @@ export default {
         goals: ''
       }
     }
+  },
+  mounted() {
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "VolunteerAction",
+        "name": "Volunteer with Precious Plastic Darwin",
+        "description": "Join our community recycling efforts as a volunteer. Multiple roles available from workshop assistance to collection driving.",
+        "agent": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin"
+        },
+        "location": {
+          "@type": "Place",
+          "name": "Darwin, Northern Territory",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Darwin",
+            "addressRegion": "NT",
+            "addressCountry": "AU"
+          }
+        },
+        "potentialAction": {
+          "@type": "JoinAction",
+          "name": "Sign up to volunteer",
+          "target": "https://preciousplastic.com.au/community#volunteer"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Precious Plastic Darwin Community",
+        "description": "Community-driven plastic recycling initiative connecting volunteers, schools, and businesses in Darwin",
+        "url": "https://preciousplastic.com.au/community",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin"
+        },
+        "memberOf": {
+          "@type": "Organization",
+          "name": "Global Precious Plastic Movement"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Community",
+            "item": "https://preciousplastic.com.au/community"
+          }
+        ]
+      }
+    ]
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(structuredData)
+    document.head.appendChild(script)
   }
 }
 </script>
