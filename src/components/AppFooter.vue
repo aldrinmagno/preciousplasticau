@@ -29,7 +29,7 @@
       </div>
       
       <div class="footer-bottom">
-        <p>&copy; 2024 Precious Plastic Darwin. Part of the global Precious Plastic movement.</p>
+        <p>&copy; 2025 Precious Plastic Darwin. Part of the global Precious Plastic movement.</p>
         <div class="footer-links">
           <router-link to="/policies">Terms & Privacy</router-link>
           <router-link to="/policies#returns">Returns</router-link>

@@ -11,7 +11,7 @@
         <div class="mission-content">
           <div class="mission-text">
             <h2>Our Story</h2>
-            <p>Precious Plastic Darwin began in 2023 when a group of passionate locals saw the potential to transform Darwin's plastic waste problem into an opportunity for community engagement and environmental action.</p>
+            <p>Precious Plastic Darwin began in 2025 when a passionate individual saw the potential to transform Darwin's plastic waste problem into an opportunity for community engagement and environmental action.</p>
             <p>Inspired by the global Precious Plastic movement, we established Darwin's first community-driven plastic recycling workshop, focusing on the plastic types that often end up in landfill despite being technically recyclable.</p>
             <p>Today, we're proud to be part of a growing network of communities worldwide who are taking plastic recycling into their own hands, creating local solutions for local problems.</p>
           </div>
@@ -58,109 +58,11 @@
         </div>
       </section>
 
-      <!-- Team -->
-      <section class="team">
-        <h2 class="section-title">Meet the Team</h2>
-        <div class="team-grid">
-          <div class="team-member">
-            <div class="member-photo">👨‍🔬</div>
-            <h3>Alex Chen</h3>
-            <div class="member-role">Founder & Operations Director</div>
-            <p>Environmental engineer with 8 years experience in waste management. Passionate about community-driven solutions and sustainable design.</p>
-          </div>
-          <div class="team-member">
-            <div class="member-photo">👩‍🏫</div>
-            <h3>Sarah Mitchell</h3>
-            <div class="member-role">Education Coordinator</div>
-            <p>Former high school science teacher who develops our curriculum-aligned programs and manages school partnerships across the NT.</p>
-          </div>
-          <div class="team-member">
-            <div class="member-photo">👨‍🔧</div>
-            <h3>David Nguyen</h3>
-            <div class="member-role">Workshop Manager</div>
-            <p>Mechanical engineer and maker who maintains our equipment and leads technical workshops. Expert in plastic processing machinery.</p>
-          </div>
-          <div class="team-member">
-            <div class="member-photo">👩‍💼</div>
-            <h3>Emma Thompson</h3>
-            <div class="member-role">Community Engagement</div>
-            <p>Communications specialist who builds partnerships with local organizations and manages our volunteer program.</p>
-          </div>
-        </div>
-      </section>
-
       <!-- Impact & Transparency -->
       <section class="impact-transparency">
         <h2 class="section-title">Impact & Transparency</h2>
         <p class="section-subtitle">We believe in complete transparency about our operations, impact, and challenges.</p>
-        
-        <div class="transparency-content">
-          <div class="monthly-report">
-            <h3>Monthly Material Flow (November 2024)</h3>
-            <div class="flow-stats">
-              <div class="flow-item">
-                <div class="flow-number">180kg</div>
-                <div class="flow-label">Plastic Collected</div>
-                <div class="flow-breakdown">
-                  <span>120kg HDPE</span>
-                  <span>60kg PP</span>
-                </div>
-              </div>
-              <div class="flow-item">
-                <div class="flow-number">165kg</div>
-                <div class="flow-label">Successfully Processed</div>
-                <div class="flow-breakdown">
-                  <span>92% success rate</span>
-                  <span>15kg contaminated</span>
-                </div>
-              </div>
-              <div class="flow-item">
-                <div class="flow-number">95</div>
-                <div class="flow-label">Products Created</div>
-                <div class="flow-breakdown">
-                  <span>45 homewares</span>
-                  <span>50 workshop items</span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="annual-impact">
-            <h3>2024 Annual Impact</h3>
-            <div class="impact-grid">
-              <div class="impact-stat">
-                <div class="stat-number">2,450kg</div>
-                <div class="stat-label">Plastic Diverted from Landfill</div>
-                <div class="stat-context">Equivalent to ~49,000 milk bottles</div>
-              </div>
-              <div class="impact-stat">
-                <div class="stat-number">1,200</div>
-                <div class="stat-label">Products Created</div>
-                <div class="stat-context">From sunglasses to planters</div>
-              </div>
-              <div class="impact-stat">
-                <div class="stat-number">85</div>
-                <div class="stat-label">Active Volunteers</div>
-                <div class="stat-context">Contributing 2,400+ hours</div>
-              </div>
-              <div class="impact-stat">
-                <div class="stat-number">15</div>
-                <div class="stat-label">Partner Schools</div>
-                <div class="stat-context">Reaching 3,000+ students</div>
-              </div>
-              <div class="impact-stat">
-                <div class="stat-number">450</div>
-                <div class="stat-label">Workshop Participants</div>
-                <div class="stat-context">Across all age groups</div>
-              </div>
-              <div class="impact-stat">
-                <div class="stat-number">8</div>
-                <div class="stat-label">Collection Points</div>
-                <div class="stat-context">Across Darwin & Palmerston</div>
-              </div>
-            </div>
-          </div>
-
+    
           <div class="challenges">
             <h3>Current Challenges & Goals</h3>
             <div class="challenges-grid">
@@ -185,7 +87,6 @@
                 </ul>
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -231,34 +132,6 @@
         </div>
       </section>
 
-      <!-- Media Kit -->
-      <section class="media-kit">
-        <h2 class="section-title">Media Kit & Press</h2>
-        <div class="media-content">
-          <div class="media-info">
-            <h3>For Media Inquiries</h3>
-            <p>We're always happy to share our story and expertise with media outlets. Whether you're covering sustainability, community initiatives, or innovation in the NT, we're here to help.</p>
-            <div class="press-contact">
-              <h4>Press Contact</h4>
-              <p><strong>Emma Thompson</strong><br>
-              Community Engagement Coordinator<br>
-              📧 <a href="mailto:media@preciousplastic.com.au">media@preciousplastic.com.au</a><br>
-              📱 0412 345 678</p>
-            </div>
-          </div>
-          <div class="media-resources">
-            <h3>Media Resources</h3>
-            <div class="resources-grid">
-              <button class="resource-btn">📸 High-res Photos</button>
-              <button class="resource-btn">📄 Fact Sheet</button>
-              <button class="resource-btn">🎥 Video Content</button>
-              <button class="resource-btn">📊 Impact Data</button>
-              <button class="resource-btn">🏷️ Logo Package</button>
-              <button class="resource-btn">📰 Press Releases</button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   </div>
 </template>

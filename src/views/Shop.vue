@@ -23,7 +23,7 @@
             <div class="category-icon">🕶️</div>
             <h3>Sunglasses</h3>
             <p>Stylish frames made from recycled HDPE bottles collected in Darwin</p>
-            <div class="price-range">From $45</div>
+            <div class="price-range">From $99</div>
             <button class="btn-secondary">Join Waitlist</button>
           </div>
           <div class="category-card">
@@ -63,7 +63,7 @@
               <p><strong>Impact:</strong> Diverted 12 bottles from landfill</p>
               <p><strong>Batch ID:</strong> DRW-SG-001</p>
             </div>
-            <div class="product-price">$45</div>
+            <div class="product-price">$99</div>
             <button class="btn-primary">Join Waitlist</button>
           </div>
           <div class="product-preview">
@@ -118,8 +118,8 @@
       <section class="care-warranty">
         <div class="info-grid">
           <div class="info-card">
-            <h3>🛡️ Warranty</h3>
-            <p>All products come with a 12-month warranty against manufacturing defects. We stand behind the quality of our recycled products.</p>
+            <h3>🛡️ Life time warranty</h3>
+            <p>All products come with a life time warranty against manufacturing defects. We stand behind the quality of our recycled products.</p>
           </div>
           <div class="info-card">
             <h3>🧼 Care Instructions</h3>

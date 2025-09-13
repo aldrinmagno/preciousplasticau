@@ -23,47 +23,8 @@
 
       <!-- Upcoming Events -->
       <section class="upcoming-events">
-        <h2 class="section-title">Upcoming Events</h2>
-        <div class="events-grid">
-          <div 
-            v-for="event in filteredEvents" 
-            :key="event.id"
-            class="event-card"
-          >
-            <div class="event-date">
-              <div class="month">{{ event.month }}</div>
-              <div class="day">{{ event.day }}</div>
-            </div>
-            <div class="event-content">
-              <div class="event-category">{{ event.category }}</div>
-              <h3>{{ event.title }}</h3>
-              <div class="event-details">
-                <p>👥 {{ event.audience }}</p>
-                <p>⏱️ {{ event.duration }}</p>
-                <p>💰 {{ event.price }}</p>
-                <p>📍 {{ event.location }}</p>
-              </div>
-              <div class="event-description">
-                <p>{{ event.description }}</p>
-              </div>
-              <div class="event-outcomes">
-                <h4>What you'll learn:</h4>
-                <ul>
-                  <li v-for="outcome in event.outcomes" :key="outcome">{{ outcome }}</li>
-                </ul>
-              </div>
-              <div class="event-bring">
-                <h4>What to bring:</h4>
-                <p>{{ event.whatToBring }}</p>
-              </div>
-              <div class="event-actions">
-                <button v-if="event.bookable" class="btn-primary">Book Now</button>
-                <button v-else class="btn-secondary">Request Quote</button>
-                <span class="capacity">{{ event.capacity }} spots available</span>
-              </div>
-            </div>
-          </div>
-        </div>
+        <h2 class="section-title">Upcoming Events <small>(Events coming soon!)</small></h2>
+        <h3></h3>
       </section>
 
       <!-- Host a Workshop -->
@@ -80,7 +41,6 @@
               <li>Age-appropriate activities (Years 3-12)</li>
               <li>Teacher resources included</li>
             </ul>
-            <div class="pricing">From $15/student (minimum 20 students)</div>
           </div>
           
           <div class="host-option">
@@ -91,7 +51,6 @@
               <li>Custom duration (2-6 hours)</li>
               <li>Certificate of participation</li>
             </ul>
-            <div class="pricing">From $75/person (minimum 10 people)</div>
           </div>
           
           <div class="host-option">
@@ -102,7 +61,6 @@
               <li>Take home your creations</li>
               <li>Group discounts available</li>
             </ul>
-            <div class="pricing">From $40/person (minimum 8 people)</div>
           </div>
         </div>
 

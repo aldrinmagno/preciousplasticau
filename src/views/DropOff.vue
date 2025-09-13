@@ -87,22 +87,9 @@
           </div>
           <div class="locations-list">
             <div class="location-card">
-              <h3>Palmerston Community Centre</h3>
-              <p>📍 1 Chung Wah Terrace, Palmerston NT 0830</p>
-              <p>🕒 Mon-Fri: 9am-5pm, Sat: 10am-4pm</p>
-              <p>🚗 Free parking available</p>
-            </div>
-            <div class="location-card">
-              <h3>Nightcliff Shopping Centre</h3>
-              <p>📍 Pavonia Way, Nightcliff NT 0810</p>
-              <p>🕒 Daily: 8am-6pm</p>
-              <p>🚗 Shopping centre parking</p>
-            </div>
-            <div class="location-card">
-              <h3>Berrimah Research Farm</h3>
-              <p>📍 Makagon Road, Berrimah NT 0828</p>
-              <p>🕒 Weekdays: 8am-4pm</p>
-              <p>🚗 Staff parking area</p>
+              <h3>Precious Plastic Darwin</h3>
+              <p>📍 9 Raymond St., Palmerston NT 0832</p>
+              <p>🕒 Sat-Sun: 10am-4pm</p>
             </div>
           </div>
         </div>

@@ -93,49 +93,9 @@
 
       <!-- Downloadable Resources -->
       <section class="downloads">
-        <h2 class="section-title">Downloadable Resources</h2>
+        <h2 class="section-title">Downloadable Resources <small>(Coming soon!)</small></h2>
         <div class="downloads-grid">
-          <div class="download-card">
-            <div class="download-icon">📄</div>
-            <h3>Plastic Prep Guide</h3>
-            <p>Step-by-step instructions for preparing plastic for recycling</p>
-            <button class="btn-primary">Download PDF</button>
-          </div>
-          
-          <div class="download-card">
-            <div class="download-icon">🏷️</div>
-            <h3>Bin Labels</h3>
-            <p>Printable labels for sorting bins (#2 HDPE, #5 PP)</p>
-            <button class="btn-primary">Download PDF</button>
-          </div>
-          
-          <div class="download-card">
-            <div class="download-icon">📊</div>
-            <h3>Teacher Pack</h3>
-            <p>Lesson plans, activities, and worksheets for educators</p>
-            <button class="btn-primary">Download ZIP</button>
-          </div>
-          
-          <div class="download-card">
-            <div class="download-icon">📋</div>
-            <h3>Collection Point Setup</h3>
-            <p>Guide for setting up plastic collection at your workplace</p>
-            <button class="btn-primary">Download PDF</button>
-          </div>
-          
-          <div class="download-card">
-            <div class="download-icon">🎯</div>
-            <h3>Plastic Audit Kit</h3>
-            <p>Tools and templates for conducting a plastic waste audit</p>
-            <button class="btn-primary">Download PDF</button>
-          </div>
-          
-          <div class="download-card">
-            <div class="download-icon">📈</div>
-            <h3>Impact Poster</h3>
-            <p>Visual poster showing the recycling process and impact</p>
-            <button class="btn-primary">Download PDF</button>
-          </div>
+         
         </div>
       </section>
 
@@ -263,32 +223,6 @@
         </div>
       </section>
 
-      <!-- Blog/News -->
-      <section class="blog">
-        <h2 class="section-title">Latest Updates</h2>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <div class="blog-date">Dec 5, 2024</div>
-            <h3>Darwin High School's Amazing Recycling Project</h3>
-            <p>Students collected 50kg of HDPE in just one month, turning it into planters for their school garden. See how they did it and the impact they're making.</p>
-            <a href="#" class="read-more">Read More →</a>
-          </article>
-          
-          <article class="blog-card">
-            <div class="blog-date">Nov 28, 2024</div>
-            <h3>New Partnership with City of Palmerston</h3>
-            <p>We're excited to announce our new collection points across Palmerston, making it easier for residents to recycle their plastic waste locally.</p>
-            <a href="#" class="read-more">Read More →</a>
-          </article>
-          
-          <article class="blog-card">
-            <div class="blog-date">Nov 15, 2024</div>
-            <h3>Monthly Impact Report: November 2024</h3>
-            <p>This month we processed 180kg of plastic, created 95 new products, and engaged with 12 schools. See our full transparency report.</p>
-            <a href="#" class="read-more">Read More →</a>
-          </article>
-        </div>
-      </section>
     </div>
   </div>
 </template>

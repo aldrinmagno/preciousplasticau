@@ -91,7 +91,7 @@
             <div class="schedule">
               <div class="schedule-item">
                 <span class="day">Collection Runs</span>
-                <span class="time">Tuesday & Friday</span>
+                <span class="time">Saturday & Sunday</span>
               </div>
               <div class="schedule-item">
                 <span class="day">Drop-off Points</span>
@@ -156,52 +156,6 @@
             <h3>Newsletter</h3>
             <p>Monthly updates, workshop schedules, and impact reports</p>
             <span class="social-cta">Coming Soon</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Business Information -->
-      <section class="business-info">
-        <h2 class="section-title">Business Information</h2>
-        <div class="business-grid">
-          <div class="business-card">
-            <h3>📋 Legal Information</h3>
-            <div class="business-details">
-              <p><strong>Business Name:</strong> Precious Plastic Darwin</p>
-              <p><strong>ABN:</strong> 12 345 678 901</p>
-              <p><strong>Registration:</strong> Northern Territory</p>
-              <p><strong>Type:</strong> Community Interest Organization</p>
-            </div>
-          </div>
-          
-          <div class="business-card">
-            <h3>🏢 Postal Address</h3>
-            <div class="business-details">
-              <p>Precious Plastic Darwin<br>
-              PO Box 1234<br>
-              Darwin NT 0800<br>
-              Australia</p>
-            </div>
-          </div>
-          
-          <div class="business-card">
-            <h3>💼 Services</h3>
-            <div class="business-details">
-              <p>• Plastic recycling services</p>
-              <p>• Educational workshops</p>
-              <p>• Community engagement</p>
-              <p>• Consultation services</p>
-            </div>
-          </div>
-          
-          <div class="business-card">
-            <h3>🤝 Partnerships</h3>
-            <div class="business-details">
-              <p>• Schools and educational institutions</p>
-              <p>• Local councils and government</p>
-              <p>• Environmental organizations</p>
-              <p>• Community groups</p>
-            </div>
           </div>
         </div>
       </section>

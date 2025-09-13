@@ -78,11 +78,10 @@
         <div class="location-preview">
           <div class="map-placeholder">
             <p>🗺️ Interactive map coming soon</p>
-            <p>Current locations: Palmerston, Nightcliff, Berrimah</p>
+            <p>Current locations: Palmerston</p>
           </div>
           <div class="location-info">
             <h3>Current Hours</h3>
-            <p><strong>Weekdays:</strong> 9am - 5pm</p>
             <p><strong>Weekends:</strong> 10am - 4pm</p>
             <router-link to="/drop-off" class="btn-primary">View All Locations</router-link>
           </div>
@@ -114,75 +113,6 @@
             <p>Corporate & bulk orders</p>
             <router-link to="/shop" class="btn-primary">Inquire</router-link>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Upcoming Workshops -->
-    <section class="workshops">
-      <div class="container">
-        <h2 class="section-title">Upcoming Workshops</h2>
-        <div class="workshop-grid">
-          <div class="workshop-card">
-            <div class="workshop-date">Dec 15</div>
-            <h3>School Holiday Workshop</h3>
-            <p>Ages 8-16 • 2 hours • $25</p>
-            <router-link to="/workshops" class="btn-primary">Book Now</router-link>
-          </div>
-          <div class="workshop-card">
-            <div class="workshop-date">Dec 20</div>
-            <h3>Community Maker Session</h3>
-            <p>Adults • 3 hours • $40</p>
-            <router-link to="/workshops" class="btn-primary">Book Now</router-link>
-          </div>
-          <div class="workshop-card">
-            <div class="workshop-date">Jan 10</div>
-            <h3>Corporate Team Building</h3>
-            <p>Groups 10+ • Half day • Quote</p>
-            <router-link to="/workshops" class="btn-primary">Inquire</router-link>
-          </div>
-        </div>
-        <div class="workshop-cta">
-          <router-link to="/workshops" class="btn-secondary">See All Workshops</router-link>
-        </div>
-      </div>
-    </section>
-
-    <!-- Impact Counters -->
-    <section class="impact">
-      <div class="container">
-        <h2 class="section-title">Our Impact</h2>
-        <div class="impact-grid">
-          <div class="impact-card">
-            <div class="impact-number">2,450</div>
-            <div class="impact-label">kg Plastic Diverted</div>
-          </div>
-          <div class="impact-card">
-            <div class="impact-number">1,200</div>
-            <div class="impact-label">Items Made</div>
-          </div>
-          <div class="impact-card">
-            <div class="impact-number">85</div>
-            <div class="impact-label">Active Volunteers</div>
-          </div>
-          <div class="impact-card">
-            <div class="impact-number">15</div>
-            <div class="impact-label">Partner Schools</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="partners">
-      <div class="container">
-        <h2 class="section-title">Partners & Schools</h2>
-        <div class="partner-logos">
-          <div class="partner-logo">🏫 Darwin High School</div>
-          <div class="partner-logo">🏫 Palmerston College</div>
-          <div class="partner-logo">🏢 City of Darwin</div>
-          <div class="partner-logo">🏢 City of Palmerston</div>
-          <div class="partner-logo">🌱 Environment Centre NT</div>
         </div>
       </div>
     </section>
