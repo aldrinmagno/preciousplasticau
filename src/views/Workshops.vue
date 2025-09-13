@@ -108,26 +108,27 @@
 
         <form class="host-form" @submit.prevent="submitHostRequest">
           <h3>Request a Workshop</h3>
+          <input type="hidden" name="form-name" value="workshop-request">
           <div class="form-row">
-            <input type="text" v-model="hostForm.organization" placeholder="School/Organization Name" required>
-            <input type="text" v-model="hostForm.contact" placeholder="Contact Person" required>
+            <input type="text" v-model="hostForm.organization" name="organization" placeholder="School/Organization Name" required>
+            <input type="text" v-model="hostForm.contact" name="contact" placeholder="Contact Person" required>
           </div>
           <div class="form-row">
-            <input type="email" v-model="hostForm.email" placeholder="Email Address" required>
-            <input type="tel" v-model="hostForm.phone" placeholder="Phone Number">
+            <input type="email" v-model="hostForm.email" name="email" placeholder="Email Address" required>
+            <input type="tel" v-model="hostForm.phone" name="phone" placeholder="Phone Number">
           </div>
           <div class="form-row">
-            <select v-model="hostForm.type" required>
+            <select v-model="hostForm.type" name="type" required>
               <option value="">Workshop Type</option>
               <option value="school">School Program</option>
               <option value="corporate">Corporate Workshop</option>
               <option value="community">Community Group</option>
             </select>
-            <input type="number" v-model="hostForm.participants" placeholder="Number of Participants" min="8" required>
+            <input type="number" v-model="hostForm.participants" name="participants" placeholder="Number of Participants" min="8" required>
           </div>
           <div class="form-row">
-            <input type="date" v-model="hostForm.preferredDate" placeholder="Preferred Date">
-            <select v-model="hostForm.duration">
+            <input type="date" v-model="hostForm.preferredDate" name="preferredDate" placeholder="Preferred Date">
+            <select v-model="hostForm.duration" name="duration">
               <option value="">Preferred Duration</option>
               <option value="2">2 hours</option>
               <option value="3">3 hours</option>
@@ -135,7 +136,7 @@
               <option value="6">Full day (6 hours)</option>
             </select>
           </div>
-          <textarea v-model="hostForm.details" placeholder="Tell us about your group, learning objectives, and any special requirements" rows="4"></textarea>
+          <textarea v-model="hostForm.details" name="details" placeholder="Tell us about your group, learning objectives, and any special requirements" rows="4"></textarea>
           <button type="submit" class="btn-primary">Request Workshop Quote</button>
         </form>
       </section>
@@ -322,10 +323,31 @@ export default {
     }
   },
   methods: {
-    submitHostRequest() {
-      console.log('Host request:', this.hostForm)
-      alert('Thanks for your workshop request! We\'ll get back to you within 2 business days with a custom quote.')
-      this.resetHostForm()
+    async submitHostRequest() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'workshop-request')
+        formData.append('organization', this.hostForm.organization)
+        formData.append('contact', this.hostForm.contact)
+        formData.append('email', this.hostForm.email)
+        formData.append('phone', this.hostForm.phone)
+        formData.append('type', this.hostForm.type)
+        formData.append('participants', this.hostForm.participants)
+        formData.append('preferredDate', this.hostForm.preferredDate)
+        formData.append('duration', this.hostForm.duration)
+        formData.append('details', this.hostForm.details)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your workshop request! We\'ll get back to you within 2 business days with a custom quote.')
+        this.resetHostForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
     resetHostForm() {
       this.hostForm = {

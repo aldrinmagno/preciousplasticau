@@ -112,16 +112,17 @@
       <section class="bulk-pickup">
         <h2>Business & Bulk Collection</h2>
         <p>Large quantities? We offer pickup services for businesses and organizations.</p>
-        <form class="bulk-form">
+        <form class="bulk-form" @submit.prevent="submitBulkRequest" name="bulk-pickup" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="bulk-pickup">
           <div class="form-row">
-            <input type="text" placeholder="Business Name" required>
-            <input type="email" placeholder="Email" required>
+            <input type="text" v-model="bulkForm.business" name="business" placeholder="Business Name" required>
+            <input type="email" v-model="bulkForm.email" name="email" placeholder="Email" required>
           </div>
           <div class="form-row">
-            <input type="text" placeholder="Address">
-            <input type="tel" placeholder="Phone">
+            <input type="text" v-model="bulkForm.address" name="address" placeholder="Address">
+            <input type="tel" v-model="bulkForm.phone" name="phone" placeholder="Phone">
           </div>
-          <textarea placeholder="Tell us about your plastic waste (types, quantities, frequency)" rows="4"></textarea>
+          <textarea v-model="bulkForm.details" name="details" placeholder="Tell us about your plastic waste (types, quantities, frequency)" rows="4" required></textarea>
           <button type="submit" class="btn-primary">Request Pickup Quote</button>
         </form>
       </section>
@@ -155,6 +156,50 @@
 <script>
 export default {
   name: 'DropOff',
+  data() {
+    return {
+      bulkForm: {
+        business: '',
+        email: '',
+        address: '',
+        phone: '',
+        details: ''
+      }
+    }
+  },
+  methods: {
+    async submitBulkRequest() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'bulk-pickup')
+        formData.append('business', this.bulkForm.business)
+        formData.append('email', this.bulkForm.email)
+        formData.append('address', this.bulkForm.address)
+        formData.append('phone', this.bulkForm.phone)
+        formData.append('details', this.bulkForm.details)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your bulk pickup request! We\'ll get back to you within 2 business days.')
+        this.resetBulkForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
+    },
+    resetBulkForm() {
+      this.bulkForm = {
+        business: '',
+        email: '',
+        address: '',
+        phone: '',
+        details: ''
+      }
+    }
+  },
   mounted() {
     // Add comprehensive structured data
     const structuredData = [

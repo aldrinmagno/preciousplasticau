@@ -141,10 +141,11 @@
     <div v-if="showWaitlistForm" class="modal-overlay" @click="showWaitlistForm = false">
       <div class="modal" @click.stop>
         <h3>Join the Shop Waitlist</h3>
-        <form @submit.prevent="submitWaitlist">
-          <input type="text" v-model="waitlistForm.name" placeholder="Your Name" required>
-          <input type="email" v-model="waitlistForm.email" placeholder="Email Address" required>
-          <select v-model="waitlistForm.interest" required>
+        <form @submit.prevent="submitWaitlist" name="shop-waitlist" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="shop-waitlist">
+          <input type="text" v-model="waitlistForm.name" name="name" placeholder="Your Name" required>
+          <input type="email" v-model="waitlistForm.email" name="email" placeholder="Email Address" required>
+          <select v-model="waitlistForm.interest" name="interest" required>
             <option value="">What interests you most?</option>
             <option value="sunglasses">Sunglasses</option>
             <option value="homewares">Homewares</option>
@@ -152,7 +153,7 @@
             <option value="sheets">Sheets & Tiles</option>
             <option value="all">Everything</option>
           </select>
-          <textarea v-model="waitlistForm.message" placeholder="Any specific requests or questions?" rows="3"></textarea>
+          <textarea v-model="waitlistForm.message" name="message" placeholder="Any specific requests or questions?" rows="3"></textarea>
           <div class="modal-actions">
             <button type="button" class="btn-secondary" @click="showWaitlistForm = false">Cancel</button>
             <button type="submit" class="btn-primary">Join Waitlist</button>
@@ -165,19 +166,20 @@
     <div v-if="showWholesaleForm" class="modal-overlay" @click="showWholesaleForm = false">
       <div class="modal" @click.stop>
         <h3>Wholesale Inquiry</h3>
-        <form @submit.prevent="submitWholesale">
-          <input type="text" v-model="wholesaleForm.company" placeholder="Company Name" required>
-          <input type="text" v-model="wholesaleForm.contact" placeholder="Contact Person" required>
-          <input type="email" v-model="wholesaleForm.email" placeholder="Email Address" required>
-          <input type="tel" v-model="wholesaleForm.phone" placeholder="Phone Number">
-          <select v-model="wholesaleForm.type" required>
+        <form @submit.prevent="submitWholesale" name="wholesale-inquiry" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="wholesale-inquiry">
+          <input type="text" v-model="wholesaleForm.company" name="company" placeholder="Company Name" required>
+          <input type="text" v-model="wholesaleForm.contact" name="contact" placeholder="Contact Person" required>
+          <input type="email" v-model="wholesaleForm.email" name="email" placeholder="Email Address" required>
+          <input type="tel" v-model="wholesaleForm.phone" name="phone" placeholder="Phone Number">
+          <select v-model="wholesaleForm.type" name="type" required>
             <option value="">Inquiry Type</option>
             <option value="corporate-gifts">Corporate Gifts</option>
             <option value="retail">Retail Partnership</option>
             <option value="custom">Custom Products</option>
             <option value="bulk">Bulk Order</option>
           </select>
-          <textarea v-model="wholesaleForm.details" placeholder="Tell us about your requirements (quantities, timeline, budget, etc.)" rows="4" required></textarea>
+          <textarea v-model="wholesaleForm.details" name="details" placeholder="Tell us about your requirements (quantities, timeline, budget, etc.)" rows="4" required></textarea>
           <div class="modal-actions">
             <button type="button" class="btn-secondary" @click="showWholesaleForm = false">Cancel</button>
             <button type="submit" class="btn-primary">Send Inquiry</button>
@@ -212,19 +214,51 @@ export default {
     }
   },
   methods: {
-    submitWaitlist() {
-      // Handle waitlist submission
-      console.log('Waitlist submission:', this.waitlistForm)
-      alert('Thanks for joining our waitlist! We\'ll notify you when products are available.')
-      this.showWaitlistForm = false
-      this.resetWaitlistForm()
+    async submitWaitlist() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'shop-waitlist')
+        formData.append('name', this.waitlistForm.name)
+        formData.append('email', this.waitlistForm.email)
+        formData.append('interest', this.waitlistForm.interest)
+        formData.append('message', this.waitlistForm.message)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for joining our waitlist! We\'ll notify you when products are available.')
+        this.showWaitlistForm = false
+        this.resetWaitlistForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
-    submitWholesale() {
-      // Handle wholesale inquiry
-      console.log('Wholesale inquiry:', this.wholesaleForm)
-      alert('Thanks for your wholesale inquiry! We\'ll get back to you within 2 business days.')
-      this.showWholesaleForm = false
-      this.resetWholesaleForm()
+    async submitWholesale() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'wholesale-inquiry')
+        formData.append('company', this.wholesaleForm.company)
+        formData.append('contact', this.wholesaleForm.contact)
+        formData.append('email', this.wholesaleForm.email)
+        formData.append('phone', this.wholesaleForm.phone)
+        formData.append('type', this.wholesaleForm.type)
+        formData.append('details', this.wholesaleForm.details)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your wholesale inquiry! We\'ll get back to you within 2 business days.')
+        this.showWholesaleForm = false
+        this.resetWholesaleForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
     resetWaitlistForm() {
       this.waitlistForm = {

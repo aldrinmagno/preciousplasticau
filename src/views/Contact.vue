@@ -11,14 +11,15 @@
         <div class="contact-grid">
           <div class="form-container">
             <h2>Send us a Message</h2>
-            <form @submit.prevent="submitContactForm" class="contact-form">
+            <form @submit.prevent="submitContactForm" class="contact-form" name="contact-form" method="POST" data-netlify="true">
+              <input type="hidden" name="form-name" value="contact-form">
               <div class="form-row">
-                <input type="text" v-model="contactForm.name" placeholder="Your Name" required>
-                <input type="email" v-model="contactForm.email" placeholder="Email Address" required>
+                <input type="text" v-model="contactForm.name" name="name" placeholder="Your Name" required>
+                <input type="email" v-model="contactForm.email" name="email" placeholder="Email Address" required>
               </div>
               <div class="form-row">
-                <input type="tel" v-model="contactForm.phone" placeholder="Phone Number (optional)">
-                <select v-model="contactForm.topic" required>
+                <input type="tel" v-model="contactForm.phone" name="phone" placeholder="Phone Number (optional)">
+                <select v-model="contactForm.topic" name="topic" required>
                   <option value="">Select Topic</option>
                   <option value="general">General Inquiry</option>
                   <option value="volunteer">Volunteer Opportunities</option>
@@ -29,7 +30,7 @@
                   <option value="feedback">Feedback</option>
                 </select>
               </div>
-              <textarea v-model="contactForm.message" placeholder="Your message..." rows="6" required></textarea>
+              <textarea v-model="contactForm.message" name="message" placeholder="Your message..." rows="6" required></textarea>
               <button type="submit" class="btn-primary">Send Message</button>
             </form>
           </div>
@@ -259,10 +260,27 @@ export default {
     }
   },
   methods: {
-    submitContactForm() {
-      console.log('Contact form:', this.contactForm)
-      alert('Thanks for your message! We\'ll get back to you within 24 hours.')
-      this.resetContactForm()
+    async submitContactForm() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'contact-form')
+        formData.append('name', this.contactForm.name)
+        formData.append('email', this.contactForm.email)
+        formData.append('phone', this.contactForm.phone)
+        formData.append('topic', this.contactForm.topic)
+        formData.append('message', this.contactForm.message)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your message! We\'ll get back to you within 24 hours.')
+        this.resetContactForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
     resetContactForm() {
       this.contactForm = {

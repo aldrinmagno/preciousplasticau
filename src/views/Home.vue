@@ -194,7 +194,7 @@
         <p class="section-subtitle">Get workshop notifications and impact updates</p>
         <div class="signup-options">
           <router-link to="/community#volunteer" class="btn-primary">Volunteer Sign-up</router-link>
-          <a href="https://www.facebook.com/groups/1801827844055214" target="_blank" class="btn-secondary">Join Facebook Group</a>
+        <button @click="showVolunteerSignup = true" class="btn-primary">Volunteer Sign-up</button>
         </div>
       </div>
     </section>
@@ -203,12 +203,85 @@
     <router-link to="/drop-off" class="sticky-cta">
       📍 Find Drop-off
     </router-link>
+
+    <!-- Volunteer Signup Modal -->
+    <div v-if="showVolunteerSignup" class="modal-overlay" @click="showVolunteerSignup = false">
+      <div class="modal" @click.stop>
+        <h3>Volunteer Sign-up</h3>
+        <form @submit.prevent="submitVolunteerSignup" name="volunteer-signup" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="volunteer-signup">
+          <input type="text" v-model="volunteerForm.name" name="name" placeholder="Your Name" required>
+          <input type="email" v-model="volunteerForm.email" name="email" placeholder="Email Address" required>
+          <input type="tel" v-model="volunteerForm.phone" name="phone" placeholder="Phone Number">
+          <select v-model="volunteerForm.interest" name="interest" required>
+            <option value="">What interests you most?</option>
+            <option value="workshop">Workshop Assistant</option>
+            <option value="collection">Collection Driver</option>
+            <option value="admin">Data & Admin</option>
+            <option value="outreach">Community Outreach</option>
+            <option value="maintenance">Machine Maintenance</option>
+            <option value="design">Product Design</option>
+          </select>
+          <textarea v-model="volunteerForm.message" name="message" placeholder="Tell us about yourself and why you want to volunteer" rows="3"></textarea>
+          <div class="modal-actions">
+            <button type="button" class="btn-secondary" @click="showVolunteerSignup = false">Cancel</button>
+            <button type="submit" class="btn-primary">Sign Up to Volunteer</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
+  data() {
+    return {
+      showVolunteerSignup: false,
+      volunteerForm: {
+        name: '',
+        email: '',
+        phone: '',
+        interest: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async submitVolunteerSignup() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'volunteer-signup')
+        formData.append('name', this.volunteerForm.name)
+        formData.append('email', this.volunteerForm.email)
+        formData.append('phone', this.volunteerForm.phone)
+        formData.append('interest', this.volunteerForm.interest)
+        formData.append('message', this.volunteerForm.message)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for signing up to volunteer! We\'ll be in touch soon.')
+        this.showVolunteerSignup = false
+        this.resetVolunteerForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
+    },
+    resetVolunteerForm() {
+      this.volunteerForm = {
+        name: '',
+        email: '',
+        phone: '',
+        interest: '',
+        message: ''
+      }
+    }
+  },
   mounted() {
     // Add comprehensive structured data
     const structuredData = [

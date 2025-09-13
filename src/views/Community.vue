@@ -81,14 +81,15 @@
 
         <div class="volunteer-signup">
           <h3>Ready to Get Involved?</h3>
-          <form @submit.prevent="submitVolunteerForm" class="volunteer-form">
+          <form @submit.prevent="submitVolunteerForm" class="volunteer-form" name="volunteer-form" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="volunteer-form">
             <div class="form-row">
-              <input type="text" v-model="volunteerForm.name" placeholder="Your Name" required>
-              <input type="email" v-model="volunteerForm.email" placeholder="Email Address" required>
+              <input type="text" v-model="volunteerForm.name" name="name" placeholder="Your Name" required>
+              <input type="email" v-model="volunteerForm.email" name="email" placeholder="Email Address" required>
             </div>
             <div class="form-row">
-              <input type="tel" v-model="volunteerForm.phone" placeholder="Phone Number">
-              <select v-model="volunteerForm.availability" required>
+              <input type="tel" v-model="volunteerForm.phone" name="phone" placeholder="Phone Number">
+              <select v-model="volunteerForm.availability" name="availability" required>
                 <option value="">Your Availability</option>
                 <option value="weekdays">Weekdays</option>
                 <option value="weekends">Weekends</option>
@@ -97,7 +98,7 @@
               </select>
             </div>
             <div class="form-row">
-              <select v-model="volunteerForm.interest" required>
+              <select v-model="volunteerForm.interest" name="interest" required>
                 <option value="">Primary Interest</option>
                 <option value="workshop">Workshop Assistant</option>
                 <option value="collection">Collection Driver</option>
@@ -107,14 +108,14 @@
                 <option value="design">Product Design</option>
                 <option value="multiple">Multiple roles</option>
               </select>
-              <select v-model="volunteerForm.experience">
+              <select v-model="volunteerForm.experience" name="experience">
                 <option value="">Experience Level</option>
                 <option value="none">No experience</option>
                 <option value="some">Some experience</option>
                 <option value="experienced">Very experienced</option>
               </select>
             </div>
-            <textarea v-model="volunteerForm.message" placeholder="Tell us about yourself, your skills, and why you want to volunteer" rows="4"></textarea>
+            <textarea v-model="volunteerForm.message" name="message" placeholder="Tell us about yourself, your skills, and why you want to volunteer" rows="4"></textarea>
             <button type="submit" class="btn-primary">Sign Up to Volunteer</button>
           </form>
         </div>
@@ -318,18 +319,20 @@
     <div v-if="showPartnershipForm" class="modal-overlay" @click="showPartnershipForm = null">
       <div class="modal" @click.stop>
         <h3>Partnership Inquiry - {{ partnershipType }}</h3>
-        <form @submit.prevent="submitPartnershipForm">
-          <input type="text" v-model="partnershipForm.organization" placeholder="Organization Name" required>
-          <input type="text" v-model="partnershipForm.contact" placeholder="Contact Person" required>
-          <input type="email" v-model="partnershipForm.email" placeholder="Email Address" required>
-          <input type="tel" v-model="partnershipForm.phone" placeholder="Phone Number">
-          <select v-model="partnershipForm.size" required>
+        <form @submit.prevent="submitPartnershipForm" name="partnership-inquiry" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="partnership-inquiry">
+          <input type="hidden" name="partnership-type" :value="partnershipType">
+          <input type="text" v-model="partnershipForm.organization" name="organization" placeholder="Organization Name" required>
+          <input type="text" v-model="partnershipForm.contact" name="contact" placeholder="Contact Person" required>
+          <input type="email" v-model="partnershipForm.email" name="email" placeholder="Email Address" required>
+          <input type="tel" v-model="partnershipForm.phone" name="phone" placeholder="Phone Number">
+          <select v-model="partnershipForm.size" name="size" required>
             <option value="">Organization Size</option>
             <option value="small">Small (1-50 people)</option>
             <option value="medium">Medium (51-200 people)</option>
             <option value="large">Large (200+ people)</option>
           </select>
-          <textarea v-model="partnershipForm.goals" placeholder="Tell us about your sustainability goals and how you'd like to partner with us" rows="4" required></textarea>
+          <textarea v-model="partnershipForm.goals" name="goals" placeholder="Tell us about your sustainability goals and how you'd like to partner with us" rows="4" required></textarea>
           <div class="modal-actions">
             <button type="button" class="btn-secondary" @click="showPartnershipForm = null">Cancel</button>
             <button type="submit" class="btn-primary">Send Partnership Inquiry</button>
@@ -376,16 +379,54 @@ export default {
     }
   },
   methods: {
-    submitVolunteerForm() {
-      console.log('Volunteer form:', this.volunteerForm)
-      alert('Thanks for signing up to volunteer! We\'ll be in touch within a week to discuss next steps.')
-      this.resetVolunteerForm()
+    async submitVolunteerForm() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'volunteer-form')
+        formData.append('name', this.volunteerForm.name)
+        formData.append('email', this.volunteerForm.email)
+        formData.append('phone', this.volunteerForm.phone)
+        formData.append('availability', this.volunteerForm.availability)
+        formData.append('interest', this.volunteerForm.interest)
+        formData.append('experience', this.volunteerForm.experience)
+        formData.append('message', this.volunteerForm.message)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for signing up to volunteer! We\'ll be in touch within a week to discuss next steps.')
+        this.resetVolunteerForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
-    submitPartnershipForm() {
-      console.log('Partnership form:', this.partnershipForm)
-      alert('Thanks for your partnership inquiry! We\'ll get back to you within 3 business days.')
-      this.showPartnershipForm = null
-      this.resetPartnershipForm()
+    async submitPartnershipForm() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'partnership-inquiry')
+        formData.append('partnership-type', this.partnershipType)
+        formData.append('organization', this.partnershipForm.organization)
+        formData.append('contact', this.partnershipForm.contact)
+        formData.append('email', this.partnershipForm.email)
+        formData.append('phone', this.partnershipForm.phone)
+        formData.append('size', this.partnershipForm.size)
+        formData.append('goals', this.partnershipForm.goals)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your partnership inquiry! We\'ll get back to you within 3 business days.')
+        this.showPartnershipForm = null
+        this.resetPartnershipForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
     },
     resetVolunteerForm() {
       this.volunteerForm = {
