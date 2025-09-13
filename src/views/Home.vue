@@ -210,31 +210,111 @@
 export default {
   name: 'Home',
   mounted() {
-    // Add structured data
-    const structuredData = {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Precious Plastic Darwin",
-      "url": "https://preciousplastic.com.au",
-      "logo": "https://preciousplastic.com.au/logo.png",
-      "description": "Community-driven plastic recycling in Darwin, Northern Territory",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Darwin",
-        "addressRegion": "NT",
-        "addressCountry": "AU"
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Precious Plastic Darwin",
+        "alternateName": "PP Darwin",
+        "url": "https://preciousplastic.com.au",
+        "logo": "https://preciousplastic.com.au/logo.png",
+        "description": "Community-driven plastic recycling in Darwin, Northern Territory. We turn local plastic waste into valuable products through workshops and education.",
+        "foundingDate": "2023",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Darwin",
+          "addressRegion": "NT",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -12.4634,
+          "longitude": 130.8456
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "",
+          "contactType": "customer service",
+          "email": "hello@preciousplastic.com.au",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://www.facebook.com/profile.php?id=61580648091526",
+          "https://www.facebook.com/groups/1801827844055214"
+        ],
+        "serviceArea": {
+          "@type": "GeoCircle",
+          "geoMidpoint": {
+            "@type": "GeoCoordinates",
+            "latitude": -12.4634,
+            "longitude": 130.8456
+          },
+          "geoRadius": "50000"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Plastic Recycling Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Plastic Collection",
+                "description": "HDPE and PP plastic collection from drop-off points"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Recycling Workshops",
+                "description": "Educational workshops for schools and communities"
+              }
+            }
+          ]
+        }
       },
-      "contactPoint": {
-        "@type": "ContactPoint",
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Precious Plastic Darwin",
+        "description": "Community plastic recycling workshop in Darwin, NT",
+        "url": "https://preciousplastic.com.au",
         "telephone": "",
-        "contactType": "customer service",
-        "email": "hello@preciousplastic.com.au"
+        "email": "hello@preciousplastic.com.au",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Darwin",
+          "addressRegion": "NT",
+          "addressCountry": "AU"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": -12.4634,
+          "longitude": 130.8456
+        },
+        "openingHours": [
+          "Mo-Fr 09:00-17:00",
+          "Sa 10:00-16:00"
+        ],
+        "priceRange": "$",
+        "paymentAccepted": "Cash, Card",
+        "currenciesAccepted": "AUD"
       },
-      "sameAs": [
-        "https://www.facebook.com/profile.php?id=61580648091526",
-        "https://www.facebook.com/groups/1801827844055214"
-      ]
-    }
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'

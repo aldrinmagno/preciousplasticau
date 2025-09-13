@@ -297,33 +297,121 @@
 export default {
   name: 'Learn',
   mounted() {
-    // Add HowTo structured data
-    const howToData = [
+    // Add comprehensive structured data
+    const structuredData = [
       {
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "Set Up a Plastic Collection Point",
-        "description": "Step-by-step guide to setting up a plastic collection point at your workplace or school",
+        "description": "Step-by-step guide to setting up a plastic collection point at your workplace or school for HDPE and PP recycling",
+        "image": "https://preciousplastic.com.au/logo.png",
+        "totalTime": "PT2H",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "AUD",
+          "value": "50"
+        },
+        "supply": [
+          {
+            "@type": "HowToSupply",
+            "name": "Collection bins"
+          },
+          {
+            "@type": "HowToSupply", 
+            "name": "Printed labels"
+          },
+          {
+            "@type": "HowToSupply",
+            "name": "Signage materials"
+          }
+        ],
         "step": [
           {
             "@type": "HowToStep",
             "name": "Choose Location",
-            "text": "Find a visible, accessible spot with good foot traffic"
+            "text": "Find a visible, accessible spot with good foot traffic",
+            "image": "https://preciousplastic.com.au/logo.png"
           },
           {
             "@type": "HowToStep", 
             "name": "Get Containers",
-            "text": "Use clearly labeled bins for #2 HDPE and #5 PP"
+            "text": "Use clearly labeled bins for #2 HDPE and #5 PP",
+            "image": "https://preciousplastic.com.au/logo.png"
           },
           {
             "@type": "HowToStep",
             "name": "Add Signage", 
-            "text": "Use our printable posters and bin labels"
+            "text": "Use our printable posters and bin labels",
+            "image": "https://preciousplastic.com.au/logo.png"
           },
           {
             "@type": "HowToStep",
             "name": "Arrange Collection",
-            "text": "Contact us to schedule regular pickups"
+            "text": "Contact us to schedule regular pickups",
+            "image": "https://preciousplastic.com.au/logo.png"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Run a Plastic Audit at School",
+        "description": "Complete guide to conducting a plastic waste audit at your school to identify recycling opportunities",
+        "image": "https://preciousplastic.com.au/logo.png",
+        "totalTime": "P1W",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Plan the Audit",
+            "text": "Choose a typical week and gather volunteers",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Collect & Sort",
+            "text": "Gather all plastic waste and sort by type",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Weigh & Record",
+            "text": "Document quantities and take photos",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Create Action Plan",
+            "text": "Identify reduction and recycling opportunities",
+            "image": "https://preciousplastic.com.au/logo.png"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Precious Plastic Darwin Learning Hub",
+        "description": "Educational resources for plastic recycling, identification guides, and sustainability education",
+        "url": "https://preciousplastic.com.au/learn",
+        "parentOrganization": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Learn",
+            "item": "https://preciousplastic.com.au/learn"
           }
         ]
       }
@@ -331,7 +419,7 @@ export default {
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(howToData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }

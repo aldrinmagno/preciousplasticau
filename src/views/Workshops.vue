@@ -342,13 +342,16 @@ export default {
     }
   },
   mounted() {
-    // Add Event structured data
+    // Add comprehensive structured data
     const eventData = this.events.filter(event => event.bookable).map(event => ({
       "@context": "https://schema.org",
       "@type": "Event",
       "name": event.title,
       "description": event.description,
-      "startDate": `2024-${event.month === 'DEC' ? '12' : event.month === 'JAN' ? '01' : '02'}-${event.day}`,
+      "startDate": `2024-${event.month === 'DEC' ? '12' : event.month === 'JAN' ? '01' : '02'}-${event.day}T10:00:00+09:30`,
+      "endDate": `2024-${event.month === 'DEC' ? '12' : event.month === 'JAN' ? '01' : '02'}-${event.day}T${event.duration === '2 hours' ? '12:00:00' : event.duration === '3 hours' ? '13:00:00' : '16:00:00'}+09:30`,
+      "eventStatus": "https://schema.org/EventScheduled",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "location": {
         "@type": "Place",
         "name": event.location,
@@ -361,19 +364,88 @@ export default {
       },
       "organizer": {
         "@type": "Organization",
-        "name": "Precious Plastic Darwin"
+        "name": "Precious Plastic Darwin",
+        "url": "https://preciousplastic.com.au"
       },
       "offers": {
         "@type": "Offer",
         "price": event.price.replace('$', ''),
         "priceCurrency": "AUD",
-        "availability": "https://schema.org/InStock"
-      }
+        "availability": "https://schema.org/InStock",
+        "url": "https://preciousplastic.com.au/workshops",
+        "validFrom": "2024-11-01T00:00:00+09:30"
+      },
+      "performer": {
+        "@type": "Organization",
+        "name": "Precious Plastic Darwin"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": event.audience
+      },
+      "keywords": "recycling workshop darwin, plastic recycling education, sustainability workshop NT, hands-on learning darwin"
     }))
+
+    const structuredData = [
+      ...eventData,
+      {
+        "@context": "https://schema.org",
+        "@type": "EducationalOrganization",
+        "name": "Precious Plastic Darwin",
+        "description": "Educational workshops and programs for plastic recycling and sustainability",
+        "url": "https://preciousplastic.com.au",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Darwin",
+          "addressRegion": "NT",
+          "addressCountry": "AU"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Educational Programs",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "School Recycling Workshops",
+                "description": "Curriculum-aligned sustainability education for schools"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Course",
+                "name": "Community Maker Sessions",
+                "description": "Hands-on plastic recycling workshops for adults"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Workshops",
+            "item": "https://preciousplastic.com.au/workshops"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(eventData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }

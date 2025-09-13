@@ -246,38 +246,91 @@ export default {
     }
   },
   mounted() {
-    // Add Product structured data
-    const productData = {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "Recycled Plastic Products",
-      "description": "Sustainable products made from recycled HDPE and PP plastics in Darwin, NT",
-      "brand": {
-        "@type": "Brand",
-        "name": "Precious Plastic Darwin"
-      },
-      "manufacturer": {
-        "@type": "Organization",
-        "name": "Precious Plastic Darwin"
-      },
-      "material": "Recycled HDPE and PP plastic",
-      "additionalProperty": [
-        {
-          "@type": "PropertyValue",
-          "name": "Recycled Content",
-          "value": "80-90%"
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Recycled Plastic Products",
+        "description": "Sustainable products made from recycled HDPE and PP plastics in Darwin, NT. Including sunglasses, homewares, and custom gifts.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Precious Plastic Darwin"
         },
-        {
-          "@type": "PropertyValue",
-          "name": "Origin",
-          "value": "Darwin, Northern Territory"
+        "manufacturer": {
+          "@type": "Organization",
+          "name": "Precious Plastic Darwin",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Darwin",
+            "addressRegion": "NT",
+            "addressCountry": "AU"
+          }
+        },
+        "material": "Recycled HDPE and PP plastic",
+        "category": "Sustainable Products",
+        "offers": {
+          "@type": "AggregateOffer",
+          "priceCurrency": "AUD",
+          "lowPrice": "15",
+          "highPrice": "75",
+          "offerCount": "50",
+          "availability": "https://schema.org/PreOrder"
+        },
+        "additionalProperty": [
+          {
+            "@type": "PropertyValue",
+            "name": "Recycled Content",
+            "value": "80-90%"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Origin",
+            "value": "Darwin, Northern Territory"
+          },
+          {
+            "@type": "PropertyValue",
+            "name": "Sustainability",
+            "value": "Made from local plastic waste"
+          }
+        ],
+        "review": {
+          "@type": "Review",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Community Feedback"
+          },
+          "reviewBody": "Amazing to see local plastic waste turned into beautiful, functional products."
         }
-      ]
-    }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Shop",
+            "item": "https://preciousplastic.com.au/shop"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(productData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }

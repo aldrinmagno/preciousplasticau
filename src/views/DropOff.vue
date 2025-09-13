@@ -156,33 +156,114 @@
 export default {
   name: 'DropOff',
   mounted() {
-    // Add FAQ structured data
-    const faqData = {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What happens if my plastic is contaminated?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Contaminated plastic cannot be recycled and will need to be disposed of separately. Please ensure all items are clean and dry."
+    // Add comprehensive structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What happens if my plastic is contaminated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Contaminated plastic cannot be recycled and will need to be disposed of separately. Please ensure all items are clean and dry."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you accept soft plastics like bags?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, we currently only accept rigid plastics (#2 HDPE and #5 PP). Soft plastics can be taken to REDcycle collection points."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I drop off electronic waste?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, we don't accept e-waste. Contact the City of Darwin for e-waste disposal options."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What about hazardous items like chemicals?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Never bring hazardous materials. Even empty chemical containers cannot be accepted due to contamination risks."
+            }
           }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Prepare Plastic for Recycling",
+        "description": "Step-by-step guide to prepare HDPE and PP plastics for drop-off at Precious Plastic Darwin",
+        "image": "https://preciousplastic.com.au/logo.png",
+        "totalTime": "PT10M",
+        "estimatedCost": {
+          "@type": "MonetaryAmount",
+          "currency": "AUD",
+          "value": "0"
         },
-        {
-          "@type": "Question",
-          "name": "Do you accept soft plastics like bags?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No, we currently only accept rigid plastics (#2 HDPE and #5 PP). Soft plastics can be taken to REDcycle collection points."
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Rinse containers thoroughly",
+            "text": "Remove all food residue and rinse with water until clean",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Remove all labels and stickers",
+            "text": "Peel off labels, stickers, and adhesive residue completely",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Remove caps and lids",
+            "text": "Separate caps and lids if they are different plastic types",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Flatten bottles to save space",
+            "text": "Compress bottles and containers to maximize transport efficiency",
+            "image": "https://preciousplastic.com.au/logo.png"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Sort by plastic type",
+            "text": "Separate #2 HDPE and #5 PP plastics into different containers",
+            "image": "https://preciousplastic.com.au/logo.png"
           }
-        }
-      ]
-    }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Drop-off",
+            "item": "https://preciousplastic.com.au/drop-off"
+          }
+        ]
+      }
+    ]
 
     const script = document.createElement('script')
     script.type = 'application/ld+json'
-    script.textContent = JSON.stringify(faqData)
+    script.textContent = JSON.stringify(structuredData)
     document.head.appendChild(script)
   }
 }
