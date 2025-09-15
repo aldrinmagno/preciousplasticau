@@ -12,7 +12,7 @@
           <div class="mission-text">
             <h2>Our Story</h2>
             <p>Precious Plastic Darwin began in 2025 when a passionate individual saw the potential to transform Darwin's plastic waste problem into an opportunity for community engagement and environmental action.</p>
-            <p>Inspired by the global Precious Plastic movement, we established Darwin's first community-driven plastic recycling workshop, focusing on the plastic types that often end up in landfill despite being technically recyclable.</p>
+            <p>Inspired by the global Precious Plastic movement, we established community-driven plastic recycling workshop, focusing on the plastic types that often end up in landfill despite being technically recyclable.</p>
             <p>Today, we're proud to be part of a growing network of communities worldwide who are taking plastic recycling into their own hands, creating local solutions for local problems.</p>
           </div>
           <div class="mission-image">
