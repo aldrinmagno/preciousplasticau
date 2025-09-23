@@ -111,43 +111,11 @@
     <section class="upcoming-workshops">
       <div class="container">
         <h2>Upcoming workshops</h2>
-        <div class="workshop-cards">
-          <div class="workshop-card">
-            <div class="workshop-date">
-              <span class="day">15</span>
-              <span class="month">JAN</span>
-            </div>
-            <div class="workshop-content">
-              <h3>Plastic Shredder Demo (Darwin)</h3>
-              <p>📍 Darwin Community Centre</p>
-              <p>💰 $25 per person</p>
-              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
-            </div>
-          </div>
-          <div class="workshop-card">
-            <div class="workshop-date">
-              <span class="day">22</span>
-              <span class="month">JAN</span>
-            </div>
-            <div class="workshop-content">
-              <h3>How to Sort Plastics 101</h3>
-              <p>📍 Palmerston Library</p>
-              <p>💰 Free</p>
-              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
-            </div>
-          </div>
-          <div class="workshop-card">
-            <div class="workshop-date">
-              <span class="day">29</span>
-              <span class="month">JAN</span>
-            </div>
-            <div class="workshop-content">
-              <h3>Start a Community Plastic Hub</h3>
-              <p>📍 Online workshop</p>
-              <p>💰 $15 per person</p>
-              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
-            </div>
-          </div>
+        <div class="coming-soon-placeholder">
+          <div class="placeholder-icon">🗓️</div>
+          <h3>Workshops coming soon!</h3>
+          <p>We're planning exciting hands-on workshops for 2025. Join our mailing list or follow us on social media to be the first to know when bookings open.</p>
+          <router-link to="/events-workshops" class="btn-secondary">Learn more about workshops</router-link>
         </div>
       </div>
     </section>
@@ -503,6 +471,36 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+}
+
+.coming-soon-placeholder {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-placeholder h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.coming-soon-placeholder p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
 }
 
 .workshop-card {
