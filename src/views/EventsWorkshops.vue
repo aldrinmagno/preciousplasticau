@@ -207,8 +207,18 @@ export default {
         phone: '',
         type: '',
         participants: '',
+        details: ''
+      }
+    }
+  },
+  methods: {
+    async submitHostRequest() {
+      try {
+        // Form submission logic would go here
+        alert('Thank you for your interest! We\'ll be in touch soon.')
         this.resetHostForm()
       } catch (error) {
+        alert('There was an error submitting your request. Please try again.')
       }
     },
     resetHostForm() {
