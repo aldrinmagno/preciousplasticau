@@ -3,27 +3,44 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><router-link to="/drop-off">Accepted Plastics</router-link></li>
-            <li><router-link to="/drop-off#map">Drop-off Map</router-link></li>
-            <li><router-link to="/workshops#schools">Book School Workshop</router-link></li>
-            <li><router-link to="/community#volunteer">Volunteer</router-link></li>
-          </ul>
+          <h3>Precious Plastic Darwin</h3>
+          <div class="contact-info">
+            <p>📍 Darwin, Northern Territory 0800</p>
+            <p>📧 <a href="mailto:hello@preciousplastic.com.au">hello@preciousplastic.com.au</a></p>
+            <p>🌐 <a href="https://preciousplastic.com.au">preciousplastic.com.au</a></p>
+            <p><strong>ABN:</strong> 12 345 678 901</p>
+          </div>
         </div>
         
         <div class="footer-section">
-          <h3>Contact Info</h3>
-          <p>📍 Darwin, Northern Territory</p>
-          <p>📧 <a href="mailto:hello@preciousplastic.com.au">hello@preciousplastic.com.au</a></p>
-          <p>🌐 <a href="https://preciousplastic.com.au">preciousplastic.com.au</a></p>
+          <h3>Opening Hours</h3>
+          <div class="hours">
+            <p><strong>Drop-off Points:</strong></p>
+            <p>Monday - Friday: 8am - 6pm</p>
+            <p>Saturday: 9am - 4pm</p>
+            <p>Sunday: 10am - 2pm</p>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><router-link to="/about">About</router-link></li>
+            <li><router-link to="/contact">Contact</router-link></li>
+            <li><router-link to="/plastic-drop-off">Find a drop-off</router-link></li>
+            <li><router-link to="/events-workshops">Book a workshop</router-link></li>
+          </ul>
         </div>
         
         <div class="footer-section">
           <h3>Follow Us</h3>
           <div class="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61580648091526" target="_blank">📘 Facebook Page</a>
-            <a href="https://www.facebook.com/groups/1801827844055214" target="_blank">👥 Facebook Group</a>
+            <a href="https://www.facebook.com/profile.php?id=61580648091526" target="_blank" rel="noopener">
+              📘 Facebook
+            </a>
+            <a href="https://www.instagram.com/preciousplasticdarwin" target="_blank" rel="noopener">
+              📸 Instagram
+            </a>
           </div>
         </div>
       </div>
@@ -31,9 +48,8 @@
       <div class="footer-bottom">
         <p>&copy; 2025 Precious Plastic Darwin. Part of the global Precious Plastic movement.</p>
         <div class="footer-links">
-          <router-link to="/policies">Terms & Privacy</router-link>
-          <router-link to="/policies#returns">Returns</router-link>
-          <router-link to="/policies#safety">Safety</router-link>
+          <a href="/privacy">Privacy Policy</a>
+          <a href="/terms">Terms of Service</a>
         </div>
       </div>
     </div>
@@ -48,9 +64,10 @@ export default {
 
 <style scoped>
 footer {
-  background: #2D3748;
-  color: white;
+  background: #1E1E1E;
+  color: #FAFAF9;
   padding: 3rem 0 1rem;
+  margin-top: 4rem;
 }
 
 .footer-content {
@@ -61,11 +78,18 @@ footer {
 }
 
 .footer-section h3 {
+  font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 1rem;
-  color: #fee77b;
-  text-transform: uppercase;
+  color: #F9C513;
+}
+
+.contact-info p,
+.hours p {
+  margin-bottom: 0.5rem;
+  color: #FAFAF9;
+  opacity: 0.9;
 }
 
 .footer-section ul {
@@ -77,18 +101,15 @@ footer {
 }
 
 .footer-section a {
-  color: #CBD5E0;
+  color: #FAFAF9;
   text-decoration: none;
-  transition: color 0.3s ease;
+  opacity: 0.9;
+  transition: opacity 0.3s ease;
 }
 
 .footer-section a:hover {
-  color: #fee77b;
-}
-
-.footer-section p {
-  margin-bottom: 0.5rem;
-  color: #CBD5E0;
+  opacity: 1;
+  color: #F9C513;
 }
 
 .social-links {
@@ -98,7 +119,7 @@ footer {
 }
 
 .footer-bottom {
-  border-top: 1px solid #4A5568;
+  border-top: 1px solid rgba(250, 250, 249, 0.2);
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
@@ -118,14 +139,15 @@ footer {
 }
 
 .footer-links a {
-  color: #CBD5E0;
+  color: #FAFAF9;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
 .footer-links a:hover {
-  color: #fee77b;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {

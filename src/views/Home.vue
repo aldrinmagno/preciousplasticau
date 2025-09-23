@@ -3,307 +3,269 @@
     <!-- Hero Section -->
     <section class="hero">
       <div class="container">
-        <h1>Turn Darwin's plastic into new products</h1>
-        <p>Drop off your HDPE/PP, join a workshop, and shop locally-made recycled goods.</p>
+        <h1>Plastic recycling in Darwin, made local and hands-on</h1>
+        <p>Drop off HDPE (#2) and PP (#5), learn to sort plastics, and see them remade into new products—right here in Darwin.</p>
         <div class="hero-ctas">
-          <router-link to="/drop-off" class="btn-primary">Find a Drop-off</router-link>
-          <router-link to="/workshops" class="btn-secondary">Book a Workshop</router-link>
-          <router-link to="/shop" class="btn-secondary">Shop Recycled</router-link>
+          <router-link to="/plastic-drop-off" class="btn-primary">Find a drop-off</router-link>
+          <router-link to="/events-workshops" class="btn-secondary">Book a workshop</router-link>
+          <router-link to="/shop" class="btn-tertiary">Join the shop waitlist</router-link>
         </div>
       </div>
     </section>
 
     <!-- What We Accept -->
-    <section class="accepted-plastics">
+    <section class="what-we-accept">
       <div class="container">
-        <h2 class="section-title">What We Accept</h2>
-        <div class="plastic-grid">
-          <div class="plastic-card">
+        <h2>What we accept</h2>
+        <div class="plastic-types">
+          <div class="plastic-card accepted">
             <div class="plastic-icon">🥛</div>
             <h3>HDPE #2</h3>
-            <p>Milk bottles, detergent containers</p>
+            <p>Milk bottle lids, shampoo bottles</p>
+            <span class="status">✅ We accept</span>
           </div>
-          <div class="plastic-card">
+          <div class="plastic-card accepted">
             <div class="plastic-icon">🧴</div>
             <h3>PP #5</h3>
-            <p>Yogurt containers, bottle caps</p>
-          </div>
-          <div class="plastic-card">
-            <div class="plastic-icon">📋</div>
-            <h3>More Types</h3>
-            <p><router-link to="/drop-off">See full list →</router-link></p>
+            <p>Caps, containers</p>
+            <span class="status">✅ We accept</span>
           </div>
         </div>
+        <p class="prep-note">Clean, dry, labels removed.</p>
+        <router-link to="/plastic-drop-off" class="link-cta">Full list & prep guide →</router-link>
       </div>
     </section>
 
     <!-- How It Works -->
     <section class="how-it-works">
       <div class="container">
-        <h2 class="section-title">How It Works</h2>
+        <h2>How it works</h2>
         <div class="process-steps">
           <div class="step">
-            <div class="step-number">1</div>
+            <div class="step-icon">📦</div>
             <h3>Collect</h3>
             <p>Gather clean HDPE & PP plastics</p>
           </div>
           <div class="step">
-            <div class="step-number">2</div>
+            <div class="step-icon">🔄</div>
             <h3>Sort</h3>
-            <p>Separate by plastic type & color</p>
+            <p>Separate by plastic type & colour</p>
           </div>
           <div class="step">
-            <div class="step-number">3</div>
+            <div class="step-icon">✂️</div>
             <h3>Shred</h3>
             <p>Break down into small flakes</p>
           </div>
           <div class="step">
-            <div class="step-number">4</div>
+            <div class="step-icon">🔨</div>
             <h3>Make</h3>
             <p>Transform into new products</p>
           </div>
           <div class="step">
-            <div class="step-number">5</div>
-            <h3>Give Back</h3>
+            <div class="step-icon">🎁</div>
+            <h3>Give back</h3>
             <p>Return to the community</p>
           </div>
         </div>
+        <div class="process-links">
+          <router-link to="/events-workshops">Learn in our workshops</router-link>
+          <router-link to="/shop">See what we make</router-link>
+        </div>
       </div>
     </section>
 
-    <!-- Drop-off Locations -->
-    <section class="locations">
+    <!-- Nearby Drop-off Map -->
+    <section class="nearby-dropoff">
       <div class="container">
-        <h2 class="section-title">Drop-off Locations</h2>
-        <div class="location-preview">
+        <h2>Nearby drop-off map</h2>
+        <div class="map-container">
           <div class="map-placeholder">
-            <p>🗺️ Interactive map coming soon</p>
-            <p>Current locations: Palmerston</p>
-          </div>
-          <div class="location-info">
-            <h3>Current Hours</h3>
-            <p><strong>Weekends:</strong> 10am - 4pm</p>
-            <router-link to="/drop-off" class="btn-primary">View All Locations</router-link>
+            <h3>Darwin & Palmerston Drop-off Points</h3>
+            <div class="location-cards">
+              <div class="location-card">
+                <h4>Palmerston Community Centre</h4>
+                <p>📍 Temple Terrace, Palmerston</p>
+                <p>🕒 Mon-Fri 8am-6pm, Sat 9am-4pm</p>
+                <p>🚗 Free parking available</p>
+              </div>
+              <div class="location-card">
+                <h4>Darwin Waterfront</h4>
+                <p>📍 Kitchener Drive, Darwin</p>
+                <p>🕒 Daily 10am-2pm</p>
+                <p>🚶 Walk-in access</p>
+              </div>
+            </div>
           </div>
         </div>
+        <router-link to="/plastic-drop-off" class="btn-primary">See all locations</router-link>
       </div>
     </section>
 
-    <!-- Featured Products -->
-    <section class="featured-products">
+    <!-- Upcoming Workshops -->
+    <section class="upcoming-workshops">
       <div class="container">
-        <h2 class="section-title">Featured Products</h2>
-        <p class="section-subtitle">Made from Darwin's recycled plastic</p>
-        <div class="product-grid">
-          <div class="product-card">
-            <div class="product-image">🕶️</div>
-            <h3>Recycled Sunglasses</h3>
-            <p>Made from local HDPE bottles</p>
-            <router-link to="/shop" class="btn-primary">Join Waitlist</router-link>
+        <h2>Upcoming workshops</h2>
+        <div class="workshop-cards">
+          <div class="workshop-card">
+            <div class="workshop-date">
+              <span class="day">15</span>
+              <span class="month">JAN</span>
+            </div>
+            <div class="workshop-content">
+              <h3>Plastic Shredder Demo (Darwin)</h3>
+              <p>📍 Darwin Community Centre</p>
+              <p>💰 $25 per person</p>
+              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
+            </div>
           </div>
-          <div class="product-card">
-            <div class="product-image">🏠</div>
-            <h3>Homewares</h3>
-            <p>Bowls, planters & storage</p>
-            <router-link to="/shop" class="btn-primary">Join Waitlist</router-link>
+          <div class="workshop-card">
+            <div class="workshop-date">
+              <span class="day">22</span>
+              <span class="month">JAN</span>
+            </div>
+            <div class="workshop-content">
+              <h3>How to Sort Plastics 101</h3>
+              <p>📍 Palmerston Library</p>
+              <p>💰 Free</p>
+              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
+            </div>
           </div>
-          <div class="product-card">
-            <div class="product-image">🎁</div>
-            <h3>Custom Gifts</h3>
-            <p>Corporate & bulk orders</p>
-            <router-link to="/shop" class="btn-primary">Inquire</router-link>
+          <div class="workshop-card">
+            <div class="workshop-date">
+              <span class="day">29</span>
+              <span class="month">JAN</span>
+            </div>
+            <div class="workshop-content">
+              <h3>Start a Community Plastic Hub</h3>
+              <p>📍 Online workshop</p>
+              <p>💰 $15 per person</p>
+              <router-link to="/events-workshops" class="btn-secondary">Book now</router-link>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Newsletter Signup -->
-    <section class="newsletter">
+    <!-- Impact Counters -->
+    <section class="impact-counters">
       <div class="container">
-        <h2 class="section-title">Stay Updated</h2>
-        <p class="section-subtitle">Get workshop notifications and impact updates</p>
-        <div class="signup-options">
-          <router-link to="/community#volunteer" class="btn-primary">Volunteer Sign-up</router-link>
-        <button @click="showVolunteerSignup = true" class="btn-primary">Volunteer Sign-up</button>
+        <h2>Our impact</h2>
+        <div class="counters">
+          <div class="counter">
+            <span class="number">2,450</span>
+            <span class="label">Kg diverted</span>
+          </div>
+          <div class="counter">
+            <span class="number">156</span>
+            <span class="label">Items made</span>
+          </div>
+          <div class="counter">
+            <span class="number">89</span>
+            <span class="label">Volunteers</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Sticky CTA -->
-    <router-link to="/drop-off" class="sticky-cta">
-      📍 Find Drop-off
-    </router-link>
-
-    <!-- Volunteer Signup Modal -->
-    <div v-if="showVolunteerSignup" class="modal-overlay" @click="showVolunteerSignup = false">
-      <div class="modal" @click.stop>
-        <h3>Volunteer Sign-up</h3>
-        <form @submit.prevent="submitVolunteerSignup" name="volunteer-signup" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="volunteer-signup">
-          <input type="text" v-model="volunteerForm.name" name="name" placeholder="Your Name" required>
-          <input type="email" v-model="volunteerForm.email" name="email" placeholder="Email Address" required>
-          <input type="tel" v-model="volunteerForm.phone" name="phone" placeholder="Phone Number">
-          <select v-model="volunteerForm.interest" name="interest" required>
-            <option value="">What interests you most?</option>
-            <option value="workshop">Workshop Assistant</option>
-            <option value="collection">Collection Driver</option>
-            <option value="admin">Data & Admin</option>
-            <option value="outreach">Community Outreach</option>
-            <option value="maintenance">Machine Maintenance</option>
-            <option value="design">Product Design</option>
-          </select>
-          <textarea v-model="volunteerForm.message" name="message" placeholder="Tell us about yourself and why you want to volunteer" rows="3"></textarea>
-          <div class="modal-actions">
-            <button type="button" class="btn-secondary" @click="showVolunteerSignup = false">Cancel</button>
-            <button type="submit" class="btn-primary">Sign Up to Volunteer</button>
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="container">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Where is a plastic drop-off near me in Darwin?</h3>
+            <p>Check our map on the <router-link to="/plastic-drop-off">Plastic drop-off page</router-link>—filter by suburb and opening hours. We have locations in Darwin city, Palmerston, and surrounding suburbs.</p>
           </div>
-        </form>
+          <div class="faq-item">
+            <h3>What plastics can I recycle near me?</h3>
+            <p>We accept clean, dry HDPE (#2) and PP (#5) plastics. Remove labels and caps, sort by code. Check our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to look up specific items.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Do you collect from businesses or schools?</h3>
+            <p>Yes! We offer bulk collection services for businesses and schools. <router-link to="/plastic-drop-off">Request a pick-up</router-link> or contact us to arrange regular collections.</p>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  data() {
-    return {
-      showVolunteerSignup: false,
-      volunteerForm: {
-        name: '',
-        email: '',
-        phone: '',
-        interest: '',
-        message: ''
-      }
-    }
-  },
-  methods: {
-    async submitVolunteerSignup() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'volunteer-signup')
-        formData.append('name', this.volunteerForm.name)
-        formData.append('email', this.volunteerForm.email)
-        formData.append('phone', this.volunteerForm.phone)
-        formData.append('interest', this.volunteerForm.interest)
-        formData.append('message', this.volunteerForm.message)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for signing up to volunteer! We\'ll be in touch soon.')
-        this.showVolunteerSignup = false
-        this.resetVolunteerForm()
-      } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
-      }
-    },
-    resetVolunteerForm() {
-      this.volunteerForm = {
-        name: '',
-        email: '',
-        phone: '',
-        interest: '',
-        message: ''
-      }
-    }
-  },
   mounted() {
-    // Add comprehensive structured data
+    // Add structured data
     const structuredData = [
       {
         "@context": "https://schema.org",
-        "@type": "Organization",
+        "@type": ["Organization", "LocalBusiness"],
         "name": "Precious Plastic Darwin",
-        "alternateName": "PP Darwin",
         "url": "https://preciousplastic.com.au",
         "logo": "https://preciousplastic.com.au/logo.png",
         "description": "Community-driven plastic recycling in Darwin, Northern Territory. We turn local plastic waste into valuable products through workshops and education.",
-        "foundingDate": "2023",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Darwin",
           "addressRegion": "NT",
-          "addressCountry": "AU"
+          "addressCountry": "AU",
+          "postalCode": "0800"
         },
         "geo": {
           "@type": "GeoCoordinates",
           "latitude": -12.4634,
           "longitude": 130.8456
         },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "",
-          "contactType": "customer service",
-          "email": "hello@preciousplastic.com.au",
-          "availableLanguage": "English"
-        },
+        "telephone": "",
+        "email": "hello@preciousplastic.com.au",
+        "openingHours": [
+          "Mo-Fr 08:00-18:00",
+          "Sa 09:00-16:00",
+          "Su 10:00-14:00"
+        ],
         "sameAs": [
           "https://www.facebook.com/profile.php?id=61580648091526",
-          "https://www.facebook.com/groups/1801827844055214"
-        ],
-        "serviceArea": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": -12.4634,
-            "longitude": 130.8456
-          },
-          "geoRadius": "50000"
-        },
-        "hasOfferCatalog": {
-          "@type": "OfferCatalog",
-          "name": "Plastic Recycling Services",
-          "itemListElement": [
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Plastic Collection",
-                "description": "HDPE and PP plastic collection from drop-off points"
-              }
-            },
-            {
-              "@type": "Offer",
-              "itemOffered": {
-                "@type": "Service",
-                "name": "Recycling Workshops",
-                "description": "Educational workshops for schools and communities"
-              }
-            }
-          ]
+          "https://www.instagram.com/preciousplasticdarwin"
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "url": "https://preciousplastic.com.au",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://preciousplastic.com.au/a-z-plastic-recycling?q={search_term_string}",
+          "query-input": "required name=search_term_string"
         }
       },
       {
         "@context": "https://schema.org",
-        "@type": "LocalBusiness",
-        "name": "Precious Plastic Darwin",
-        "description": "Community plastic recycling workshop in Darwin, NT",
-        "url": "https://preciousplastic.com.au",
-        "telephone": "",
-        "email": "hello@preciousplastic.com.au",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Darwin",
-          "addressRegion": "NT",
-          "addressCountry": "AU"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": -12.4634,
-          "longitude": 130.8456
-        },
-        "openingHours": [
-          "Mo-Fr 09:00-17:00",
-          "Sa 10:00-16:00"
-        ],
-        "priceRange": "$",
-        "paymentAccepted": "Cash, Card",
-        "currenciesAccepted": "AUD"
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Where is a plastic drop-off near me in Darwin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Check our map on the Plastic drop-off page—filter by suburb and opening hours. We have locations in Darwin city, Palmerston, and surrounding suburbs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What plastics can I recycle near me?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We accept clean, dry HDPE (#2) and PP (#5) plastics. Remove labels and caps, sort by code."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you collect from businesses or schools?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We offer bulk collection services for businesses and schools. Request a pick-up or contact us to arrange regular collections."
+            }
+          }
+        ]
       },
       {
         "@context": "https://schema.org",
@@ -329,26 +291,27 @@ export default {
 
 <style scoped>
 .hero {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 6rem 0;
+  background: linear-gradient(135deg, #1B73E8 0%, #2FBF71 100%);
+  color: #FAFAF9;
+  padding: 4rem 0;
   text-align: center;
 }
 
 .hero h1 {
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
 }
 
 .hero p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
   max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  opacity: 0.95;
 }
 
 .hero-ctas {
@@ -358,28 +321,29 @@ export default {
   flex-wrap: wrap;
 }
 
-.accepted-plastics {
+.what-we-accept {
   padding: 4rem 0;
-  background: #f7fafc;
+  background: #FAFAF9;
 }
 
-.plastic-grid {
+.plastic-types {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .plastic-card {
-  background: white;
+  background: #FAFAF9;
+  border: 2px solid #2FBF71;
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
 .plastic-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .plastic-icon {
@@ -389,220 +353,278 @@ export default {
 
 .plastic-card h3 {
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #2D3748;
+  color: #1E1E1E;
+}
+
+.plastic-card p {
+  color: #1E1E1E;
+  margin-bottom: 1rem;
+}
+
+.status {
+  color: #2FBF71;
+  font-weight: 600;
+}
+
+.prep-note {
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.link-cta {
+  display: block;
+  text-align: center;
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link-cta:hover {
+  color: #1557b0;
 }
 
 .how-it-works {
   padding: 4rem 0;
-  background: white;
+  background: #FAFAF9;
 }
 
 .process-steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 
 .step {
   text-align: center;
 }
 
-.step-number {
-  width: 60px;
-  height: 60px;
-  background: #fee77b;
-  color: #2D3748;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 900;
-  margin: 0 auto 1rem;
+.step-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
 .step h3 {
   font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #2D3748;
-}
-
-.locations {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.location-preview {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.map-placeholder {
-  background: #e2e8f0;
-  padding: 3rem;
-  border-radius: 12px;
-  text-align: center;
-  color: #4a5568;
-}
-
-.location-info h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  color: #2D3748;
-}
-
-.featured-products {
-  padding: 4rem 0;
-  background: white;
-}
-
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-.product-card {
-  background: #f7fafc;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-image {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.product-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #2D3748;
-}
-
-.workshops {
-  padding: 4rem 0;
-  background: #f7fafc;
-}
-
-.workshop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.workshop-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.workshop-date {
-  background: #fee77b;
-  color: #2D3748;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 700;
-  display: inline-block;
-  margin-bottom: 1rem;
-}
-
-.workshop-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #2D3748;
-}
-
-.workshop-cta {
-  text-align: center;
-}
-
-.impact {
-  padding: 4rem 0;
-  background: #2D3748;
-  color: white;
-}
-
-.impact .section-title {
-  color: white;
-}
-
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.impact-card {
-  text-align: center;
-}
-
-.impact-number {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #fee77b;
-  margin-bottom: 0.5rem;
-}
-
-.impact-label {
-  font-size: 1.1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
 }
 
-.partners {
-  padding: 4rem 0;
-  background: white;
+.step p {
+  color: #1E1E1E;
+  opacity: 0.8;
 }
 
-.partner-logos {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  text-align: center;
-}
-
-.partner-logo {
-  padding: 1.5rem;
-  background: #f7fafc;
-  border-radius: 8px;
-  font-weight: 600;
-  color: #4a5568;
-}
-
-.newsletter {
-  padding: 4rem 0;
-  background: #f7fafc;
-  text-align: center;
-}
-
-.signup-options {
+.process-links {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
+.process-links a {
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.process-links a:hover {
+  color: #1557b0;
+}
+
+.nearby-dropoff {
+  padding: 4rem 0;
+  background: #FAFAF9;
+  text-align: center;
+}
+
+.map-container {
+  margin-bottom: 2rem;
+}
+
+.map-placeholder {
+  background: rgba(27, 115, 232, 0.1);
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.map-placeholder h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1E1E1E;
+}
+
+.location-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.location-card {
+  background: #FAFAF9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(30, 30, 30, 0.1);
+}
+
+.location-card h4 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.location-card p {
+  margin-bottom: 0.3rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.upcoming-workshops {
+  padding: 4rem 0;
+  background: #FAFAF9;
+}
+
+.workshop-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.workshop-card {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.workshop-date {
+  background: #F9C513;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  min-width: 80px;
+}
+
+.workshop-date .day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1E1E1E;
+}
+
+.workshop-date .month {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1E1E1E;
+}
+
+.workshop-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.workshop-content p {
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.impact-counters {
+  padding: 4rem 0;
+  background: #1E1E1E;
+  color: #FAFAF9;
+  text-align: center;
+}
+
+.impact-counters h2 {
+  color: #FAFAF9;
+  margin-bottom: 3rem;
+}
+
+.counters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.counter {
+  text-align: center;
+}
+
+.counter .number {
+  display: block;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #F9C513;
+  margin-bottom: 0.5rem;
+}
+
+.counter .label {
+  font-size: 1.1rem;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.faq {
+  padding: 4rem 0;
+  background: #FAFAF9;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.faq-item h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.faq-item p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.faq-item a {
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.faq-item a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
   
   .hero-ctas {
@@ -610,12 +632,9 @@ export default {
     align-items: center;
   }
   
-  .location-preview {
-    grid-template-columns: 1fr;
-  }
-  
-  .process-steps {
-    grid-template-columns: 1fr;
+  .workshop-card {
+    flex-direction: column;
+    text-align: center;
   }
 }
 </style>

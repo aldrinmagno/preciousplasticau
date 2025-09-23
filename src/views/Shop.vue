@@ -2,187 +2,222 @@
   <div class="shop">
     <div class="container">
       <header class="page-header">
-        <h1>Shop recycled plastic products (made in Darwin)</h1>
-        <p class="lead">Unique products made from Darwin's recycled HDPE and PP plastics. Each item comes with its origin story and impact details.</p>
+        <h1>Recycled plastic products, made in Darwin</h1>
+        <p class="intro">Locally made recycled plastic products from Darwin—sunglasses, homewares, gifts. Join the waitlist or preorder limited batches made from HDPE/PP.</p>
       </header>
 
-      <!-- Coming Soon Notice -->
-      <section class="coming-soon">
-        <div class="notice-card">
-          <h2>🚀 Store Launching Soon!</h2>
-          <p>We're putting the finishing touches on our first batch of recycled products. Join our waitlist to be the first to know when items are available.</p>
-          <button class="btn-primary" @click="showWaitlistForm = true">Join the Waitlist</button>
-        </div>
-      </section>
-
-      <!-- Product Categories Preview -->
-      <section class="categories">
-        <h2 class="section-title">Product Categories</h2>
-        <div class="category-grid">
+      <!-- Featured Categories -->
+      <section class="categories-section">
+        <h2>Featured categories</h2>
+        <div class="categories-grid">
           <div class="category-card">
-            <div class="category-icon">🕶️</div>
+            <div class="category-image">🕶️</div>
             <h3>Sunglasses</h3>
             <p>Stylish frames made from recycled HDPE bottles collected in Darwin</p>
-            <div class="price-range">From $99</div>
-            <button class="btn-secondary">Join Waitlist</button>
+            <div class="category-details">
+              <span class="material">Made from HDPE #2</span>
+              <span class="price">From $89</span>
+            </div>
+            <button class="btn-primary" @click="joinWaitlist('sunglasses')">Join waitlist</button>
           </div>
+          
           <div class="category-card">
-            <div class="category-icon">🏠</div>
+            <div class="category-image">🏠</div>
             <h3>Homewares</h3>
             <p>Bowls, planters, and storage solutions from local PP containers</p>
-            <div class="price-range">From $25</div>
-            <button class="btn-secondary">Join Waitlist</button>
+            <div class="category-details">
+              <span class="material">Made from PP #5</span>
+              <span class="price">From $25</span>
+            </div>
+            <button class="btn-primary" @click="joinWaitlist('homewares')">Join waitlist</button>
           </div>
+          
           <div class="category-card">
-            <div class="category-icon">🎁</div>
-            <h3>Corporate Gifts</h3>
-            <p>Custom branded items perfect for sustainable corporate gifting</p>
-            <div class="price-range">Quote on request</div>
-            <button class="btn-secondary">Get Quote</button>
+            <div class="category-image">🎁</div>
+            <h3>Gifts</h3>
+            <p>Unique gifts and custom items perfect for sustainable gifting</p>
+            <div class="category-details">
+              <span class="material">Mixed HDPE/PP</span>
+              <span class="price">From $15</span>
+            </div>
+            <button class="btn-primary" @click="joinWaitlist('gifts')">Join waitlist</button>
           </div>
+          
           <div class="category-card">
-            <div class="category-icon">📐</div>
-            <h3>Sheets & Tiles</h3>
+            <div class="category-image">📐</div>
+            <h3>Sheet/Tiles for Makers</h3>
             <p>Raw materials for makers, builders, and creative projects</p>
-            <div class="price-range">From $15/sheet</div>
-            <button class="btn-secondary">Join Waitlist</button>
+            <div class="category-details">
+              <span class="material">Various plastics</span>
+              <span class="price">From $12/sheet</span>
+            </div>
+            <button class="btn-primary" @click="joinWaitlist('sheets')">Join waitlist</button>
           </div>
         </div>
       </section>
 
-      <!-- Featured Products Preview -->
-      <section class="featured-preview">
-        <h2 class="section-title">Coming Soon</h2>
-        <div class="product-preview-grid">
-          <div class="product-preview">
+      <!-- Featured Products -->
+      <section class="products-section">
+        <h2>Coming soon - preorder now</h2>
+        <div class="products-grid">
+          <div class="product-card">
             <div class="product-image">🕶️</div>
-            <h3>Darwin Classic Sunglasses</h3>
-            <div class="product-details">
-              <p><strong>Made from:</strong> 85% recycled HDPE milk bottles</p>
-              <p><strong>Origin:</strong> Collected from Palmerston & Nightcliff</p>
-              <p><strong>Impact:</strong> Diverted 12 bottles from landfill</p>
-              <p><strong>Batch ID:</strong> DRW-SG-001</p>
+            <div class="product-content">
+              <h3>Darwin Classic Sunglasses</h3>
+              <div class="product-details">
+                <p><strong>Recycled content:</strong> 85%</p>
+                <p><strong>Material:</strong> HDPE #2</p>
+                <p><strong>Batch ID:</strong> DRW-SG-001</p>
+                <p><strong>Made in Darwin:</strong> ✅</p>
+              </div>
+              <div class="product-story">
+                <p>Made from milk bottles and detergent containers collected from Palmerston and Darwin suburbs. Each pair diverts approximately 12 bottles from landfill.</p>
+              </div>
+              <div class="product-price">$89</div>
+              <div class="product-status">Preorder - Ships March 2025</div>
+              <button class="btn-primary">Preorder now</button>
             </div>
-            <div class="product-price">$99</div>
-            <button class="btn-primary">Join Waitlist</button>
           </div>
-          <div class="product-preview">
+          
+          <div class="product-card">
             <div class="product-image">🌱</div>
-            <h3>Recycled Planter Set</h3>
-            <div class="product-details">
-              <p><strong>Made from:</strong> 90% recycled PP yogurt containers</p>
-              <p><strong>Origin:</strong> Local Darwin households</p>
-              <p><strong>Impact:</strong> Diverted 25 containers from waste</p>
-              <p><strong>Batch ID:</strong> DRW-PL-003</p>
+            <div class="product-content">
+              <h3>Recycled Planter Set (3 sizes)</h3>
+              <div class="product-details">
+                <p><strong>Recycled content:</strong> 90%</p>
+                <p><strong>Material:</strong> PP #5</p>
+                <p><strong>Batch ID:</strong> DRW-PL-003</p>
+                <p><strong>Made in Darwin:</strong> ✅</p>
+              </div>
+              <div class="product-story">
+                <p>Created from yogurt containers and takeaway boxes. Perfect for herbs and small plants. Drainage holes included.</p>
+              </div>
+              <div class="product-price">$35</div>
+              <div class="product-status">Preorder - Ships February 2025</div>
+              <button class="btn-primary">Preorder now</button>
             </div>
-            <div class="product-price">$35</div>
-            <button class="btn-primary">Join Waitlist</button>
           </div>
-          <div class="product-preview">
+          
+          <div class="product-card">
             <div class="product-image">📦</div>
-            <h3>Storage Bowl Collection</h3>
-            <div class="product-details">
-              <p><strong>Made from:</strong> 80% recycled mixed HDPE</p>
-              <p><strong>Origin:</strong> Darwin community drop-offs</p>
-              <p><strong>Impact:</strong> Diverted 18 containers from waste</p>
-              <p><strong>Batch ID:</strong> DRW-BW-007</p>
+            <div class="product-content">
+              <h3>Storage Bowl Collection</h3>
+              <div class="product-details">
+                <p><strong>Recycled content:</strong> 80%</p>
+                <p><strong>Material:</strong> Mixed HDPE</p>
+                <p><strong>Batch ID:</strong> DRW-BW-007</p>
+                <p><strong>Made in Darwin:</strong> ✅</p>
+              </div>
+              <div class="product-story">
+                <p>Versatile storage bowls made from mixed HDPE containers. Food-safe finish, dishwasher safe. Set of 3 nested bowls.</p>
+              </div>
+              <div class="product-price">$28</div>
+              <div class="product-status">Preorder - Ships April 2025</div>
+              <button class="btn-primary">Preorder now</button>
             </div>
-            <div class="product-price">$28</div>
-            <button class="btn-primary">Join Waitlist</button>
           </div>
         </div>
       </section>
 
-      <!-- Wholesale Inquiry -->
-      <section class="wholesale">
-        <h2>Wholesale & Corporate Orders</h2>
-        <p>Interested in bulk orders or custom corporate gifts? We offer special pricing for larger quantities and can create custom designs with your branding.</p>
-        <div class="wholesale-features">
-          <div class="feature">
-            <h4>🏢 Corporate Gifts</h4>
-            <p>Custom branded items with sustainability story</p>
+      <!-- About Our Materials -->
+      <section class="materials-section">
+        <h2>About our materials</h2>
+        <div class="materials-content">
+          <div class="materials-info">
+            <h3>HDPE/PP sourcing and tracing</h3>
+            <p>Every product comes with a batch ID that traces back to the specific plastic donations we received. We can tell you which suburbs your product came from and approximately how many containers were diverted from landfill.</p>
+            <div class="tracing-features">
+              <div class="feature">
+                <strong>📍 Location tracking:</strong> Know which Darwin suburbs contributed to your product
+              </div>
+              <div class="feature">
+                <strong>📊 Impact measurement:</strong> See exactly how many containers were diverted
+              </div>
+              <div class="feature">
+                <strong>🔍 Quality assurance:</strong> Full traceability from collection to finished product
+              </div>
+              <div class="feature">
+                <strong>♻️ Circular story:</strong> Each item comes with its complete recycling journey
+              </div>
+            </div>
           </div>
-          <div class="feature">
-            <h4>🏪 Retail Partners</h4>
-            <p>Wholesale pricing for stores and resellers</p>
-          </div>
-          <div class="feature">
-            <h4>🎨 Custom Design</h4>
-            <p>Work with us to create unique products</p>
+          <div class="materials-stats">
+            <h3>Current material stocks</h3>
+            <div class="stock-items">
+              <div class="stock-item">
+                <span class="stock-type">HDPE #2</span>
+                <span class="stock-amount">450kg processed</span>
+              </div>
+              <div class="stock-item">
+                <span class="stock-type">PP #5</span>
+                <span class="stock-amount">320kg processed</span>
+              </div>
+              <div class="stock-item">
+                <span class="stock-type">Mixed colours</span>
+                <span class="stock-amount">12 colour batches</span>
+              </div>
+            </div>
           </div>
         </div>
-        <button class="btn-primary" @click="showWholesaleForm = true">Request Wholesale Quote</button>
       </section>
 
-      <!-- Product Care & Warranty -->
-      <section class="care-warranty">
-        <div class="info-grid">
-          <div class="info-card">
-            <h3>🛡️ Life time warranty</h3>
-            <p>All products come with a life time warranty against manufacturing defects. We stand behind the quality of our recycled products.</p>
+      <!-- Wholesale & Corporate -->
+      <section class="wholesale-section">
+        <h2>Wholesale & corporate gifts</h2>
+        <div class="wholesale-content">
+          <p>Looking for bulk orders or custom corporate gifts? We offer special pricing for larger quantities and can create custom designs with your branding.</p>
+          <div class="wholesale-options">
+            <div class="wholesale-option">
+              <h3>🏢 Corporate gifts</h3>
+              <p>Custom branded items with sustainability story cards. Minimum order 25 pieces.</p>
+            </div>
+            <div class="wholesale-option">
+              <h3>🏪 Retail partnerships</h3>
+              <p>Wholesale pricing for stores and resellers. Consistent supply and marketing support.</p>
+            </div>
+            <div class="wholesale-option">
+              <h3>🎨 Custom products</h3>
+              <p>Work with us to create unique products for your organisation or event.</p>
+            </div>
           </div>
-          <div class="info-card">
-            <h3>🧼 Care Instructions</h3>
-            <p>Hand wash with mild soap. Avoid harsh chemicals. UV-resistant but store indoors when possible for longest life.</p>
-          </div>
-          <div class="info-card">
-            <h3>📦 Shipping</h3>
-            <p>Free shipping within Darwin. $10 flat rate to rest of NT. Australia-wide shipping available on request.</p>
-          </div>
-          <div class="info-card">
-            <h3>↩️ Returns</h3>
-            <p>30-day return policy. Items must be unused and in original condition. Return shipping at customer expense.</p>
-          </div>
+          <form @submit.prevent="submitWholesaleInquiry" class="wholesale-form">
+            <h3>Wholesale inquiry</h3>
+            <input type="hidden" name="form-name" value="wholesale-inquiry">
+            <div class="form-row">
+              <input type="text" v-model="wholesaleForm.company" name="company" placeholder="Company Name" required>
+              <input type="text" v-model="wholesaleForm.contact" name="contact" placeholder="Contact Person" required>
+            </div>
+            <div class="form-row">
+              <input type="email" v-model="wholesaleForm.email" name="email" placeholder="Email Address" required>
+              <input type="tel" v-model="wholesaleForm.phone" name="phone" placeholder="Phone Number">
+            </div>
+            <select v-model="wholesaleForm.type" name="type" required>
+              <option value="">Inquiry Type</option>
+              <option value="corporate-gifts">Corporate Gifts</option>
+              <option value="retail">Retail Partnership</option>
+              <option value="custom">Custom Products</option>
+              <option value="bulk">Bulk Order</option>
+            </select>
+            <textarea v-model="wholesaleForm.details" name="details" placeholder="Tell us about your requirements (quantities, timeline, budget, etc.)" rows="4" required></textarea>
+            <button type="submit" class="btn-primary">Send inquiry</button>
+          </form>
         </div>
       </section>
     </div>
 
     <!-- Waitlist Modal -->
-    <div v-if="showWaitlistForm" class="modal-overlay" @click="showWaitlistForm = false">
+    <div v-if="showWaitlistModal" class="modal-overlay" @click="showWaitlistModal = false">
       <div class="modal" @click.stop>
-        <h3>Join the Shop Waitlist</h3>
+        <h3>Join the waitlist</h3>
         <form @submit.prevent="submitWaitlist" name="shop-waitlist" method="POST" data-netlify="true">
           <input type="hidden" name="form-name" value="shop-waitlist">
+          <input type="hidden" name="category" :value="selectedCategory">
           <input type="text" v-model="waitlistForm.name" name="name" placeholder="Your Name" required>
           <input type="email" v-model="waitlistForm.email" name="email" placeholder="Email Address" required>
-          <select v-model="waitlistForm.interest" name="interest" required>
-            <option value="">What interests you most?</option>
-            <option value="sunglasses">Sunglasses</option>
-            <option value="homewares">Homewares</option>
-            <option value="corporate">Corporate Gifts</option>
-            <option value="sheets">Sheets & Tiles</option>
-            <option value="all">Everything</option>
-          </select>
           <textarea v-model="waitlistForm.message" name="message" placeholder="Any specific requests or questions?" rows="3"></textarea>
           <div class="modal-actions">
-            <button type="button" class="btn-secondary" @click="showWaitlistForm = false">Cancel</button>
-            <button type="submit" class="btn-primary">Join Waitlist</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- Wholesale Modal -->
-    <div v-if="showWholesaleForm" class="modal-overlay" @click="showWholesaleForm = false">
-      <div class="modal" @click.stop>
-        <h3>Wholesale Inquiry</h3>
-        <form @submit.prevent="submitWholesale" name="wholesale-inquiry" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="wholesale-inquiry">
-          <input type="text" v-model="wholesaleForm.company" name="company" placeholder="Company Name" required>
-          <input type="text" v-model="wholesaleForm.contact" name="contact" placeholder="Contact Person" required>
-          <input type="email" v-model="wholesaleForm.email" name="email" placeholder="Email Address" required>
-          <input type="tel" v-model="wholesaleForm.phone" name="phone" placeholder="Phone Number">
-          <select v-model="wholesaleForm.type" name="type" required>
-            <option value="">Inquiry Type</option>
-            <option value="corporate-gifts">Corporate Gifts</option>
-            <option value="retail">Retail Partnership</option>
-            <option value="custom">Custom Products</option>
-            <option value="bulk">Bulk Order</option>
-          </select>
-          <textarea v-model="wholesaleForm.details" name="details" placeholder="Tell us about your requirements (quantities, timeline, budget, etc.)" rows="4" required></textarea>
-          <div class="modal-actions">
-            <button type="button" class="btn-secondary" @click="showWholesaleForm = false">Cancel</button>
-            <button type="submit" class="btn-primary">Send Inquiry</button>
+            <button type="button" class="btn-tertiary" @click="showWaitlistModal = false">Cancel</button>
+            <button type="submit" class="btn-primary">Join waitlist</button>
           </div>
         </form>
       </div>
@@ -195,12 +230,11 @@ export default {
   name: 'Shop',
   data() {
     return {
-      showWaitlistForm: false,
-      showWholesaleForm: false,
+      showWaitlistModal: false,
+      selectedCategory: '',
       waitlistForm: {
         name: '',
         email: '',
-        interest: '',
         message: ''
       },
       wholesaleForm: {
@@ -214,13 +248,17 @@ export default {
     }
   },
   methods: {
+    joinWaitlist(category) {
+      this.selectedCategory = category
+      this.showWaitlistModal = true
+    },
     async submitWaitlist() {
       try {
         const formData = new FormData()
         formData.append('form-name', 'shop-waitlist')
+        formData.append('category', this.selectedCategory)
         formData.append('name', this.waitlistForm.name)
         formData.append('email', this.waitlistForm.email)
-        formData.append('interest', this.waitlistForm.interest)
         formData.append('message', this.waitlistForm.message)
         
         await fetch('/', {
@@ -230,13 +268,13 @@ export default {
         })
         
         alert('Thanks for joining our waitlist! We\'ll notify you when products are available.')
-        this.showWaitlistForm = false
+        this.showWaitlistModal = false
         this.resetWaitlistForm()
       } catch (error) {
         alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
       }
     },
-    async submitWholesale() {
+    async submitWholesaleInquiry() {
       try {
         const formData = new FormData()
         formData.append('form-name', 'wholesale-inquiry')
@@ -254,7 +292,6 @@ export default {
         })
         
         alert('Thanks for your wholesale inquiry! We\'ll get back to you within 2 business days.')
-        this.showWholesaleForm = false
         this.resetWholesaleForm()
       } catch (error) {
         alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
@@ -264,7 +301,6 @@ export default {
       this.waitlistForm = {
         name: '',
         email: '',
-        interest: '',
         message: ''
       }
     },
@@ -280,67 +316,46 @@ export default {
     }
   },
   mounted() {
-    // Add comprehensive structured data
+    // Add structured data
     const structuredData = [
       {
         "@context": "https://schema.org",
         "@type": "Product",
-        "name": "Recycled Plastic Products",
-        "description": "Sustainable products made from recycled HDPE and PP plastics in Darwin, NT. Including sunglasses, homewares, and custom gifts.",
+        "name": "Darwin Classic Sunglasses",
+        "description": "Stylish sunglasses made from 85% recycled HDPE bottles collected in Darwin",
         "brand": {
           "@type": "Brand",
           "name": "Precious Plastic Darwin"
         },
         "manufacturer": {
           "@type": "Organization",
-          "name": "Precious Plastic Darwin",
-          "address": {
-            "@type": "PostalAddress",
-            "addressLocality": "Darwin",
-            "addressRegion": "NT",
-            "addressCountry": "AU"
-          }
+          "name": "Precious Plastic Darwin"
         },
-        "material": "Recycled HDPE and PP plastic",
-        "category": "Sustainable Products",
+        "material": "85% Recycled HDPE #2",
         "offers": {
-          "@type": "AggregateOffer",
+          "@type": "Offer",
+          "price": "89",
           "priceCurrency": "AUD",
-          "lowPrice": "15",
-          "highPrice": "75",
-          "offerCount": "50",
-          "availability": "https://schema.org/PreOrder"
+          "availability": "https://schema.org/PreOrder",
+          "url": "https://preciousplastic.com.au/shop"
         },
         "additionalProperty": [
           {
             "@type": "PropertyValue",
             "name": "Recycled Content",
-            "value": "80-90%"
+            "value": "85%"
           },
           {
             "@type": "PropertyValue",
-            "name": "Origin",
-            "value": "Darwin, Northern Territory"
+            "name": "Made In",
+            "value": "Darwin, NT, Australia"
           },
           {
             "@type": "PropertyValue",
-            "name": "Sustainability",
-            "value": "Made from local plastic waste"
+            "name": "Batch ID",
+            "value": "DRW-SG-001"
           }
-        ],
-        "review": {
-          "@type": "Review",
-          "reviewRating": {
-            "@type": "Rating",
-            "ratingValue": "5",
-            "bestRating": "5"
-          },
-          "author": {
-            "@type": "Person",
-            "name": "Community Feedback"
-          },
-          "reviewBody": "Amazing to see local plastic waste turned into beautiful, functional products."
-        }
+        ]
       },
       {
         "@context": "https://schema.org",
@@ -381,210 +396,318 @@ export default {
 }
 
 .page-header h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #2D3748;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: #1E1E1E;
 }
 
-.lead {
-  font-size: 1.3rem;
-  color: #4A5568;
-  max-width: 700px;
+.intro {
+  font-size: 1.2rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  max-width: 800px;
   margin: 0 auto;
 }
 
-.coming-soon {
+.categories-section {
   margin-bottom: 4rem;
 }
 
-.notice-card {
-  background: linear-gradient(135deg, #fee77b, #f4c20d);
-  padding: 3rem;
-  border-radius: 12px;
-  text-align: center;
-  color: #2D3748;
-}
-
-.notice-card h2 {
-  font-size: 2.5rem;
-  font-weight: 900;
-  margin-bottom: 1rem;
-}
-
-.notice-card p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.categories {
-  margin-bottom: 4rem;
-}
-
-.category-grid {
+.categories-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
 
 .category-card {
-  background: white;
+  background: #FAFAF9;
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
   transition: transform 0.3s ease;
 }
 
 .category-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
-.category-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.category-card h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.category-card p {
-  color: #4A5568;
-  margin-bottom: 1rem;
-  line-height: 1.6;
-}
-
-.price-range {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #f4c20d;
-  margin-bottom: 1.5rem;
-}
-
-.featured-preview {
-  margin-bottom: 4rem;
-}
-
-.product-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
-}
-
-.product-preview {
-  background: #F7FAFC;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-}
-
-.product-image {
+.category-image {
   font-size: 4rem;
   margin-bottom: 1rem;
 }
 
-.product-preview h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2D3748;
+.category-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: #1E1E1E;
 }
 
-.product-details {
-  text-align: left;
+.category-card p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.category-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
 }
 
+.material {
+  background: rgba(27, 115, 232, 0.1);
+  color: #1B73E8;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2FBF71;
+}
+
+.products-section {
+  margin-bottom: 4rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+  display: flex;
+  gap: 1.5rem;
+}
+
+.product-image {
+  font-size: 4rem;
+  flex-shrink: 0;
+}
+
+.product-content {
+  flex: 1;
+}
+
+.product-content h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.product-details {
+  margin-bottom: 1rem;
+}
+
 .product-details p {
-  margin-bottom: 0.5rem;
-  color: #4A5568;
+  margin-bottom: 0.3rem;
+  color: #1E1E1E;
+  opacity: 0.8;
   font-size: 0.9rem;
+}
+
+.product-story {
+  margin-bottom: 1rem;
+}
+
+.product-story p {
+  color: #1E1E1E;
+  opacity: 0.7;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .product-price {
   font-size: 1.5rem;
-  font-weight: 900;
-  color: #f4c20d;
-  margin-bottom: 1rem;
-}
-
-.wholesale {
-  background: #F7FAFC;
-  padding: 3rem;
-  border-radius: 12px;
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-.wholesale h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.wholesale p {
-  font-size: 1.2rem;
-  color: #4A5568;
-  margin-bottom: 2rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.wholesale-features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-  margin-bottom: 2rem;
-}
-
-.feature h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2D3748;
+  font-weight: 600;
+  color: #2FBF71;
   margin-bottom: 0.5rem;
 }
 
-.feature p {
-  color: #4A5568;
-  font-size: 1rem;
+.product-status {
+  color: #F9C513;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
 }
 
-.care-warranty {
+.materials-section {
   margin-bottom: 4rem;
 }
 
-.info-grid {
+.materials-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.materials-info h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.materials-info p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.tracing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.feature {
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.materials-stats {
+  background: rgba(249, 197, 19, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.materials-stats h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.stock-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.stock-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-type {
+  font-weight: 600;
+  color: #1E1E1E;
+}
+
+.stock-amount {
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.wholesale-section {
+  margin-bottom: 4rem;
+}
+
+.wholesale-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.wholesale-content p {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+
+.wholesale-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
+  margin-bottom: 3rem;
 }
 
-.info-card {
-  background: white;
+.wholesale-option {
+  text-align: center;
+}
+
+.wholesale-option h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.wholesale-option p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.wholesale-form {
+  background: rgba(27, 115, 232, 0.1);
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.info-card h3 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2D3748;
+.wholesale-form h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #1E1E1E;
+  text-align: center;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   margin-bottom: 1rem;
 }
 
-.info-card p {
-  color: #4A5568;
-  line-height: 1.6;
+.wholesale-form input,
+.wholesale-form select,
+.wholesale-form textarea {
+  padding: 1rem;
+  border: 2px solid rgba(30, 30, 30, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.wholesale-form input:focus,
+.wholesale-form select:focus,
+.wholesale-form textarea:focus {
+  outline: none;
+  border-color: #1B73E8;
+}
+
+.wholesale-form select,
+.wholesale-form textarea {
+  grid-column: 1 / -1;
+  margin-bottom: 1rem;
+}
+
+.wholesale-form textarea {
+  resize: vertical;
 }
 
 .modal-overlay {
@@ -593,7 +716,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(30, 30, 30, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -602,9 +725,9 @@ export default {
 }
 
 .modal {
-  background: white;
+  background: #FAFAF9;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 16px;
   max-width: 500px;
   width: 100%;
   max-height: 90vh;
@@ -612,9 +735,9 @@ export default {
 }
 
 .modal h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2D3748;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1E1E1E;
   margin-bottom: 1.5rem;
   text-align: center;
 }
@@ -626,20 +749,18 @@ export default {
 }
 
 .modal input,
-.modal select,
 .modal textarea {
   padding: 1rem;
-  border: 2px solid #E2E8F0;
-  border-radius: 6px;
+  border: 2px solid rgba(30, 30, 30, 0.2);
+  border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
 
 .modal input:focus,
-.modal select:focus,
 .modal textarea:focus {
   outline: none;
-  border-color: #fee77b;
+  border-color: #1B73E8;
 }
 
 .modal textarea {
@@ -658,12 +779,17 @@ export default {
     font-size: 2rem;
   }
   
-  .notice-card h2 {
-    font-size: 2rem;
+  .product-card {
+    flex-direction: column;
+    text-align: center;
   }
   
-  .modal {
-    margin: 1rem;
+  .materials-content {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
   }
   
   .modal-actions {

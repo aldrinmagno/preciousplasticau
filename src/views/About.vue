@@ -2,136 +2,99 @@
   <div class="about">
     <div class="container">
       <header class="page-header">
-        <h1>Our mission: a circular Darwin</h1>
-        <p class="lead">Creating a circular Darwin through community-driven plastic recycling, education, and innovation.</p>
+        <h1>About Precious Plastic Darwin</h1>
+        <p class="intro">Learn about our mission to turn Darwin's plastic waste into valuable products through community workshops and education.</p>
       </header>
 
-      <!-- Mission & Story -->
-      <section class="mission">
+      <!-- Mission & Impact -->
+      <section class="mission-section">
         <div class="mission-content">
           <div class="mission-text">
-            <h2>Our Story</h2>
-            <p>Precious Plastic Darwin began in 2025 when a passionate individual saw the potential to transform Darwin's plastic waste problem into an opportunity for community engagement and environmental action.</p>
-            <p>Inspired by the global Precious Plastic movement, we established community-driven plastic recycling workshop, focusing on the plastic types that often end up in landfill despite being technically recyclable.</p>
-            <p>Today, we're proud to be part of a growing network of communities worldwide who are taking plastic recycling into their own hands, creating local solutions for local problems.</p>
+            <h2>Our mission</h2>
+            <p>We're building a circular economy in Darwin by transforming plastic waste into valuable products through community-driven recycling, education, and innovation.</p>
+            <p>Part of the global Precious Plastic movement, we focus on HDPE (#2) and PP (#5) plastics that often end up in landfill despite being technically recyclable.</p>
           </div>
-          <div class="mission-image">
-            <img src="/logo-1200x1200.png" alt="Precious Plastic Darwin workshop">
-          </div>
-        </div>
-      </section>
-
-      <!-- Vision & Values -->
-      <section class="values">
-        <h2 class="section-title">Our Values</h2>
-        <div class="values-grid">
-          <div class="value-card">
-            <div class="value-icon">🌍</div>
-            <h3>Environmental Stewardship</h3>
-            <p>We believe in taking responsibility for our environmental impact and creating positive change through direct action.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🤝</div>
-            <h3>Community Collaboration</h3>
-            <p>Real change happens when communities work together. We foster partnerships across schools, businesses, and organizations.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">📚</div>
-            <h3>Education & Empowerment</h3>
-            <p>Knowledge is power. We educate and empower people to make informed decisions about plastic use and waste.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🔄</div>
-            <h3>Circular Thinking</h3>
-            <p>We design out waste by keeping materials in use, creating a circular economy where nothing is truly "waste."</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">💡</div>
-            <h3>Innovation & Creativity</h3>
-            <p>We embrace creative solutions and innovative approaches to turn challenges into opportunities.</p>
-          </div>
-          <div class="value-card">
-            <div class="value-icon">🌱</div>
-            <h3>Local Impact</h3>
-            <p>We focus on creating meaningful change in our local community while contributing to global sustainability goals.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- Impact & Transparency -->
-      <section class="impact-transparency">
-        <h2 class="section-title">Impact & Transparency</h2>
-        <p class="section-subtitle">We believe in complete transparency about our operations, impact, and challenges.</p>
-    
-          <div class="challenges">
-            <h3>Current Challenges & Goals</h3>
-            <div class="challenges-grid">
-              <div class="challenge-card">
-                <h4>🎯 2025 Goals</h4>
-                <ul>
-                  <li>Process 4,000kg of plastic annually</li>
-                  <li>Expand to 15 collection points</li>
-                  <li>Launch online shop with 50+ products</li>
-                  <li>Partner with 25 schools</li>
-                  <li>Train 150 new volunteers</li>
-                </ul>
+          <div class="impact-counters">
+            <h3>Our impact so far</h3>
+            <div class="counters">
+              <div class="counter">
+                <span class="number">2,450</span>
+                <span class="label">Kg plastic diverted</span>
               </div>
-              <div class="challenge-card">
-                <h4>⚠️ Current Challenges</h4>
-                <ul>
-                  <li>Contamination rates still at 8%</li>
-                  <li>Limited storage space for materials</li>
-                  <li>Need for additional shredding capacity</li>
-                  <li>Seasonal volunteer availability</li>
-                  <li>Funding for equipment upgrades</li>
-                </ul>
+              <div class="counter">
+                <span class="number">156</span>
+                <span class="label">Products made</span>
               </div>
-            </div>
-        </div>
-      </section>
-
-      <!-- Global Movement -->
-      <section class="global-movement">
-        <h2 class="section-title">Part of a Global Movement</h2>
-        <div class="movement-content">
-          <div class="movement-text">
-            <p>Precious Plastic Darwin is part of the global Precious Plastic movement, started by Dave Hakkens in the Netherlands. This open-source project has inspired hundreds of communities worldwide to start their own plastic recycling initiatives.</p>
-            <p>We share knowledge, designs, and experiences with other Precious Plastic communities across Australia and internationally, contributing to a global network of local solutions.</p>
-            <div class="movement-stats">
-              <div class="global-stat">
-                <span class="stat-number">400+</span>
-                <span class="stat-label">Communities worldwide</span>
+              <div class="counter">
+                <span class="number">89</span>
+                <span class="label">Community volunteers</span>
               </div>
-              <div class="global-stat">
-                <span class="stat-number">12</span>
-                <span class="stat-label">Australian chapters</span>
-              </div>
-              <div class="global-stat">
-                <span class="stat-number">1M+</span>
-                <span class="stat-label">Kg plastic recycled globally</span>
+              <div class="counter">
+                <span class="number">12</span>
+                <span class="label">School partnerships</span>
               </div>
             </div>
           </div>
-          <div class="movement-links">
-            <h4>Connect with the Movement</h4>
-            <div class="links-grid">
-              <a href="https://preciousplastic.com" target="_blank" class="movement-link">
-                🌍 Global Precious Plastic
-              </a>
-              <a href="#" class="movement-link">
-                🇦🇺 Precious Plastic Australia
-              </a>
-              <a href="#" class="movement-link">
-                📖 Open Source Plans
-              </a>
-              <a href="#" class="movement-link">
-                🤝 Community Forum
-              </a>
+        </div>
+      </section>
+
+      <!-- Partners -->
+      <section class="partners-section">
+        <h2>Our partners</h2>
+        <div class="partners-grid">
+          <div class="partner-card">
+            <h3>🏫 Education Partners</h3>
+            <ul>
+              <li>Darwin High School</li>
+              <li>Palmerston College</li>
+              <li>Nightcliff Primary School</li>
+              <li>Charles Darwin University</li>
+            </ul>
+          </div>
+          <div class="partner-card">
+            <h3>🏛️ Government Partners</h3>
+            <ul>
+              <li>City of Darwin</li>
+              <li>City of Palmerston</li>
+              <li>NT Environment Centre</li>
+              <li>Keep Australia Beautiful NT</li>
+            </ul>
+          </div>
+          <div class="partner-card">
+            <h3>🏢 Business Partners</h3>
+            <ul>
+              <li>Darwin Community Arts</li>
+              <li>Transition Darwin</li>
+              <li>Local maker spaces</li>
+              <li>Sustainable businesses</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Media Kit -->
+      <section class="media-section">
+        <h2>Media kit</h2>
+        <div class="media-content">
+          <div class="media-info">
+            <p>Resources for journalists, partners, and supporters. High-resolution images, logos, and fact sheets available for download.</p>
+            <div class="media-contact">
+              <h3>Media contact</h3>
+              <p>📧 <a href="mailto:hello@preciousplastic.com.au">hello@preciousplastic.com.au</a></p>
+              <p>📱 Available for interviews and site visits</p>
+            </div>
+          </div>
+          <div class="media-downloads">
+            <h3>Download resources</h3>
+            <div class="download-buttons">
+              <button class="download-btn">📸 High-res photos</button>
+              <button class="download-btn">🎨 Logo pack</button>
+              <button class="download-btn">📊 Impact fact sheet</button>
+              <button class="download-btn">📋 Press release template</button>
             </div>
           </div>
         </div>
       </section>
-
     </div>
   </div>
 </template>
@@ -140,88 +103,13 @@
 export default {
   name: 'About',
   mounted() {
-    // Add comprehensive structured data
+    // Add structured data
     const structuredData = [
-      {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        "name": "Precious Plastic Darwin",
-        "alternateName": "PP Darwin",
-        "url": "https://preciousplastic.com.au",
-        "logo": "https://preciousplastic.com.au/logo.png",
-        "description": "Community-driven plastic recycling in Darwin, Northern Territory. Part of the global Precious Plastic movement creating circular economy solutions.",
-        "foundingDate": "2023",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Darwin",
-          "addressRegion": "NT",
-          "addressCountry": "AU"
-        },
-        "contactPoint": {
-          "@type": "ContactPoint",
-          "telephone": "",
-          "contactType": "customer service",
-          "email": "hello@preciousplastic.com.au",
-          "availableLanguage": "English"
-        },
-        "sameAs": [
-          "https://www.facebook.com/profile.php?id=61580648091526",
-          "https://www.facebook.com/groups/1801827844055214"
-        ],
-        "founder": {
-          "@type": "Person",
-          "name": "Alex Chen",
-          "jobTitle": "Founder & Operations Director"
-        },
-        "employee": [
-          {
-            "@type": "Person",
-            "name": "Alex Chen",
-            "jobTitle": "Founder & Operations Director"
-          },
-          {
-            "@type": "Person", 
-            "name": "Sarah Mitchell",
-            "jobTitle": "Education Coordinator"
-          },
-          {
-            "@type": "Person",
-            "name": "David Nguyen", 
-            "jobTitle": "Workshop Manager"
-          },
-          {
-            "@type": "Person",
-            "name": "Emma Thompson",
-            "jobTitle": "Community Engagement"
-          }
-        ],
-        "memberOf": {
-          "@type": "Organization",
-          "name": "Global Precious Plastic Movement"
-        },
-        "knowsAbout": [
-          "Plastic Recycling",
-          "HDPE Processing",
-          "PP Processing", 
-          "Sustainability Education",
-          "Community Engagement",
-          "Circular Economy"
-        ],
-        "areaServed": {
-          "@type": "GeoCircle",
-          "geoMidpoint": {
-            "@type": "GeoCoordinates",
-            "latitude": -12.4634,
-            "longitude": 130.8456
-          },
-          "geoRadius": "100000"
-        }
-      },
       {
         "@context": "https://schema.org",
         "@type": "AboutPage",
         "name": "About Precious Plastic Darwin",
-        "description": "Learn about our mission, team, impact, and commitment to creating a circular Darwin through community-driven plastic recycling",
+        "description": "Learn about our mission to turn Darwin's plastic waste into valuable products through community workshops and education",
         "url": "https://preciousplastic.com.au/about",
         "mainEntity": {
           "@type": "Organization",
@@ -267,20 +155,22 @@ export default {
 }
 
 .page-header h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  color: #2D3748;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 1rem;
+  color: #1E1E1E;
 }
 
-.lead {
-  font-size: 1.3rem;
-  color: #4A5568;
+.intro {
+  font-size: 1.2rem;
+  color: #1E1E1E;
+  opacity: 0.8;
   max-width: 700px;
   margin: 0 auto;
 }
 
-.mission {
+.mission-section {
   margin-bottom: 4rem;
 }
 
@@ -288,408 +178,188 @@ export default {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
-  align-items: center;
+  align-items: start;
 }
 
 .mission-text h2 {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #2D3748;
+  font-size: 2rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
+  color: #1E1E1E;
 }
 
 .mission-text p {
   font-size: 1.1rem;
-  color: #4A5568;
-  line-height: 1.7;
+  color: #1E1E1E;
+  opacity: 0.8;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
 }
 
-.mission-image img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+.impact-counters {
+  background: rgba(249, 197, 19, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
 }
 
-.values {
-  background: #F7FAFC;
-  padding: 4rem 0;
+.impact-counters h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #1E1E1E;
+}
+
+.counters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.counter {
+  text-align: center;
+}
+
+.counter .number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #F9C513;
+  margin-bottom: 0.5rem;
+}
+
+.counter .label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1E1E1E;
+  opacity: 0.8;
+}
+
+.partners-section {
   margin-bottom: 4rem;
-  border-radius: 12px;
 }
 
-.values-grid {
+.partners-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
 }
 
-.value-card {
-  background: white;
+.partner-card {
+  background: #FAFAF9;
+  border-radius: 16px;
   padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
 }
 
-.value-card:hover {
-  transform: translateY(-5px);
-}
-
-.value-icon {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.value-card h3 {
+.partner-card h3 {
   font-size: 1.3rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.value-card p {
-  color: #4A5568;
-  line-height: 1.6;
-}
-
-.team {
-  margin-bottom: 4rem;
-}
-
-.team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
-.team-member {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
-}
-
-.team-member:hover {
-  transform: translateY(-5px);
-}
-
-.member-photo {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-}
-
-.team-member h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 0.5rem;
-}
-
-.member-role {
-  color: #f4c20d;
   font-weight: 600;
   margin-bottom: 1rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
+  color: #1E1E1E;
 }
 
-.team-member p {
-  color: #4A5568;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-.impact-transparency {
-  margin-bottom: 4rem;
-}
-
-.transparency-content {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.monthly-report {
-  background: #F7FAFC;
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.monthly-report h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.flow-stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
-}
-
-.flow-item {
-  text-align: center;
-}
-
-.flow-number {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #f4c20d;
-  margin-bottom: 0.5rem;
-}
-
-.flow-label {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 0.5rem;
-}
-
-.flow-breakdown {
-  display: flex;
-  flex-direction: column;
-  gap: 0.2rem;
-}
-
-.flow-breakdown span {
-  font-size: 0.9rem;
-  color: #4A5568;
-}
-
-.annual-impact h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.impact-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-}
-
-.impact-stat {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #f4c20d;
-  display: block;
-  margin-bottom: 0.5rem;
-}
-
-.stat-label {
-  font-size: 1rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 0.5rem;
-}
-
-.stat-context {
-  font-size: 0.9rem;
-  color: #4A5568;
-}
-
-.challenges h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-
-.challenges-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.challenge-card {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.challenge-card h4 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.challenge-card ul {
+.partner-card ul {
   list-style: none;
   padding: 0;
 }
 
-.challenge-card li {
-  padding: 0.3rem 0;
-  color: #4A5568;
-  font-size: 0.95rem;
+.partner-card li {
+  padding: 0.5rem 0;
+  color: #1E1E1E;
+  opacity: 0.8;
+  position: relative;
+  padding-left: 1.5rem;
 }
 
-.challenge-card li::before {
-  content: '• ';
-  color: #fee77b;
-  font-weight: bold;
+.partner-card li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #1B73E8;
+  font-weight: 600;
 }
 
-.global-movement {
-  background: #F7FAFC;
-  padding: 4rem 0;
+.media-section {
   margin-bottom: 4rem;
-  border-radius: 12px;
 }
 
-.movement-content {
+.media-content {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 3rem;
   align-items: start;
 }
 
-.movement-text p {
+.media-info p {
   font-size: 1.1rem;
-  color: #4A5568;
-  line-height: 1.7;
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.media-contact {
+  background: rgba(27, 115, 232, 0.1);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.media-contact h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.media-contact p {
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+}
+
+.media-contact a {
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.media-downloads {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.media-downloads h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
-}
-
-.movement-stats {
-  display: flex;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.global-stat {
+  color: #1E1E1E;
   text-align: center;
 }
 
-.global-stat .stat-number {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #f4c20d;
-  display: block;
-}
-
-.global-stat .stat-label {
-  font-size: 0.9rem;
-  color: #4A5568;
-  font-weight: 600;
-}
-
-.movement-links h4 {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.links-grid {
+.download-buttons {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.movement-link {
-  display: block;
-  background: white;
+.download-btn {
   padding: 1rem;
+  background: #FAFAF9;
+  border: 2px solid rgba(30, 30, 30, 0.2);
   border-radius: 8px;
-  text-decoration: none;
-  color: #2D3748;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.movement-link:hover {
-  background: #fee77b;
-  transform: translateY(-2px);
-}
-
-.media-kit {
-  margin-bottom: 4rem;
-}
-
-.media-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.media-info h3,
-.media-resources h3 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 1rem;
-}
-
-.media-info p {
-  color: #4A5568;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.press-contact {
-  background: #F7FAFC;
-  padding: 1.5rem;
-  border-radius: 8px;
-}
-
-.press-contact h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #2D3748;
-  margin-bottom: 0.5rem;
-}
-
-.press-contact p {
-  color: #4A5568;
-  margin: 0;
-}
-
-.press-contact a {
-  color: #f4c20d;
-  text-decoration: none;
-}
-
-.resources-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.resource-btn {
-  background: white;
-  border: 2px solid #E2E8F0;
-  padding: 1rem;
-  border-radius: 8px;
-  font-weight: 600;
-  color: #2D3748;
+  font-weight: 500;
+  color: #1E1E1E;
   cursor: pointer;
   transition: all 0.3s ease;
+  text-align: left;
 }
 
-.resource-btn:hover {
-  border-color: #fee77b;
-  background: #fee77b;
+.download-btn:hover {
+  border-color: #1B73E8;
+  background: rgba(27, 115, 232, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -698,20 +368,11 @@ export default {
   }
   
   .mission-content,
-  .movement-content,
   .media-content {
     grid-template-columns: 1fr;
   }
   
-  .challenges-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .movement-stats {
-    justify-content: center;
-  }
-  
-  .resources-grid {
+  .counters {
     grid-template-columns: 1fr;
   }
 }

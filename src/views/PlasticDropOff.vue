@@ -1,0 +1,591 @@
+<template>
+  <div class="plastic-drop-off">
+    <div class="container">
+      <header class="page-header">
+        <h1>Plastic drop-off locations in Darwin</h1>
+        <p class="intro">Donate your clean, sorted HDPE (#2) and PP (#5). Bottle caps and small plastic lids welcome if PP or HDPE.</p>
+      </header>
+
+      <!-- Accepted vs Not Accepted -->
+      <section class="accepted-section">
+        <h2>Accepted vs not accepted</h2>
+        <div class="plastic-grid">
+          <div class="accepted-card">
+            <h3>✅ Accepted</h3>
+            <div class="plastic-list">
+              <div class="plastic-item">
+                <strong>HDPE #2:</strong> Bottles, lids, containers
+              </div>
+              <div class="plastic-item">
+                <strong>PP #5:</strong> Caps, containers, bottle caps
+              </div>
+            </div>
+          </div>
+          <div class="not-accepted-card">
+            <h3>❌ Not accepted</h3>
+            <div class="plastic-list">
+              <div class="plastic-item">Soft plastics/film</div>
+              <div class="plastic-item">PVC #3</div>
+              <div class="plastic-item">PS #6 (polystyrene)</div>
+              <div class="plastic-item">Mixed/contaminated plastics</div>
+              <div class="plastic-item">Hazardous containers</div>
+            </div>
+          </div>
+        </div>
+        <div class="download-cta">
+          <button class="btn-primary" @click="downloadPrepGuide">📄 Download "Prep & Sorting Guide" (PDF)</button>
+        </div>
+      </section>
+
+      <!-- How to Prepare Plastics -->
+      <section class="prep-section">
+        <h2>How to prepare plastics</h2>
+        <div class="prep-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Rinse</h3>
+              <p>Clean out all food residue and liquids</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Remove labels</h3>
+              <p>Peel off all stickers and adhesive labels</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Dry</h3>
+              <p>Let items air dry completely</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Sort by code</h3>
+              <p>Separate HDPE #2 and PP #5 items</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-number">5</div>
+            <div class="step-content">
+              <h3>Bag/box</h3>
+              <p>Keep small plastic lids in a sealed container</p>
+            </div>
+          </div>
+        </div>
+        <p class="prep-note">
+          <strong>Note:</strong> Keep small plastic lids in a sealed container.
+          <router-link to="/a-z-plastic-recycling">Check our A–Z guide</router-link> for item lookups.
+        </p>
+      </section>
+
+      <!-- Map & Hours -->
+      <section class="locations-section">
+        <h2>Map & hours</h2>
+        <div class="locations-grid">
+          <div class="location-card">
+            <h3>Palmerston Community Centre</h3>
+            <div class="location-details">
+              <p><strong>📍 Address:</strong> Temple Terrace, Palmerston NT 0830</p>
+              <p><strong>🕒 Hours:</strong> Mon-Fri 8am-6pm, Sat 9am-4pm, Sun 10am-2pm</p>
+              <p><strong>🚗 Access:</strong> Free parking available, wheelchair accessible</p>
+              <p><strong>📞 Contact:</strong> Call ahead for large drop-offs</p>
+            </div>
+          </div>
+          
+          <div class="location-card">
+            <h3>Darwin Waterfront</h3>
+            <div class="location-details">
+              <p><strong>📍 Address:</strong> Kitchener Drive, Darwin NT 0800</p>
+              <p><strong>🕒 Hours:</strong> Daily 10am-2pm</p>
+              <p><strong>🚶 Access:</strong> Walk-in access, near Wave Lagoon</p>
+              <p><strong>📞 Contact:</strong> Volunteer staffed</p>
+            </div>
+          </div>
+          
+          <div class="location-card">
+            <h3>Casuarina Shopping Centre</h3>
+            <div class="location-details">
+              <p><strong>📍 Address:</strong> 247 Trower Rd, Casuarina NT 0810</p>
+              <p><strong>🕒 Hours:</strong> Mon-Fri 9am-5pm, Sat 9am-3pm</p>
+              <p><strong>🚗 Access:</strong> Near main entrance, trolley friendly</p>
+              <p><strong>📞 Contact:</strong> Security can assist after hours</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="business-pickup">
+          <h3>Business & school collections</h3>
+          <p>Large quantities? We offer pickup services for businesses and schools.</p>
+          <form @submit.prevent="submitPickupRequest" class="pickup-form">
+            <input type="hidden" name="form-name" value="business-pickup">
+            <div class="form-row">
+              <input type="text" v-model="pickupForm.business" name="business" placeholder="Business/School Name" required>
+              <input type="email" v-model="pickupForm.email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-row">
+              <input type="text" v-model="pickupForm.address" name="address" placeholder="Collection Address" required>
+              <input type="tel" v-model="pickupForm.phone" name="phone" placeholder="Phone Number">
+            </div>
+            <textarea v-model="pickupForm.details" name="details" placeholder="Tell us about your plastic waste (types, estimated quantities, frequency)" rows="3" required></textarea>
+            <button type="submit" class="btn-primary">Request pickup quote</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section class="faq-section">
+        <h2>Frequently asked questions</h2>
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Do you take bottle caps for recycling in Darwin?</h3>
+            <p>Yes! We accept bottle caps if they're made from PP (#5) or HDPE (#2). Check the recycling code on the cap. Keep small caps in a sealed container or bag to prevent them from getting lost.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>What time can I drop off?</h3>
+            <p>Drop-off times vary by location. Palmerston Community Centre has the longest hours (8am-6pm weekdays), while Darwin Waterfront is open daily 10am-2pm. Check our location cards above for specific hours.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>Do you accept mixed plastics?</h3>
+            <p>No, we only accept clean, sorted HDPE (#2) and PP (#5) plastics. Mixed or contaminated plastics can't be processed in our machines. Use our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to identify plastic types.</p>
+          </div>
+          
+          <div class="faq-item">
+            <h3>Can I drop off during yellow bin week?</h3>
+            <p>Yes! Our drop-off points are available regardless of your council bin collection schedule. We accept items that might not go in your yellow bin, like small plastic lids and caps.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'PlasticDropOff',
+  data() {
+    return {
+      pickupForm: {
+        business: '',
+        email: '',
+        address: '',
+        phone: '',
+        details: ''
+      }
+    }
+  },
+  methods: {
+    downloadPrepGuide() {
+      // Placeholder for PDF download
+      alert('Prep & Sorting Guide PDF download will be available soon!')
+    },
+    async submitPickupRequest() {
+      try {
+        const formData = new FormData()
+        formData.append('form-name', 'business-pickup')
+        formData.append('business', this.pickupForm.business)
+        formData.append('email', this.pickupForm.email)
+        formData.append('address', this.pickupForm.address)
+        formData.append('phone', this.pickupForm.phone)
+        formData.append('details', this.pickupForm.details)
+        
+        await fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: new URLSearchParams(formData).toString()
+        })
+        
+        alert('Thanks for your pickup request! We\'ll get back to you within 2 business days.')
+        this.resetPickupForm()
+      } catch (error) {
+        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
+      }
+    },
+    resetPickupForm() {
+      this.pickupForm = {
+        business: '',
+        email: '',
+        address: '',
+        phone: '',
+        details: ''
+      }
+    }
+  },
+  mounted() {
+    // Add structured data
+    const structuredData = [
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you take bottle caps for recycling in Darwin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We accept bottle caps if they're made from PP (#5) or HDPE (#2). Check the recycling code on the cap. Keep small caps in a sealed container or bag to prevent them from getting lost."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What time can I drop off?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Drop-off times vary by location. Palmerston Community Centre has the longest hours (8am-6pm weekdays), while Darwin Waterfront is open daily 10am-2pm."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you accept mixed plastics?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No, we only accept clean, sorted HDPE (#2) and PP (#5) plastics. Mixed or contaminated plastics can't be processed in our machines."
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to prepare plastics for recycling",
+        "description": "Step-by-step guide to prepare HDPE and PP plastics for drop-off",
+        "step": [
+          {
+            "@type": "HowToStep",
+            "name": "Rinse",
+            "text": "Clean out all food residue and liquids"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Remove labels",
+            "text": "Peel off all stickers and adhesive labels"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Dry",
+            "text": "Let items air dry completely"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Sort by code",
+            "text": "Separate HDPE #2 and PP #5 items"
+          },
+          {
+            "@type": "HowToStep",
+            "name": "Bag/box",
+            "text": "Keep small plastic lids in a sealed container"
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://preciousplastic.com.au/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Plastic drop-off",
+            "item": "https://preciousplastic.com.au/plastic-drop-off"
+          }
+        ]
+      }
+    ]
+
+    const script = document.createElement('script')
+    script.type = 'application/ld+json'
+    script.textContent = JSON.stringify(structuredData)
+    document.head.appendChild(script)
+  }
+}
+</script>
+
+<style scoped>
+.plastic-drop-off {
+  padding: 2rem 0;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.page-header h1 {
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.intro {
+  font-size: 1.2rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.accepted-section {
+  margin-bottom: 4rem;
+}
+
+.plastic-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.accepted-card,
+.not-accepted-card {
+  border-radius: 16px;
+  padding: 2rem;
+}
+
+.accepted-card {
+  background: rgba(47, 191, 113, 0.1);
+  border: 2px solid #2FBF71;
+}
+
+.not-accepted-card {
+  background: rgba(255, 90, 74, 0.1);
+  border: 2px solid #FF5A4A;
+}
+
+.accepted-card h3 {
+  color: #2FBF71;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.not-accepted-card h3 {
+  color: #FF5A4A;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.plastic-item {
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.download-cta {
+  text-align: center;
+}
+
+.prep-section {
+  margin-bottom: 4rem;
+}
+
+.prep-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.step {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.step-number {
+  background: #F9C513;
+  color: #1E1E1E;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+.step-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.step-content p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.prep-note {
+  text-align: center;
+  color: #1E1E1E;
+  opacity: 0.8;
+}
+
+.prep-note a {
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.prep-note a:hover {
+  text-decoration: underline;
+}
+
+.locations-section {
+  margin-bottom: 4rem;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.location-card {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.location-card h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.location-details p {
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+  font-size: 0.9rem;
+}
+
+.business-pickup {
+  background: rgba(27, 115, 232, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.business-pickup h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.business-pickup p {
+  margin-bottom: 2rem;
+  color: #1E1E1E;
+  opacity: 0.8;
+}
+
+.pickup-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.pickup-form input,
+.pickup-form textarea {
+  padding: 1rem;
+  border: 2px solid rgba(30, 30, 30, 0.2);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.pickup-form input:focus,
+.pickup-form textarea:focus {
+  outline: none;
+  border-color: #1B73E8;
+}
+
+.pickup-form textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  margin-bottom: 1rem;
+}
+
+.faq-section {
+  margin-bottom: 4rem;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.faq-item {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.faq-item h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.faq-item p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  line-height: 1.6;
+}
+
+.faq-item a {
+  color: #1B73E8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.faq-item a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .plastic-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .prep-steps {
+    grid-template-columns: 1fr;
+  }
+}
+</style>

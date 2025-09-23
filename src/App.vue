@@ -26,9 +26,9 @@ export default {
     window.addEventListener('scroll', () => {
       const header = document.querySelector('header')
       if (window.scrollY > 100) {
-        header.style.background = 'rgba(255, 255, 255, 0.98)'
+        header.style.background = 'rgba(250, 250, 249, 0.98)'
       } else {
-        header.style.background = 'rgba(255, 255, 255, 0.95)'
+        header.style.background = 'rgba(250, 250, 249, 0.95)'
       }
     })
   }
@@ -43,10 +43,10 @@ export default {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   line-height: 1.6;
-  color: #333;
-  background: #ffffff;
+  color: #1E1E1E;
+  background: #FAFAF9;
   min-height: 100vh;
 }
 
@@ -58,94 +58,115 @@ body {
 
 .section-title {
   text-align: center;
-  font-size: 3rem;
-  font-weight: 900;
+  font-family: 'Inter', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
   margin-bottom: 1rem;
-  color: #2D3748;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  color: #1E1E1E;
+  line-height: 1.2;
 }
 
 .section-subtitle {
   text-align: center;
-  font-size: 1.3rem;
-  color: #4A5568;
-  font-weight: 500;
+  font-size: 1.2rem;
+  color: #1E1E1E;
+  font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
   margin-bottom: 3rem;
+  line-height: 1.5;
 }
 
 .btn-primary {
   display: inline-block;
-  background: #fee77b;
-  color: #2D3748;
+  background: #F9C513;
+  color: #1E1E1E;
   padding: 1rem 2rem;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 700;
+  border-radius: 12px;
+  font-weight: 600;
   font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(254, 231, 123, 0.4);
+  box-shadow: 0 4px 15px rgba(249, 197, 19, 0.3);
   border: none;
   cursor: pointer;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
-  background: #f4c20d;
+  background: #e6b012;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(254, 231, 123, 0.6);
+  box-shadow: 0 6px 20px rgba(249, 197, 19, 0.4);
 }
 
 .btn-secondary {
   display: inline-block;
-  background: transparent;
-  color: #2D3748;
+  background: #1B73E8;
+  color: #FAFAF9;
   padding: 1rem 2rem;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: 700;
+  border-radius: 12px;
+  font-weight: 600;
   font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
   transition: all 0.3s ease;
-  border: 2px solid #2D3748;
+  border: none;
   cursor: pointer;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .btn-secondary:hover {
-  background: #2D3748;
-  color: white;
-}
-
-.sticky-cta {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background: #fee77b;
-  color: #2D3748;
-  padding: 1rem 1.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 700;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.sticky-cta:hover {
-  background: #f4c20d;
+  background: #1557b0;
   transform: translateY(-2px);
+}
+
+.btn-tertiary {
+  display: inline-block;
+  background: transparent;
+  color: #1E1E1E;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  border: 2px solid #1E1E1E;
+  cursor: pointer;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-tertiary:hover {
+  background: #1E1E1E;
+  color: #FAFAF9;
+}
+
+.card {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(30, 30, 30, 0.12);
 }
 
 .skip-link {
   position: absolute;
   top: -40px;
   left: 6px;
-  background: #000;
-  color: #fff;
+  background: #1E1E1E;
+  color: #FAFAF9;
   padding: 8px;
   text-decoration: none;
   z-index: 10000;
@@ -158,18 +179,15 @@ body {
 
 @media (max-width: 768px) {
   .section-title {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
   
   .section-subtitle {
     font-size: 1.1rem;
   }
   
-  .sticky-cta {
-    bottom: 10px;
-    right: 10px;
-    padding: 0.8rem 1.2rem;
-    font-size: 0.9rem;
+  .container {
+    padding: 0 16px;
   }
 }
 </style>
