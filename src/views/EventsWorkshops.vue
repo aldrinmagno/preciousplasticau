@@ -168,14 +168,10 @@ export default {
           seats: 25,
           description: 'Combine team building with sustainability education. Perfect for CSR programs.',
           type: 'corporate'
-        },
-        {
-          id: 6,
-          title: 'High School Science Incursion',
         }
       ]
     }
-  }
+  },
   mounted() {
     // Add structured data for events
     const eventData = this.events.map(event => ({
