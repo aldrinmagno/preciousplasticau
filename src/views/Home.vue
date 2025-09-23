@@ -89,16 +89,10 @@
             <h3>Darwin & Palmerston Drop-off Points</h3>
             <div class="location-cards">
               <div class="location-card">
-                <h4>Palmerston Community Centre</h4>
-                <p>📍 Temple Terrace, Palmerston</p>
-                <p>🕒 Mon-Fri 8am-6pm, Sat 9am-4pm</p>
-                <p>🚗 Free parking available</p>
+                <h4>Palmerston Location Coming Soon!</h4>
               </div>
               <div class="location-card">
-                <h4>Darwin Waterfront</h4>
-                <p>📍 Kitchener Drive, Darwin</p>
-                <p>🕒 Daily 10am-2pm</p>
-                <p>🚶 Walk-in access</p>
+                <h4>Darwin Location Coming Soon!</h4>
               </div>
             </div>
           </div>
@@ -126,15 +120,15 @@
         <h2>Our impact</h2>
         <div class="counters">
           <div class="counter">
-            <span class="number">2,450</span>
+            <span class="number">0</span>
             <span class="label">Kg diverted</span>
           </div>
           <div class="counter">
-            <span class="number">156</span>
+            <span class="number">0</span>
             <span class="label">Items made</span>
           </div>
           <div class="counter">
-            <span class="number">89</span>
+            <span class="number">0</span>
             <span class="label">Volunteers</span>
           </div>
         </div>
