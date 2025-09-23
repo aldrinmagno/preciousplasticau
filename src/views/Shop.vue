@@ -56,69 +56,6 @@
         </div>
       </section>
 
-      <!-- Featured Products -->
-      <section class="products-section">
-        <h2>Coming soon - preorder now</h2>
-        <div class="products-grid">
-          <div class="product-card">
-            <div class="product-image">🕶️</div>
-            <div class="product-content">
-              <h3>Darwin Classic Sunglasses</h3>
-              <div class="product-details">
-                <p><strong>Recycled content:</strong> 85%</p>
-                <p><strong>Material:</strong> HDPE #2</p>
-                <p><strong>Batch ID:</strong> DRW-SG-001</p>
-                <p><strong>Made in Darwin:</strong> ✅</p>
-              </div>
-              <div class="product-story">
-                <p>Made from milk bottles and detergent containers collected from Palmerston and Darwin suburbs. Each pair diverts approximately 12 bottles from landfill.</p>
-              </div>
-              <div class="product-price">$89</div>
-              <div class="product-status">Preorder - Ships March 2025</div>
-              <button class="btn-primary">Preorder now</button>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <div class="product-image">🌱</div>
-            <div class="product-content">
-              <h3>Recycled Planter Set (3 sizes)</h3>
-              <div class="product-details">
-                <p><strong>Recycled content:</strong> 90%</p>
-                <p><strong>Material:</strong> PP #5</p>
-                <p><strong>Batch ID:</strong> DRW-PL-003</p>
-                <p><strong>Made in Darwin:</strong> ✅</p>
-              </div>
-              <div class="product-story">
-                <p>Created from yogurt containers and takeaway boxes. Perfect for herbs and small plants. Drainage holes included.</p>
-              </div>
-              <div class="product-price">$35</div>
-              <div class="product-status">Preorder - Ships February 2025</div>
-              <button class="btn-primary">Preorder now</button>
-            </div>
-          </div>
-          
-          <div class="product-card">
-            <div class="product-image">📦</div>
-            <div class="product-content">
-              <h3>Storage Bowl Collection</h3>
-              <div class="product-details">
-                <p><strong>Recycled content:</strong> 80%</p>
-                <p><strong>Material:</strong> Mixed HDPE</p>
-                <p><strong>Batch ID:</strong> DRW-BW-007</p>
-                <p><strong>Made in Darwin:</strong> ✅</p>
-              </div>
-              <div class="product-story">
-                <p>Versatile storage bowls made from mixed HDPE containers. Food-safe finish, dishwasher safe. Set of 3 nested bowls.</p>
-              </div>
-              <div class="product-price">$28</div>
-              <div class="product-status">Preorder - Ships April 2025</div>
-              <button class="btn-primary">Preorder now</button>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- About Our Materials -->
       <section class="materials-section">
         <h2>About our materials</h2>
