@@ -38,7 +38,7 @@
             <a href="https://www.facebook.com/profile.php?id=61580648091526" target="_blank" rel="noopener">
               📘 Facebook
             </a>
-            <a href="https://www.instagram.com/preciousplasticdarwin" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/preciousplasticdarwinau" target="_blank" rel="noopener">
               📸 Instagram
             </a>
           </div>
