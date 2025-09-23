@@ -234,6 +234,7 @@ export default {
   position: absolute;
   left: 0;
   color: #1B73E8;
+}
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
