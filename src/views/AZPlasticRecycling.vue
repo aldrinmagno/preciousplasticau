@@ -117,7 +117,7 @@
           <div class="bin-day-checker">
             <h3>Check your bin day</h3>
             <p>Use Darwin Council's bin day checker to find your collection schedule:</p>
-            <a href="https://www.darwin.nt.gov.au/council/waste-and-recycling/bin-collection-days" target="_blank" class="btn-secondary">
+            <a href="https://www.darwin.nt.gov.au/resident-services/waste-recycling/my-bin-day" target="_blank" class="btn-secondary">
               Check bin day →
             </a>
           </div>
