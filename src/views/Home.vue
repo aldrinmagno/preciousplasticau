@@ -20,18 +20,24 @@
         <div class="plastic-types">
           <div class="plastic-card accepted">
             <div class="plastic-icon">🥛</div>
+            <h3>PET #1</h3>
+            <p>Water bottles, soft drink bottles</p>
+            <span class="status">✅ We accept</span>
+          </div>
+          <div class="plastic-card accepted">
+            <div class="plastic-icon">🧴</div>
             <h3>HDPE #2</h3>
             <p>Milk bottle lids, shampoo bottles</p>
             <span class="status">✅ We accept</span>
           </div>
           <div class="plastic-card accepted">
-            <div class="plastic-icon">🧴</div>
+            <div class="plastic-icon">🥤</div>
             <h3>PP #5</h3>
             <p>Caps, containers</p>
             <span class="status">✅ We accept</span>
           </div>
         </div>
-        <p class="prep-note">Clean, dry, labels removed.</p>
+        <p class="prep-note">Clean, dry, labels removed. We accept PET #1, HDPE #2, and PP #5.</p>
         <router-link to="/plastic-drop-off" class="link-cta">Full list & prep guide →</router-link>
       </div>
     </section>
