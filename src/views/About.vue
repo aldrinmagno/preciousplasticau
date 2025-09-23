@@ -38,40 +38,6 @@
         </div>
       </section>
 
-      <!-- Partners -->
-      <section class="partners-section">
-        <h2>Our partners</h2>
-        <div class="partners-grid">
-          <div class="partner-card">
-            <h3>🏫 Education Partners</h3>
-            <ul>
-              <li>Darwin High School</li>
-              <li>Palmerston College</li>
-              <li>Nightcliff Primary School</li>
-              <li>Charles Darwin University</li>
-            </ul>
-          </div>
-          <div class="partner-card">
-            <h3>🏛️ Government Partners</h3>
-            <ul>
-              <li>City of Darwin</li>
-              <li>City of Palmerston</li>
-              <li>NT Environment Centre</li>
-              <li>Keep Australia Beautiful NT</li>
-            </ul>
-          </div>
-          <div class="partner-card">
-            <h3>🏢 Business Partners</h3>
-            <ul>
-              <li>Darwin Community Arts</li>
-              <li>Transition Darwin</li>
-              <li>Local maker spaces</li>
-              <li>Sustainable businesses</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
       <!-- Media Kit -->
       <section class="media-section">
         <h2>Media kit</h2>
@@ -82,15 +48,6 @@
               <h3>Media contact</h3>
               <p>📧 <a href="mailto:hello@preciousplastic.com.au">hello@preciousplastic.com.au</a></p>
               <p>📱 Available for interviews and site visits</p>
-            </div>
-          </div>
-          <div class="media-downloads">
-            <h3>Download resources</h3>
-            <div class="download-buttons">
-              <button class="download-btn">📸 High-res photos</button>
-              <button class="download-btn">🎨 Logo pack</button>
-              <button class="download-btn">📊 Impact fact sheet</button>
-              <button class="download-btn">📋 Press release template</button>
             </div>
           </div>
         </div>
@@ -277,98 +234,12 @@ export default {
   position: absolute;
   left: 0;
   color: #1B73E8;
-  font-weight: 600;
-}
-
-.media-section {
-  margin-bottom: 4rem;
-}
-
-.media-content {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  align-items: start;
-}
-
-.media-info p {
-  font-size: 1.1rem;
-  color: #1E1E1E;
-  opacity: 0.8;
-  margin-bottom: 2rem;
-  line-height: 1.6;
-}
-
-.media-contact {
-  background: rgba(27, 115, 232, 0.1);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-.media-contact h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  color: #1E1E1E;
-}
-
-.media-contact p {
-  margin-bottom: 0.5rem;
-  color: #1E1E1E;
-  opacity: 0.8;
-}
-
-.media-contact a {
-  color: #1B73E8;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.media-downloads {
-  background: #FAFAF9;
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
-}
-
-.media-downloads h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  color: #1E1E1E;
-  text-align: center;
-}
-
-.download-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.download-btn {
-  padding: 1rem;
-  background: #FAFAF9;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-weight: 500;
-  color: #1E1E1E;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: left;
-}
-
-.download-btn:hover {
-  border-color: #1B73E8;
-  background: rgba(27, 115, 232, 0.1);
-}
-
 @media (max-width: 768px) {
   .page-header h1 {
     font-size: 2rem;
   }
   
-  .mission-content,
-  .media-content {
+  .mission-content {
     grid-template-columns: 1fr;
   }
   
