@@ -122,33 +122,17 @@
         <h2>Map & hours</h2>
         <div class="locations-grid">
           <div class="location-card">
-            <h3>Palmerston Community Centre</h3>
-            <div class="location-details">
-              <p><strong>📍 Address:</strong> Temple Terrace, Palmerston NT 0830</p>
-              <p><strong>🕒 Hours:</strong> Mon-Fri 8am-6pm, Sat 9am-4pm, Sun 10am-2pm</p>
-              <p><strong>🚗 Access:</strong> Free parking available, wheelchair accessible</p>
-              <p><strong>📞 Contact:</strong> Call ahead for large drop-offs</p>
-            </div>
+            <h3>Palmerston Location Coming Soon!</h3>
           </div>
           
           <div class="location-card">
-            <h3>Darwin Waterfront</h3>
-            <div class="location-details">
-              <p><strong>📍 Address:</strong> Kitchener Drive, Darwin NT 0800</p>
-              <p><strong>🕒 Hours:</strong> Daily 10am-2pm</p>
-              <p><strong>🚶 Access:</strong> Walk-in access, near Wave Lagoon</p>
-              <p><strong>📞 Contact:</strong> Volunteer staffed</p>
-            </div>
+            <h3>Darwin Location Coming Soon!</h3>
+          
           </div>
           
           <div class="location-card">
-            <h3>Casuarina Shopping Centre</h3>
-            <div class="location-details">
-              <p><strong>📍 Address:</strong> 247 Trower Rd, Casuarina NT 0810</p>
-              <p><strong>🕒 Hours:</strong> Mon-Fri 9am-5pm, Sat 9am-3pm</p>
-              <p><strong>🚗 Access:</strong> Near main entrance, trolley friendly</p>
-              <p><strong>📞 Contact:</strong> Security can assist after hours</p>
-            </div>
+            <h3>Casuarina Location Coming Soon!</h3>
+            
           </div>
         </div>
         
