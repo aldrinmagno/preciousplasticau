@@ -122,27 +122,13 @@
               <p>Work with us to create unique products for your organisation or event.</p>
             </div>
           </div>
-          <form @submit.prevent="submitWholesaleInquiry" class="wholesale-form">
-            <h3>Wholesale inquiry</h3>
-            <input type="hidden" name="form-name" value="wholesale-inquiry">
-            <div class="form-row">
-              <input type="text" v-model="wholesaleForm.company" name="company" placeholder="Company Name" required>
-              <input type="text" v-model="wholesaleForm.contact" name="contact" placeholder="Contact Person" required>
-            </div>
-            <div class="form-row">
-              <input type="email" v-model="wholesaleForm.email" name="email" placeholder="Email Address" required>
-              <input type="tel" v-model="wholesaleForm.phone" name="phone" placeholder="Phone Number">
-            </div>
-            <select v-model="wholesaleForm.type" name="type" required>
-              <option value="">Inquiry Type</option>
-              <option value="corporate-gifts">Corporate Gifts</option>
-              <option value="retail">Retail Partnership</option>
-              <option value="custom">Custom Products</option>
-              <option value="bulk">Bulk Order</option>
-            </select>
-            <textarea v-model="wholesaleForm.details" name="details" placeholder="Tell us about your requirements (quantities, timeline, budget, etc.)" rows="4" required></textarea>
-            <button type="submit" class="btn-primary">Send inquiry</button>
-          </form>
+          <div class="wholesale-cta">
+            <h3>Get in touch for wholesale</h3>
+            <p>Ready to discuss wholesale opportunities? Email us with your requirements.</p>
+            <a href="mailto:hello@preciousplastic.com.au?subject=Wholesale Inquiry" class="btn-primary email-cta">
+              📧 Email us for wholesale inquiry
+            </a>
+          </div>
         </div>
       </section>
     </div>
@@ -151,17 +137,11 @@
     <div v-if="showWaitlistModal" class="modal-overlay" @click="showWaitlistModal = false">
       <div class="modal" @click.stop>
         <h3>Join the waitlist</h3>
-        <form @submit.prevent="submitWaitlist" name="shop-waitlist" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="shop-waitlist">
-          <input type="hidden" name="category" :value="selectedCategory">
-          <input type="text" v-model="waitlistForm.name" name="name" placeholder="Your Name" required>
-          <input type="email" v-model="waitlistForm.email" name="email" placeholder="Email Address" required>
-          <textarea v-model="waitlistForm.message" name="message" placeholder="Any specific requests or questions?" rows="3"></textarea>
-          <div class="modal-actions">
-            <button type="button" class="btn-tertiary" @click="showWaitlistModal = false">Cancel</button>
-            <button type="submit" class="btn-primary">Join waitlist</button>
-          </div>
-        </form>
+        <p>Interested in {{ selectedCategory }}? Email us to join the waitlist and we'll notify you when products are available.</p>
+        <a :href="`mailto:hello@preciousplastic.com.au?subject=Waitlist - ${selectedCategory}`" class="btn-primary email-cta">
+          📧 Email to join waitlist
+        </a>
+        <button type="button" class="btn-tertiary" @click="showWaitlistModal = false">Close</button>
       </div>
     </div>
   </div>
@@ -173,88 +153,13 @@ export default {
   data() {
     return {
       showWaitlistModal: false,
-      selectedCategory: '',
-      waitlistForm: {
-        name: '',
-        email: '',
-        message: ''
-      },
-      wholesaleForm: {
-        company: '',
-        contact: '',
-        email: '',
-        phone: '',
-        type: '',
-        details: ''
-      }
+      selectedCategory: ''
     }
   },
   methods: {
     joinWaitlist(category) {
       this.selectedCategory = category
       this.showWaitlistModal = true
-    },
-    async submitWaitlist() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'shop-waitlist')
-        formData.append('category', this.selectedCategory)
-        formData.append('name', this.waitlistForm.name)
-        formData.append('email', this.waitlistForm.email)
-        formData.append('message', this.waitlistForm.message)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for joining our waitlist! We\'ll notify you when products are available.')
-        this.showWaitlistModal = false
-        this.resetWaitlistForm()
-      } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
-      }
-    },
-    async submitWholesaleInquiry() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'wholesale-inquiry')
-        formData.append('company', this.wholesaleForm.company)
-        formData.append('contact', this.wholesaleForm.contact)
-        formData.append('email', this.wholesaleForm.email)
-        formData.append('phone', this.wholesaleForm.phone)
-        formData.append('type', this.wholesaleForm.type)
-        formData.append('details', this.wholesaleForm.details)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for your wholesale inquiry! We\'ll get back to you within 2 business days.')
-        this.resetWholesaleForm()
-      } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
-      }
-    },
-    resetWaitlistForm() {
-      this.waitlistForm = {
-        name: '',
-        email: '',
-        message: ''
-      }
-    },
-    resetWholesaleForm() {
-      this.wholesaleForm = {
-        company: '',
-        contact: '',
-        email: '',
-        phone: '',
-        type: '',
-        details: ''
-      }
     }
   },
   mounted() {
@@ -604,52 +509,32 @@ export default {
   line-height: 1.5;
 }
 
-.wholesale-form {
+.wholesale-cta {
   background: rgba(27, 115, 232, 0.1);
   border-radius: 16px;
   padding: 2rem;
+  text-align: center;
 }
 
-.wholesale-form h3 {
+.wholesale-cta h3 {
   font-size: 1.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #1E1E1E;
-  text-align: center;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
+.wholesale-cta p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-.wholesale-form input,
-.wholesale-form select,
-.wholesale-form textarea {
-  padding: 1rem;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.wholesale-form input:focus,
-.wholesale-form select:focus,
-.wholesale-form textarea:focus {
-  outline: none;
-  border-color: #1B73E8;
-}
-
-.wholesale-form select,
-.wholesale-form textarea {
-  grid-column: 1 / -1;
-  margin-bottom: 1rem;
-}
-
-.wholesale-form textarea {
-  resize: vertical;
+.email-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
 }
 
 .modal-overlay {
@@ -684,36 +569,23 @@ export default {
   text-align: center;
 }
 
-.modal form {
+.modal p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.modal .email-cta {
+  display: block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal .btn-tertiary {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.modal input,
-.modal textarea {
-  padding: 1rem;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.modal input:focus,
-.modal textarea:focus {
-  outline: none;
-  border-color: #1B73E8;
-}
-
-.modal textarea {
-  resize: vertical;
-}
-
-.modal-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: flex-end;
-  margin-top: 1rem;
+  margin: 0 auto;
 }
 
 @media (max-width: 768px) {
@@ -728,14 +600,6 @@ export default {
   
   .materials-content {
     grid-template-columns: 1fr;
-  }
-  
-  .form-row {
-    grid-template-columns: 1fr;
-  }
-  
-  .modal-actions {
-    flex-direction: column;
   }
 }
 </style>

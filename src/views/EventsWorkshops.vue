@@ -57,28 +57,10 @@
           </div>
           <div class="host-form-container">
             <h3>Host an event</h3>
-            <form @submit.prevent="submitHostRequest" class="host-form">
-              <input type="hidden" name="form-name" value="host-event">
-              <div class="form-row">
-                <input type="text" v-model="hostForm.organization" name="organization" placeholder="School/Organisation Name" required>
-                <input type="text" v-model="hostForm.contact" name="contact" placeholder="Contact Person" required>
-              </div>
-              <div class="form-row">
-                <input type="email" v-model="hostForm.email" name="email" placeholder="Email Address" required>
-                <input type="tel" v-model="hostForm.phone" name="phone" placeholder="Phone Number">
-              </div>
-              <div class="form-row">
-                <select v-model="hostForm.type" name="type" required>
-                  <option value="">Event Type</option>
-                  <option value="school">School Incursion</option>
-                  <option value="corporate">Corporate Workshop</option>
-                  <option value="community">Community Event</option>
-                </select>
-                <input type="number" v-model="hostForm.participants" name="participants" placeholder="Number of Participants" min="5" required>
-              </div>
-              <textarea v-model="hostForm.details" name="details" placeholder="Tell us about your group, learning objectives, and any special requirements" rows="4"></textarea>
-              <button type="submit" class="btn-primary">Request quote</button>
-            </form>
+            <p>Interested in hosting a workshop at your school or organization? Get in touch to discuss your requirements.</p>
+            <a href="mailto:hello@preciousplastic.com.au?subject=Host Event Request" class="btn-primary email-cta">
+              📧 Email us to host an event
+            </a>
           </div>
         </div>
       </section>
@@ -190,49 +172,6 @@ export default {
         {
           id: 6,
           title: 'High School Science Incursion',
-          category: 'Schools',
-          day: '19',
-          month: 'FEB',
-          location: 'Darwin High School',
-          price: '$8 per student',
-          seats: 30,
-          description: 'Curriculum-aligned workshop covering chemistry, environmental science, and design thinking.',
-          type: 'schools'
-        }
-      ],
-      hostForm: {
-        organization: '',
-        contact: '',
-        email: '',
-        phone: '',
-        type: '',
-        participants: '',
-        details: ''
-      }
-    }
-  },
-  methods: {
-    async submitHostRequest() {
-      try {
-        // Form submission logic would go here
-        alert('Thank you for your interest! We\'ll be in touch soon.')
-        this.resetHostForm()
-      } catch (error) {
-        alert('There was an error submitting your request. Please try again.')
-      }
-    },
-    resetHostForm() {
-      this.hostForm = {
-        organization: '',
-        contact: '',
-        email: '',
-        phone: '',
-        type: '',
-        participants: '',
-        details: ''
-      }
-    }
-  },
   mounted() {
     // Add structured data for events
     const eventData = this.events.map(event => ({
@@ -536,6 +475,7 @@ export default {
   background: rgba(249, 197, 19, 0.1);
   border-radius: 16px;
   padding: 2rem;
+  text-align: center;
 }
 
 .host-form-container h3 {
@@ -543,40 +483,20 @@ export default {
   font-weight: 600;
   margin-bottom: 1.5rem;
   color: #1E1E1E;
-  text-align: center;
 }
 
-.host-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+.host-form-container p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.host-form input,
-.host-form select,
-.host-form textarea {
-  padding: 1rem;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.host-form input:focus,
-.host-form select:focus,
-.host-form textarea:focus {
-  outline: none;
-  border-color: #1B73E8;
-}
-
-.host-form textarea {
-  resize: vertical;
+.email-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
 }
 
 .learning-section {
@@ -626,10 +546,6 @@ export default {
   }
   
   .schools-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .form-row {
     grid-template-columns: 1fr;
   }
 }

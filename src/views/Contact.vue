@@ -9,29 +9,13 @@
       <!-- Contact Form -->
       <section class="contact-form-section">
         <div class="contact-grid">
-          <div class="form-container">
-            <h2>Send us a message</h2>
-            <form @submit.prevent="submitContactForm" class="contact-form">
-              <input type="hidden" name="form-name" value="contact-form">
-              <div class="form-row">
-                <input type="text" v-model="contactForm.name" name="name" placeholder="Your Name" required>
-                <input type="email" v-model="contactForm.email" name="email" placeholder="Email Address" required>
-              </div>
-              <div class="form-row">
-                <input type="tel" v-model="contactForm.phone" name="phone" placeholder="Phone Number (optional)">
-                <select v-model="contactForm.topic" name="topic" required>
-                  <option value="">Select Topic</option>
-                  <option value="drop-off">Drop-off Questions</option>
-                  <option value="workshops">Workshop Bookings</option>
-                  <option value="partnerships">Partnerships</option>
-                  <option value="volunteering">Volunteering</option>
-                  <option value="media">Media Inquiry</option>
-                  <option value="general">General Question</option>
-                </select>
-              </div>
-              <textarea v-model="contactForm.message" name="message" placeholder="Your message..." rows="6" required></textarea>
-              <button type="submit" class="btn-primary">Send message</button>
-            </form>
+          <div class="email-cta-container">
+            <h2>Get in touch</h2>
+            <p>Ready to get involved with plastic recycling in Darwin? We'd love to hear from you!</p>
+            <a href="mailto:hello@preciousplastic.com.au" class="btn-primary email-cta">
+              📧 Email us at hello@preciousplastic.com.au
+            </a>
+            <p class="email-note">We respond to all emails within 24 hours</p>
           </div>
 
           <div class="contact-info">
@@ -89,50 +73,6 @@
 <script>
 export default {
   name: 'Contact',
-  data() {
-    return {
-      contactForm: {
-        name: '',
-        email: '',
-        phone: '',
-        topic: '',
-        message: ''
-      }
-    }
-  },
-  methods: {
-    async submitContactForm() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'contact-form')
-        formData.append('name', this.contactForm.name)
-        formData.append('email', this.contactForm.email)
-        formData.append('phone', this.contactForm.phone)
-        formData.append('topic', this.contactForm.topic)
-        formData.append('message', this.contactForm.message)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for your message! We\'ll get back to you within 24 hours.')
-        this.resetContactForm()
-      } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
-      }
-    },
-    resetContactForm() {
-      this.contactForm = {
-        name: '',
-        email: '',
-        phone: '',
-        topic: '',
-        message: ''
-      }
-    }
-  },
   mounted() {
     // Add structured data
     const structuredData = [
@@ -211,7 +151,7 @@ export default {
   gap: 3rem;
 }
 
-.form-container h2,
+.email-cta-container,
 .contact-info h2 {
   font-size: 1.8rem;
   font-weight: 600;
@@ -219,37 +159,39 @@ export default {
   margin-bottom: 1.5rem;
 }
 
-.contact-form {
+.email-cta-container {
+  background: rgba(249, 197, 19, 0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.email-cta-container h2 {
+  text-align: center;
+}
+
+.email-cta-container p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.email-cta {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  text-decoration: none;
 }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: 1rem;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  outline: none;
-  border-color: #1B73E8;
-}
-
-.contact-form textarea {
-  resize: vertical;
+.email-note {
+  font-size: 0.9rem;
+  color: #1E1E1E;
+  opacity: 0.7;
+  margin-bottom: 0;
 }
 
 .info-cards {
@@ -366,10 +308,6 @@ export default {
   
   .contact-grid,
   .location-content {
-    grid-template-columns: 1fr;
-  }
-  
-  .form-row {
     grid-template-columns: 1fr;
   }
 }

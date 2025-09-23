@@ -155,19 +155,9 @@
         <div class="business-pickup">
           <h3>Business & school collections</h3>
           <p>Large quantities? We offer pickup services for businesses and schools.</p>
-          <form @submit.prevent="submitPickupRequest" class="pickup-form">
-            <input type="hidden" name="form-name" value="business-pickup">
-            <div class="form-row">
-              <input type="text" v-model="pickupForm.business" name="business" placeholder="Business/School Name" required>
-              <input type="email" v-model="pickupForm.email" name="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-row">
-              <input type="text" v-model="pickupForm.address" name="address" placeholder="Collection Address" required>
-              <input type="tel" v-model="pickupForm.phone" name="phone" placeholder="Phone Number">
-            </div>
-            <textarea v-model="pickupForm.details" name="details" placeholder="Tell us about your plastic waste (types, estimated quantities, frequency)" rows="3" required></textarea>
-            <button type="submit" class="btn-primary">Request pickup quote</button>
-          </form>
+          <a href="mailto:hello@preciousplastic.com.au?subject=Business Pickup Request" class="btn-primary email-cta">
+            📧 Email us for pickup quote
+          </a>
         </div>
       </section>
 
@@ -208,52 +198,10 @@
 <script>
 export default {
   name: 'PlasticDropOff',
-  data() {
-    return {
-      pickupForm: {
-        business: '',
-        email: '',
-        address: '',
-        phone: '',
-        details: ''
-      }
-    }
-  },
   methods: {
     downloadPrepGuide() {
       // Placeholder for PDF download
       alert('Prep & Sorting Guide PDF download will be available soon!')
-    },
-    async submitPickupRequest() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'business-pickup')
-        formData.append('business', this.pickupForm.business)
-        formData.append('email', this.pickupForm.email)
-        formData.append('address', this.pickupForm.address)
-        formData.append('phone', this.pickupForm.phone)
-        formData.append('details', this.pickupForm.details)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for your pickup request! We\'ll get back to you within 2 business days.')
-        this.resetPickupForm()
-      } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
-      }
-    },
-    resetPickupForm() {
-      this.pickupForm = {
-        business: '',
-        email: '',
-        address: '',
-        phone: '',
-        details: ''
-      }
     }
   },
   mounted() {
@@ -587,37 +535,11 @@ export default {
   opacity: 0.8;
 }
 
-.pickup-form {
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin-bottom: 1rem;
-}
-
-.pickup-form input,
-.pickup-form textarea {
-  padding: 1rem;
-  border: 2px solid rgba(30, 30, 30, 0.2);
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-}
-
-.pickup-form input:focus,
-.pickup-form textarea:focus {
-  outline: none;
-  border-color: #1B73E8;
-}
-
-.pickup-form textarea {
-  grid-column: 1 / -1;
-  resize: vertical;
-  margin-bottom: 1rem;
+.email-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
 }
 
 .faq-section {
@@ -666,10 +588,6 @@ export default {
   }
   
   .plastic-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .form-row {
     grid-template-columns: 1fr;
   }
   
