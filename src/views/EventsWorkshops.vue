@@ -172,6 +172,10 @@ export default {
         {
           id: 6,
           title: 'High School Science Incursion',
+        }
+      ]
+    }
+  }
   mounted() {
     // Add structured data for events
     const eventData = this.events.map(event => ({
