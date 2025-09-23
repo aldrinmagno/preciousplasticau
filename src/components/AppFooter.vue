@@ -8,7 +8,7 @@
             <p>📍 Darwin, Northern Territory 0800</p>
             <p>📧 <a href="mailto:hello@preciousplastic.com.au">hello@preciousplastic.com.au</a></p>
             <p>🌐 <a href="https://preciousplastic.com.au">preciousplastic.com.au</a></p>
-            <p><strong>ABN:</strong> 12 345 678 901</p>
+            <p><strong>ABN:</strong> 66 970 659 782</p>
           </div>
         </div>
         
