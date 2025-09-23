@@ -14,6 +14,9 @@
             <h3>✅ Accepted</h3>
             <div class="plastic-list">
               <div class="plastic-item">
+                <strong>PET #1:</strong> Water bottles, soft drink bottles, food containers
+              </div>
+              <div class="plastic-item">
                 <strong>HDPE #2:</strong> Bottles, lids, containers
               </div>
               <div class="plastic-item">
@@ -83,6 +86,37 @@
         </p>
       </section>
 
+      <!-- How to identify plastic codes -->
+      <section class="identify-section">
+        <h2>How to identify plastic codes</h2>
+        <div class="identify-grid">
+          <div class="identify-card">
+            <div class="code-example">#1</div>
+            <h3>PET</h3>
+            <p>Polyethylene Terephthalate</p>
+            <p class="characteristics">Clear, lightweight, often has a seam</p>
+          </div>
+          <div class="identify-card">
+            <div class="code-example">#2</div>
+            <h3>HDPE</h3>
+            <p>High-Density Polyethylene</p>
+            <p class="characteristics">Opaque, waxy feel, makes crinkly sound</p>
+          </div>
+          <div class="identify-card">
+            <div class="code-example">#5</div>
+            <h3>PP</h3>
+            <p>Polypropylene</p>
+            <p class="characteristics">Flexible, can be bent without breaking</p>
+          </div>
+          <div class="identify-card">
+            <div class="code-example">?</div>
+            <h3>No code?</h3>
+            <p>Look for recycling symbol</p>
+            <p class="characteristics">Usually on the bottom or side of containers</p>
+          </div>
+        </div>
+      </section>
+
       <!-- Map & Hours -->
       <section class="locations-section">
         <h2>Map & hours</h2>
@@ -142,8 +176,13 @@
         <h2>Frequently asked questions</h2>
         <div class="faq-grid">
           <div class="faq-item">
+            <h3>Do you accept PET #1 plastic bottles?</h3>
+            <p>Yes! We now accept clean PET #1 bottles including water bottles, soft drink bottles, and clear food containers. Remove all labels and caps, and rinse thoroughly before drop-off.</p>
+          </div>
+          
+          <div class="faq-item">
             <h3>Do you take bottle caps for recycling in Darwin?</h3>
-            <p>Yes! We accept bottle caps if they're made from PP (#5) or HDPE (#2). Check the recycling code on the cap. Keep small caps in a sealed container or bag to prevent them from getting lost.</p>
+            <p>Yes! We accept bottle caps if they're made from PP (#5), HDPE (#2), or PET (#1). Check the recycling code on the cap. Keep small caps in a sealed container or bag to prevent them from getting lost.</p>
           </div>
           
           <div class="faq-item">
@@ -153,7 +192,7 @@
           
           <div class="faq-item">
             <h3>Do you accept mixed plastics?</h3>
-            <p>No, we only accept clean, sorted HDPE (#2) and PP (#5) plastics. Mixed or contaminated plastics can't be processed in our machines. Use our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to identify plastic types.</p>
+            <p>No, we only accept clean, sorted PET (#1), HDPE (#2), and PP (#5) plastics. Mixed or contaminated plastics can't be processed in our machines. Use our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to identify plastic types.</p>
           </div>
           
           <div class="faq-item">
@@ -444,6 +483,56 @@ export default {
 
 .prep-note a:hover {
   text-decoration: underline;
+}
+
+.identify-section {
+  margin-bottom: 4rem;
+}
+
+.identify-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.identify-card {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+}
+
+.code-example {
+  background: #F9C513;
+  color: #1E1E1E;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem;
+}
+
+.identify-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1E1E1E;
+}
+
+.identify-card p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+}
+
+.characteristics {
+  font-style: italic;
+  font-size: 0.9rem;
 }
 
 .locations-section {

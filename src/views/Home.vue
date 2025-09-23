@@ -184,7 +184,7 @@
           </div>
           <div class="faq-item">
             <h3>What plastics can I recycle near me?</h3>
-            <p>We accept clean, dry HDPE (#2) and PP (#5) plastics. Remove labels and caps, sort by code. Check our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to look up specific items.</p>
+            <p>We accept clean, dry PET (#1), HDPE (#2), and PP (#5) plastics. Remove labels and caps, sort by code. Check our <router-link to="/a-z-plastic-recycling">A–Z guide</router-link> to look up specific items.</p>
           </div>
           <div class="faq-item">
             <h3>Do you collect from businesses or schools?</h3>
@@ -260,7 +260,7 @@ export default {
             "name": "What plastics can I recycle near me?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We accept clean, dry HDPE (#2) and PP (#5) plastics. Remove labels and caps, sort by code."
+              "text": "We accept clean, dry PET (#1), HDPE (#2), and PP (#5) plastics. Remove labels and caps, sort by code."
             }
           },
           {

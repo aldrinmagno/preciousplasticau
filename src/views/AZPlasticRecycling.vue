@@ -71,6 +71,12 @@
         <h2>How to identify plastic codes</h2>
         <div class="identify-grid">
           <div class="identify-card">
+            <div class="code-example">#1</div>
+            <h3>PET</h3>
+            <p>Polyethylene Terephthalate</p>
+            <p class="characteristics">Clear, lightweight, often has a seam</p>
+          </div>
+          <div class="identify-card">
             <div class="code-example">#2</div>
             <h3>HDPE</h3>
             <p>High-Density Polyethylene</p>
@@ -188,9 +194,9 @@ export default {
           id: 4,
           name: 'Bottles (drink)',
           resinCode: '#1 PET',
-          accepted: false,
+          accepted: true,
           prepNotes: 'Remove caps and labels. Rinse clean.',
-          yellowBin: 'Yes',
+          yellowBin: 'Yes, but we can also use them',
           relatedItems: ['Water bottles', 'Soft drink bottles']
         },
         {
@@ -224,9 +230,9 @@ export default {
           id: 8,
           name: 'Egg cartons (plastic)',
           resinCode: '#1 PET',
-          accepted: false,
+          accepted: true,
           prepNotes: 'Remove any labels or stickers.',
-          yellowBin: 'Yes',
+          yellowBin: 'Yes, but we can also use them',
           relatedItems: ['Food packaging', 'Fruit punnets']
         },
         {
@@ -251,9 +257,9 @@ export default {
           id: 11,
           name: 'Honey jars (plastic)',
           resinCode: '#1 PET',
-          accepted: false,
+          accepted: true,
           prepNotes: 'Remove all honey residue with hot water.',
-          yellowBin: 'Yes, if completely clean',
+          yellowBin: 'Yes, but we can also use them if completely clean',
           relatedItems: ['Jam jars', 'Sauce containers']
         },
         {
@@ -278,9 +284,9 @@ export default {
           id: 14,
           name: 'Ketchup bottles',
           resinCode: '#1 PET',
-          accepted: false,
+          accepted: true,
           prepNotes: 'Rinse thoroughly to remove all sauce.',
-          yellowBin: 'Yes',
+          yellowBin: 'Yes, but we can also use them',
           relatedItems: ['Sauce bottles', 'Condiment bottles']
         },
         {
@@ -314,9 +320,9 @@ export default {
           id: 18,
           name: 'Oil bottles',
           resinCode: '#1 PET',
-          accepted: false,
+          accepted: true,
           prepNotes: 'Very difficult to clean. Small amounts of oil contaminate batches.',
-          yellowBin: 'Only if completely clean (very difficult)',
+          yellowBin: 'Only if completely clean - we can use them if spotless',
           relatedItems: ['Cooking oil bottles', 'Olive oil bottles']
         },
         {
@@ -385,7 +391,7 @@ export default {
             "name": "What plastic items can I recycle in Darwin?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "In Darwin, you can recycle clean HDPE (#2) and PP (#5) plastics through our drop-off points. This includes milk bottles, detergent containers, yogurt containers, and bottle caps."
+              "text": "In Darwin, you can recycle clean PET (#1), HDPE (#2), and PP (#5) plastics through our drop-off points. This includes water bottles, milk bottles, detergent containers, yogurt containers, and bottle caps."
             }
           },
           {
@@ -393,7 +399,7 @@ export default {
             "name": "How do I identify plastic resin codes?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Look for the recycling symbol with a number inside, usually on the bottom of containers. HDPE (#2) has a waxy feel and makes a crinkly sound. PP (#5) is flexible and can be bent without breaking."
+              "text": "Look for the recycling symbol with a number inside, usually on the bottom of containers. PET (#1) is clear and lightweight. HDPE (#2) has a waxy feel and makes a crinkly sound. PP (#5) is flexible and can be bent without breaking."
             }
           },
           {

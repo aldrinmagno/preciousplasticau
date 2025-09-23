@@ -125,6 +125,7 @@
         <div class="materials-content">
           <div class="materials-info">
             <h3>HDPE/PP sourcing and tracing</h3>
+            <h3>PET/HDPE/PP sourcing and tracing</h3>
             <p>Every product comes with a batch ID that traces back to the specific plastic donations we received. We can tell you which suburbs your product came from and approximately how many containers were diverted from landfill.</p>
             <div class="tracing-features">
               <div class="feature">
@@ -145,6 +146,10 @@
             <h3>Current material stocks</h3>
             <div class="stock-items">
               <div class="stock-item">
+                <span class="stock-type">PET #1</span>
+                <span class="stock-amount">280kg processed</span>
+              </div>
+              <div class="stock-item">
                 <span class="stock-type">HDPE #2</span>
                 <span class="stock-amount">450kg processed</span>
               </div>
@@ -154,7 +159,7 @@
               </div>
               <div class="stock-item">
                 <span class="stock-type">Mixed colours</span>
-                <span class="stock-amount">12 colour batches</span>
+                <span class="stock-amount">15 colour batches</span>
               </div>
             </div>
           </div>
