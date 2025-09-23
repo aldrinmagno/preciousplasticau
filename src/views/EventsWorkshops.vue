@@ -23,27 +23,17 @@
       <!-- Events Calendar -->
       <section class="events-section">
         <h2>Upcoming events</h2>
-        <div class="events-grid">
-          <div 
-            v-for="event in filteredEvents" 
-            :key="event.id"
-            class="event-card"
-          >
-            <div class="event-date">
-              <span class="day">{{ event.day }}</span>
-              <span class="month">{{ event.month }}</span>
-            </div>
-            <div class="event-content">
-              <div class="event-category">{{ event.category }}</div>
-              <h3>{{ event.title }}</h3>
-              <div class="event-details">
-                <p>📍 {{ event.location }}</p>
-                <p>💰 {{ event.price }}</p>
-                <p>👥 {{ event.seats }} seats available</p>
-              </div>
-              <p class="event-description">{{ event.description }}</p>
-              <button class="btn-primary" @click="bookEvent(event)">Book now</button>
-            </div>
+        <div class="coming-soon-placeholder">
+          <div class="placeholder-icon">🗓️</div>
+          <h3>Events coming soon!</h3>
+          <p>We're planning exciting hands-on workshops for 2025. Join our mailing list or follow us on social media to be the first to know when bookings open.</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61580648091526" target="_blank" class="social-link">
+              📘 Follow on Facebook
+            </a>
+            <a href="mailto:hello@preciousplastic.com.au" class="social-link">
+              📧 Email for updates
+            </a>
           </div>
         </div>
       </section>
@@ -217,44 +207,8 @@ export default {
         phone: '',
         type: '',
         participants: '',
-        details: ''
-      }
-    }
-  },
-  computed: {
-    filteredEvents() {
-      if (this.activeFilter === 'all') {
-        return this.events
-      }
-      return this.events.filter(event => event.type === this.activeFilter)
-    }
-  },
-  methods: {
-    bookEvent(event) {
-      alert(`Booking system coming soon! Please email hello@preciousplastic.com.au to book "${event.title}"`)
-    },
-    async submitHostRequest() {
-      try {
-        const formData = new FormData()
-        formData.append('form-name', 'host-event')
-        formData.append('organization', this.hostForm.organization)
-        formData.append('contact', this.hostForm.contact)
-        formData.append('email', this.hostForm.email)
-        formData.append('phone', this.hostForm.phone)
-        formData.append('type', this.hostForm.type)
-        formData.append('participants', this.hostForm.participants)
-        formData.append('details', this.hostForm.details)
-        
-        await fetch('/', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: new URLSearchParams(formData).toString()
-        })
-        
-        alert('Thanks for your event request! We\'ll get back to you within 2 business days with a custom quote.')
         this.resetHostForm()
       } catch (error) {
-        alert('There was an error submitting your form. Please try again or email us directly at hello@preciousplastic.com.au')
       }
     },
     resetHostForm() {
@@ -397,6 +351,61 @@ export default {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: 2rem;
+}
+
+.coming-soon-placeholder {
+  background: #FAFAF9;
+  border-radius: 16px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(30, 30, 30, 0.08);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.coming-soon-placeholder h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #1E1E1E;
+}
+
+.coming-soon-placeholder p {
+  color: #1E1E1E;
+  opacity: 0.8;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1B73E8;
+  color: #FAFAF9;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background: #1557b0;
+  transform: translateY(-2px);
 }
 
 .event-card {
